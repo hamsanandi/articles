@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಮೇರುಪರ್ವತ ಎಲ್ಲಿದೆ? — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88; --text: #1a1208; --meta: #8a7055;
+}
+body { font-family: 'Noto Serif Kannada', serif; background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.9; }
+
+/* ── Site nav ── */
+.site-nav { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 12px 24px; text-align: center; }
+.site-nav a { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+.nav-sep { color: var(--border-light); margin: 0 10px; }
+
+/* ── Article wrap ── */
+.article-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* ── Header ── */
+.article-header { text-align: center; margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--border); position: relative; }
+.article-header::after { content: ''; display: block; height: 2px; width: 100px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); }
+.article-category { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--meta); margin-bottom: 14px; }
+.article-title { font-family: 'Noto Serif Kannada', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light); line-height: 1.3; margin-bottom: 14px; }
+.article-meta { font-size: 0.85em; color: var(--meta); font-family: 'Noto Sans Kannada', sans-serif; }
+.article-meta span { color: var(--border-light); margin: 0 6px; }
+
+/* ── Language toggle ── */
+.lang-toggle { display: inline-flex; gap: 3px; background: var(--header-bg); border: 1px solid var(--border-light); border-radius: 20px; padding: 5px 4px; margin-bottom: 16px; cursor: pointer; }
+.lang-btn { font-size: 0.75rem; padding: 4px 10px; border-radius: 16px; border: none; background: none; cursor: pointer; color: var(--meta); font-family: 'EB Garamond', serif; transition: all 0.18s; }
+.lang-btn.active { background: var(--gold); color: #fff; font-weight: 600; }
+.lang-btn.kn-btn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.78rem; }
+
+/* ── Body ── */
+.article-body { font-family: 'Noto Serif Kannada', serif; }
+.article-body p { margin-bottom: 1.5em; }
+
+/* ── Sanskrit verse block ── */
+.verse {
+  background: var(--section-bg);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  padding: 16px 20px;
+  margin: 1.6em 0 0.6em;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05em;
+  font-style: italic;
+  line-height: 2;
+  color: var(--text);
+}
+.verse-source {
+  font-size: 0.78em;
+  color: var(--meta);
+  font-style: normal;
+  margin-top: 8px;
+  font-family: 'Noto Sans Kannada', sans-serif;
+  line-height: 1.5;
+}
+
+/* ── Translation block ── */
+.translation {
+  background: var(--header-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 18px;
+  margin: 0 0 1.6em;
+  font-size: 0.92em;
+  line-height: 1.8;
+  color: var(--text);
+}
+.translation-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--meta);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── Source note ── */
+.source-note {
+  background: var(--section-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 1.8em 0 1em;
+  font-size: 0.88em;
+  color: var(--meta);
+  font-family: 'Noto Sans Kannada', sans-serif;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── Closing / tags / back ── */
+.article-close { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid var(--border); font-size: 0.88em; color: var(--meta); font-style: italic; text-align: right; font-family: 'Noto Sans Kannada', sans-serif; }
+.tags { margin-top: 2em; padding-top: 1.2em; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { display: inline-block; padding: 3px 10px; font-size: 0.73em; border: 1px solid var(--border-light); border-radius: 4px; color: var(--meta); background: var(--section-bg); font-family: 'Noto Sans Kannada', sans-serif; }
+.back-link { display: inline-block; margin-top: 36px; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--border-light); }
+.back-link:hover { color: var(--gold-light); border-bottom-color: var(--gold); }
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 32px 0 0; }
+footer { text-align: center; color: var(--meta); font-size: 0.82em; padding: 20px 0 30px; font-family: 'Noto Sans Kannada', sans-serif; }
+
+/* ── UI label switching ── */
+[data-ui="en"] { display: inline; }
+[data-ui="kn"] { display: none; }
+body.kn [data-ui="en"] { display: none; }
+body.kn [data-ui="kn"] { display: inline; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="https://hamsanandi.github.io/">Hamsanandi</a>
+  <span class="nav-sep">·</span>
+  <a href="https://hamsanandi.github.io/articles/">
+    <span data-ui="en">Articles</span><span data-ui="kn">ಲೇಖನಗಳು</span>
+  </a>
+</nav>
+
+<div class="article-wrap">
+
+  <header class="article-header">
+    <div class="lang-toggle" id="langToggle">
+      <button class="lang-btn active" id="btnEN">EN</button>
+      <button class="lang-btn kn-btn" id="btnKN">ಕನ್ನಡ</button>
+    </div>
+    <div class="article-category">
+      <span data-ui="en">Essay · History · Sacred Geography · Kannada</span>
+      <span data-ui="kn">ಲೇಖನ · ಇತಿಹಾಸ · ಭೂಗೋಲ · ಕನ್ನಡ</span>
+    </div>
+    <h1 class="article-title">ಮೇರುಪರ್ವತ ಎಲ್ಲಿದೆ?</h1>
+    <div class="article-meta">
+      ಹಂಸಾನಂದಿ <span>·</span> ಡಿಸೆಂಬರ್ 23, 2020
+      <span>·</span>
+      <span data-ui="en">Originally published in Indica Today</span>
+      <span data-ui="kn">ಮೂಲತಃ Indica Today ನಲ್ಲಿ ಪ್ರಕಟಿತ</span>
+    </div>
+  </header>
+
+  <div class="article-body">
+
+    <p>ಇಂದಿನ ಭಾರತೀಯ ಸಾಹಿತ್ಯದಲ್ಲಿ ಸಾಮಾನ್ಯವಾಗಿ ಅತ್ಯುತ್ತಮ ವ್ಯಕ್ತಿತ್ವವನ್ನು ಗುರುತಿಸುವಾಗ, 'ಮೇರುಸಮಾನರಾದ', 'ಮೇರು ಪ್ರಾಯರಾದ' ಮೊದಲಾದ ವಿಶೇಷಣಗಳನ್ನು ನೀವು ನೋಡಿಯೇ ಇರುವಿರಿ. ಒಂದುವೇಳೆ ನೀವು ಕರ್ನಾಟಕ ಸಂಗೀತದ ಅಭಿಮಾನಿ, ಅಥವಾ ಕೇಳುಗರಾಗಿದ್ದರೆ ತ್ಯಾಗರಾಜರ ಮಾಯಾಮಾಳವ ಗೌಳ ರಾಗದ ಕೃತಿ, 'ಮೇರು ಸಮಾನ' ಎಂಬುದರಲ್ಲಿ ಶ್ರೀರಾಮನ ಪರಾಕ್ರಮವನ್ನು, ಅವನ ಧೀರ ನಿಲುವನ್ನೂ ಮೇರುಪರ್ವತಕ್ಕೆ ಹೋಲಿಸುವುದನ್ನು ಗಮನಿಸಿರುತ್ತೀರಿ. ಅದೇ ರೀತಿ ಶಾಮಾಶಾಸ್ತ್ರಿ ಅವರು ಲಲಿತಾ ರಾಗದ 'ನನ್ನು ಬ್ರೋವು ಲಲಿತಾ' ಎಂಬ ರಾಗದಲ್ಲಿ ಜಗನ್ಮಾತೆ ಪಾರ್ವತಿಯನ್ನು 'ಸುಮೇರು ಮಧ್ಯ ನಿಲಯೇ' — 'ಮೇರುವಿನ ನಡುವಿನಲ್ಲಿ ನೆಲೆ ನಿಂತವಳೇ' ಎಂದು ಕರೆಯುವುದನ್ನೂ ನೋಡಿರುತ್ತೀರಿ. ಹಾಗಾದರೆ, ಈ ಮೇರು ಪರ್ವತ ಇರುವುದೆಲ್ಲಿ? ಅದರ ಪ್ರಾಮುಖ್ಯತೆ ಏನು ಎಂದು ತಿಳಿಸುವುದೇ ಈ ಕಿರು ಬರಹದ ಉದ್ದೇಶ.</p>
+
+    <p>ಇಂದಿನ ದಿನದಲ್ಲಿ ಯಾವ ವಿಷಯವನ್ನು ಕೂಡ ತಿಳಿದುಕೊಳ್ಳಲು ಬಹುಪಾಲು ಜನರು ಮೊದಲು ಹೋಗುವುದು ಅಂತರ್ಜಾಲಕ್ಕೆ. ಸಾರ್ವಜನಿಕ ವಿಶ್ವಕೋಶ ಎಂದು ಹೆಸರಾದ ವಿಕಿಪೀಡಿಯಾವನ್ನು ನೀವು ನೋಡಿದರೆ, ಅದರ ಪ್ರಕಾರ ಮೇರು ಪರ್ವತವನ್ನು ಟಾಂಜಾನಿಯಾದಿಂದ ಟಿಬೆಟ್ ವರೆಗೆ, ಹಿಮಾಲಯದಿಂದ ಮಧ್ಯ ಏಷ್ಯಾ ವರೆಗೆ ಎಲ್ಲೆಲ್ಲೋ ಗುರುತಿಸಿದ್ದಾರೆ. ಇನ್ನು ಕೋರಾ ಮೊದಲಾದ ಇತರೆ ಅಂತರ್ಜಾಲ ತಾಣಗಳಿಗೆ ಹೋದರೆ ಕೂಡ, ನಿಮಗೆ ಒಂದಕ್ಕಿಂತ ಒಂದು ವಿಭಿನ್ನವಾದ ಉತ್ತರಗಳೇ ದೊರಕುತ್ತವೆ. ಆದರೆ, ನಮ್ಮ ಭಾರತೀಯ ಸಂಸ್ಕೃತಿಯಲ್ಲಿ ಈ ಮೇರು ಪರ್ವತದ ಉಲ್ಲೇಖ ಸಾವಿರಾರು ವರ್ಷಗಳಿಂದ ಇರುವಾಗ, ಅದನ್ನು ಗುರುತಿಸುವುದು ಅಷ್ಟು ಕಷ್ಟವೇಕೆಂಬ ಪ್ರಶ್ನೆ ನಿಮಗೆ ಬರಬಹುದು. ಅದು ಸರಿಯಾದ ಪ್ರಶ್ನೆಯೇ. ಪುಣ್ಯವಶಾತ್, ಈಗ ಹಿಂದಿನಂತೆ ಮೂಲ ಗ್ರಂಥಗಳು ದೊರೆಯುವುದು ಅಷ್ಟು ಕಷ್ಟಕರವಾಗಿಲ್ಲ. ಅದೇ ಅಂತರ್ಜಾಲದ ಕೀಲಿಯಿಂದಲೇ ನಾವು ಮೇರು ಪರ್ವತದ ಉಲ್ಲೇಖಗಳಿರುವ ಕೆಲವು ಸಂಸ್ಕೃತ ಗ್ರಂಥಗಳನ್ನು ನೋಡಿದರೆ, ಈ ವಿಷಯದ ಒಳ ಆಯವನ್ನು ತಿಳಿಯುವುದು ಖಂಡಿತ ಕಷ್ಟ ಆಗದು. ಆ ದಿಕ್ಕಿನಲ್ಲಿ ಒಂದು ಪ್ರಯತ್ನ ಇದು.</p>
+
+    <p>ಮಹಾಭಾರತದ ಭೀಷ್ಮಪರ್ವದಲ್ಲಿ ಮೇರು ಪರ್ವತವು ಗುಂಡಾದ ಬಂಗಾರದ ಬೆಟ್ಟ ಎಂದು ಹೇಳಲಾಗಿದೆ. ಇದನ್ನ ಒಂದು ಕಾವ್ಯಮಯವಾದ ವಿವರವೆಂದು ನೋಡಬಹುದೇ ಹೊರತು, ಅದರಿಂದ, ಈ ಮೇರುಪರ್ವತ ಎಲ್ಲಿದೆ ಎಂದು ತಿಳಿಯುವುದಂತೂ ಸಾಧ್ಯವಿಲ್ಲ. ಭಾಗವತದ ಐದನೆಯ ಸ್ಕಂದದಲ್ಲೂ ಹಲವಾರು ಕಡೆ, ಮೇರು ಪರ್ವತವು ಭರತವರ್ಷದ ಉತ್ತರ ಭಾಗದಲ್ಲಿದೆ ಎಂದೂ, ಸಮುದ್ರದಿಂದ ಸುತ್ತುವರಿದ ಚಿನ್ನದ ಬೆಟ್ಟವೆಂದೂ ಕರೆಯಲಾಗಿದೆ. ಭಾರತ ದೇಶಕ್ಕೆ ಉತ್ತರದಲ್ಲಿದೆ ಅನ್ನುವುದು ಬಿಟ್ಟರೆ ಹೆಚ್ಚಿನ ವಿವರ ತಿಳಿಯುವುದಿಲ್ಲ. ನಮ್ಮ ಹಲವು ಗ್ರಂಥಗಳಲ್ಲಿ ಹೀಗೆ ಎಷ್ಟೋ ವಿಷಯಗಳು ವರ್ಣನಾತ್ಮಕವಾಗಿ ಇರುವುದರಿಂದ, ಅಂತಹ ವಿಷಯಗಳು ಇರುವುದೇ ಸುಳ್ಳು ಎಂದು ಅಲ್ಲಗಳೆಯುವ ಕೆಲವರ ಮನಸ್ಥಿತಿಗಳನ್ನೂ ನೀವು ನೋಡಿರಬಹುದು. ಇದು ಬಹುಪಾಲು ಭಾರತೀಯ ಶಾಸ್ತ್ರ ಸಾಹಿತ್ಯಕ್ಕೆ ಅನ್ವಯವಾಗುವ ಒಂದು ದೂರು. ಆದರೆ, ಈ ರೀತಿಯ ವರ್ಣನಾತ್ಮಕವಾದ ಹೇಳಿಕೆಗಳನ್ನು ಭಾರತೀಯ ಸಂಸ್ಕೃತಿಯ, ಸಾಹಿತ್ಯದ ಒಂದು ಪರಿ ಎಂದೇ ಭಾವಿಸಬೇಕೇ ಹೊರತು, ಅದು ಒಂದು ಕೊರತೆ ಎಂದು ಹೇಳಲಾಗದು. ನಾವು ಒಳ ಹೊಕ್ಕು ನೋಡಿದಾಗ ಸತ್ಯದ ಅರಿವು ಆಗಿಯೇ ಆಗುತ್ತದೆ. ಅದಕ್ಕೆ ತಕ್ಕ ಗ್ರಂಥಗಳನ್ನು ನಾವು ಹುಡುಕಬೇಕಷ್ಟೇ.</p>
+
+    <p>ವ್ಯಾಸ ಕಾಳಿದಾಸರಂತಹ ಕವಿಗಳನ್ನು ಬಿಟ್ಟು ಆರ್ಯಭಟ ಮತ್ತು ವರಾಹಮಿಹಿರನಂತಹವರ ಗ್ರಂಥಗಳಿಗೆ ಈಗ ಬರೋಣ. ಇವರು ಭೂಗೋಲ, ಆಕಾಶ ಮೊದಲಾದ ಬಗ್ಗೆ ತಮ್ಮ ಜ್ಯೋತಿಷ್ಯ ಶಾಸ್ತ್ರ ಸಂಬಂಧಿತ ಗ್ರಂಥಗಳಲ್ಲಿ ಉಲ್ಲೇಖಿಸಿದ್ದಾರೆ. ಇವರ ವರ್ಣನೆಗಳಲ್ಲಿಯೂ ಸ್ವಲ್ಪ ಮಟ್ಟಿಗೆ ಅತಿಶಯೋಕ್ತಿ ಇದ್ದರೂ, ಅವರು ಕೊಟ್ಟಿರುವ ವಿವರಗಳು ಮೇರುಪರ್ವತವನ್ನು ಪತ್ತೆಹಚ್ಚಲು ನಮಗೆ ಸಹಾಯ ಮಾಡಬಲ್ಲವು.</p>
+
+    <p>ಐದನೇ ಶತಮಾನದಲ್ಲಿ ಆರ್ಯಭಟ ಬರೆದಿರುವ ಆರ್ಯಭಟೀಯಂ — ಈ ಪುಸ್ತಕದ ಗೋಲಪಾದ ಎಂಬ ಭಾಗದಲ್ಲಿರುವ ಕೆಲವು ಪದ್ಯಗಳನ್ನು ಈಗ ಗಮನಿಸೋಣ:</p>
+
+    <div class="verse">
+      ಮೇರುರ್ಯೋಜನ ಮಾತ್ರಃ ಪ್ರಭಾಕರೋ ಹಿಮವತಾ ಪರಿಕ್ಷಿಪ್ತಃ ।<br>
+      ನಂದನವನಸ್ಯ ಮಧ್ಯೇ ರತ್ನಮಯಸ್ಸರ್ವತೋವೃತ್ತಃ ॥
+      <div class="verse-source">(ಪದ್ಯ 11, ಗೋಲಪಾದ, ಆರ್ಯಭಟೀಯಂ)</div>
+    </div>
+    <div class="translation">
+      <span class="translation-label">ಅರ್ಥ</span>
+      ಅಮೂಲ್ಯ ರತ್ನಗಳಿಂದ ತುಂಬಿರುವ ಹೊಳೆಯುವ ಈ ಮೇರುವು ಒಂದು ಯೋಜನ ಗಾತ್ರವುಳ್ಳದ್ದಾಗಿ, ಹಿಮಾಲಯದ ನಡುವಿನ ನಂದನವನದಲ್ಲಿದೆ.
+    </div>
+
+    <p>ಈ ರೀತಿಯ ವಿವರಣೆಯಿಂದ ಮೇರುವು ಎಲ್ಲಿದೆ ಎಂದು ಹುಡುಕುವುದು ಅಸಾಧ್ಯವಾದುದ್ದರಿಂದ, ಮುಂದಿನ ಪದ್ಯಕ್ಕೆ ಹೋಗೋಣ.</p>
+
+    <div class="verse">
+      ಸ್ವರ್ಮೇರೂ ಸ್ಥಲ ಮಧ್ಯೇ ವಡವಾಮುಖಶ್ಚ ಜಲ ಮಧ್ಯೇ ।<br>
+      ಅಮರಾಮರಾ ಮಾನ್ಯಂತೇ ಪರಸ್ಪರಮಧಸ್ಥಿತಾನ್ನಿಯತಮ್ ॥
+      <div class="verse-source">(ಪದ್ಯ 12, ಗೋಲಪಾದ, ಆರ್ಯಭಟೀಯಂ)</div>
+    </div>
+    <div class="translation">
+      <span class="translation-label">ಅರ್ಥ</span>
+      ಭೂಮಿಯ ನಡುವಿನ ಮೇರುವಿನಲ್ಲಿ, ದೇವತೆಗಳು ವಾಸಿಸುವರು. ನೀರಿನ ನಡುವೆ ಇರುವ ವಡವಾಮುಖದಲ್ಲಿ ಅಸುರರು ವಾಸಿಸುವರು. ದೇವತೆಗಳು ಅಸುರರನ್ನು ತಮ್ಮ ಕೆಳಗೆ ಇರುವರೆಂದೂ, ಅಸುರರು ದೇವತೆಗಳನ್ನು ತಮ್ಮ ಕೆಳಗೆ ಇರುವರೆಂದೂ ಭಾವಿಸುವರು.
+    </div>
+
+    <p>ಇಲ್ಲಿ ನಿಮಗೆ ಮೇರು, ವಡವಾಮುಖಗಳು ಭೂಗೋಲದ ಎರಡು ವಿರುದ್ಧ ಭಾಗಗಳಲ್ಲಿದೆ ಎಂಬ ಸೂಚನೆ ಸಿಗುವುದಾದರೂ ಅದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಸುಳಿವೇನೂ ಸಿಗುತ್ತಿಲ್ಲ. ಆದರೆ ಇನ್ನೋದು ನಾಲ್ಕು ಪದ್ಯ ಮುಂದೆ ಹೋದರೆ, ನಿಮಗೆ ಈ ಪದ್ಯ ಸಿಗುತ್ತೆ.</p>
+
+    <div class="verse">
+      ದೇವಾಃ ಪಶ್ಯಂತಿ ಭಗೋಲಾರ್ಧಮುದಕ್ಮೇರು ಸಂಸ್ಥಿತಾಸ್ಸವ್ಯಂ ।<br>
+      ಅಪಸವ್ಯಗಂ ತಯಾರ್ಧಂ ದಕ್ಷಿಣಾ ವಡವಾಮುಖೇ ಪ್ರೇತಾಃ ॥
+      <div class="verse-source">(ಪದ್ಯ 16, ಗೋಲಪಾದ, ಆರ್ಯಭಟೀಯಂ)</div>
+    </div>
+    <div class="translation">
+      <span class="translation-label">ಅರ್ಥ</span>
+      ಮೇರು ಪರ್ವತದ ಮೇಲಿರುವ ದೇವತೆಗಳು ನಕ್ಷತ್ರಗೋಳದ ಅರ್ಧ ಭಾಗವನ್ನು, ಪ್ರದಕ್ಷಿಣೆಯಾಗಿ ಸುತ್ತುವಂತೆ ನೋಡಿದರೆ, ವಡವಾಮುಖದಲ್ಲಿರುವ ಪಿತೃದೇವತೆಗಳು, ಉಳಿದರ್ಧ ನಕ್ಷತ್ರಗೋಳವನ್ನು ಅಪ್ರದಕ್ಷಿಣವಾಗಿ ಸುತ್ತುತ್ತಿರುವಂತೆ ನೋಡುತ್ತಾರೆ.
+    </div>
+
+    <p>ಈ ವಿವರವನ್ನು ಓದಿದಾಗ, ಇದು ಭೂಮಿಯ ಎರಡೂ ಧ್ರುವಗಳಲ್ಲಿ ಆಕಾಶದ ನಕ್ಷತ್ರಗಳು ಹೇಗೆ ಕಾಣುತ್ತವೋ ಅದನ್ನೇ ವರ್ಣಿಸಿದಂತಿದೆ ಎಂದು ನಿಮಗೆ ತಿಳಿಯುತ್ತೆ. ಭೂಮಿಯ ಉತ್ತರ ಧ್ರುವದಲ್ಲಿ ಕಾಣುವ ಅರ್ಧ ಭಾಗದ ನಕ್ಷತ್ರಗಳು, ದಕ್ಷಿಣ ಧ್ರುವದಲ್ಲಿ ಕಾಣುವುದಿಲ್ಲ. ಈ ಪದ್ಯದಲ್ಲಿ ಮೇರುವೆಂದರೆ ಉತ್ತರ ಧ್ರುವ, ವಡವಾಮುಖ ಎಂದರೆ ದಕ್ಷಿಣ ಧ್ರುವ ಎಂದು ಬಿಡಿಸಿ ಹೇಳಿಲ್ಲವಾದರೂ, ಮೇರುಪರ್ವತದ ಮೇಲಿದ್ದ ದೇವತೆಗಳು ಅರ್ಧ ಭಾಗವನ್ನು ನೋಡುತ್ತಾರೆ ಎನ್ನುವುದನ್ನೂ, ಸಾಮಾನ್ಯವಾಗಿ ದೇವತೆಗಳಿಗೆ ಉತ್ತರ ದಿಕ್ಕನ್ನೂ ಪಿತೃ ದೇವತೆಗಳಿಗೆ ದಕ್ಷಿಣ ದಿಕ್ಕನ್ನೂ ಇದೇ ಗ್ರಂಥವು ಹೇಳಿರುವುದರಿಂದ, ಮೇರುವಿನ ಮೇಲ್ಭಾಗ ಉತ್ತರ ಧ್ರುವವೆಂದೂ, ಕೆಳಭಾಗ ದಕ್ಷಿಣ ಧ್ರುವವೆಂದೂ ನಿಮಗೆ ಹೊಳೆಯುತ್ತದೆ.</p>
+
+    <p>ಇದರ ಬಗ್ಗೆ ಇನ್ನಷ್ಟು ವಿವರಗಳು ನಮಗೆ ೬ನೇ ಶತಮಾನದ ವರಾಹಮಿಹಿರನ ಪಂಚಸಿದ್ಧಾಂತಿಕಾ ಎಂಬ ಗ್ರಂಥದಲ್ಲಿ ಇರುವ ಸೂರ್ಯ ಸಿದ್ಧಾಂತದ ಭೂಗೋಲಾಧಿಕಾರದಲ್ಲಿ (12 ನೇ ಅಧ್ಯಾಯ, ಪದ್ಯ 34) ಸಿಗುತ್ತದೆ.</p>
+
+    <div class="verse">
+      ಅನೇಕರತ್ನ ನಿಚಯೋ ಜಾಂಬೂನದಮಯೋ ಗಿರಿಃ।<br>
+      ಭೂಗೋಲ ಮಧ್ಯಗೋ ಮೇರುರುಭಯತ್ರ ವಿನಿರ್ಗತಃ ॥
+      <div class="verse-source">(ಪದ್ಯ 34, ಅಧ್ಯಾಯ 12, ಸೂರ್ಯ ಸಿದ್ಧಾಂತ — ಪಂಚಸಿದ್ಧಾಂತಿಕಾ, ವರಾಹಮಿಹಿರ)</div>
+    </div>
+    <div class="translation">
+      <span class="translation-label">ಅರ್ಥ</span>
+      ಹಲವು ಬಗೆಯ ಅಮೂಲ್ಯ ರತ್ನಗಳಿಂದ ತುಂಬಿದ ಚಿನ್ನದ ಮೇರು ಪರ್ವತವು, ಭೂಗೋಲದ ನಡುವಿನಲ್ಲಿ ಎರಡೂ ಕಡೆಗಳಿಗೆ ಹಾದು ಹೋಗುತ್ತದೆ.
+    </div>
+
+    <p>ಇದರಲ್ಲಿ ಬರುವ ಚಿನ್ನ, ರತ್ನಗಳನ್ನು ಅತಿಶಯೋಕ್ತಿಯೆಂದು ಬಿಟ್ಟು ಬಿಡೋಣ, ಆದರೆ ಮೇರುವು ಭೂಮಿಯ ನಡುವೆ 'ಎರಡೂ ಕಡೆಗೆ' ಹೋಗುವಂತೆ ಹಾದುಹೋಗುತ್ತದೆ ಅನ್ನುವುದು ಮುಖ್ಯವಾಗಿ ಗಮನಿಸಬೇಕಾದ ವಿಷಯವಾಗುತ್ತದೆ.</p>
+
+    <p>ಮುಂದಿನ ಪದ್ಯದಲ್ಲೇ ವರಾಹ ಮಿಹಿರ ದೇವತೆಗಳು ಮೇರುವಿನ ಮೇಲ್ತುದಿಯಲ್ಲೂ, ಅಸುರರು ಮೇರುವಿನ ಕೆಳತುದಿಯಲ್ಲೂ ವಾಸಿಸುವರು ಎಂದು ಆರ್ಯಭಟನ ಮಾತನ್ನೇ ಮತ್ತೆ ಹೇಳಿದ್ದಾನೆ.</p>
+
+    <p>ಭೂಗೋಲದ 'ನಡುವಿನಲ್ಲಿ' ಹಾದು ಹೋಗಿ, ಎರಡೂ ಕಡೆಗೆ ತೋರಿಕೊಳ್ಳುವುದು ಏನಿರಬಹುದು ಎಂದು ನೀವು ಯೋಚಿಸಿದಾಗ, ಅದು ಭೂಮಿಯು ತನ್ನ ಸುತ್ತ ತಾನು ತಿರುಗುವ ಅಕ್ಷ (axis) ಎಂದು ತಿಳಿಯುತ್ತದೆ. ಅಂದರೆ, ಬಂಗಾರ, ಅಮೂಲ್ಯ ರತ್ನ ಇತ್ಯಾದಿಗಳ ಕವಚದೊಳಗೆ, ಆರ್ಯಭಟ ವರಾಹಮಿಹಿರರು ನಿಜವಾಗಿ ಹೇಳುತ್ತಿರುವುದಾದರೂ ಭೂಮಿಯ ಒಳಗೆ ಹಾದು ಹೋಗುವ ಕಾಲ್ಪನಿಕ ಅಕ್ಷದ ಬಗ್ಗೆಯೇ ಹೊರತು ಬೇರೇನೂ ಅಲ್ಲ. ಈ ಅಕ್ಷದ ಮೇಲ್ತುದಿಯಲ್ಲಿ ಉತ್ತರ ಧ್ರುವವಿರುವುದೂ, ಕೆಳತುದಿಯಲ್ಲಿ ದಕ್ಷಿಣ ಧ್ರುವವಿರುವುದೂ ಸಹಜವೇ.</p>
+
+    <p>ಇನ್ನು ಇದೇ ಭೂಗೋಲಾಧಿಕಾರ ಭಾಗದ ಮುಂದಿನ ಕೆಲವು ಪದ್ಯಗಳಲ್ಲಿ ವರಾಹಮಿಹಿರನು, ಮೇರುವಿನ ಮೇಲ್ಭಾಗದಲ್ಲಿ ೬ ತಿಂಗಳ ಹಗಲಿದ್ದು, ಅದೇ ಸಮಯದಲ್ಲಿ ಮೇರುವಿನ ಕೆಳಗೆ ೬ ತಿಂಗಳ ರಾತ್ರಿ ಇದೆ ಎಂದು ಹೇಳುತ್ತಾನೆ (ಪದ್ಯ ೬೮, ಸೂರ್ಯ ಸಿದ್ಧಾಂತ, ಅಧ್ಯಾಯ ೧೨). ಅಷ್ಟೇ ಅಲ್ಲದೆ, ಮೇರುವಿನ ಕಡೆಗೆ ಹೋಗುತ್ತಿದ್ದ ಹಾಗೆ, ಆಕಾಶದಲ್ಲಿ ಧ್ರುವ ನಕ್ಷತ್ರವೂ ಮೇಲೆ ಮೇಲೆ ಹೋಗುತ್ತದೆ ಎಂಬ ವಿಷಯವನ್ನೂ ಹೇಳುತ್ತಾನೆ. ನೀವು ಭೂಗೋಲದ ಬೇರೆ ಬೇರೆ ಕಡೆಯಿಂದ ಧ್ರುವ ನಕ್ಷತ್ರ, ಸಪ್ತರ್ಷಿ ಮಂಡಲ ಮೊದಲಾದುವುಗಳನ್ನು ನೋಡಿದ್ದರೆ ಈ ವಿಷಯವನ್ನು ನೀವು ಗಮನಿಸಿರಲೂಬಹುದು.</p>
+
+    <p>ಇಷ್ಟೆಲ್ಲ ನೋಡಿದ ಮೇಲೆ, ಮೇರು (ಅಥವಾ ಮೇರುವಿನ ಮೇಲ್ತುದಿ ಎಂದರೆ) ಭೂಮಿಯ ಉತ್ತರ ಧ್ರುವವಲ್ಲದೇ ಮತ್ತೇನೂ ಅಲ್ಲ, ಮೇರು ಎಂದರೆ ಭೂಗೋಳದ ಅಕ್ಷ ಎಂದು ನಿಮಗೆ ಮನದಟ್ಟಾಗುತ್ತದೆ. ಇದಕ್ಕೆ ಸಮಾನಾಂತರವಾಗಿ, ಮಾನವನ ಮೇರುದಂಡ ಬೆನ್ನುಮೂಳೆ ಎಂದು ಹೇಳುವುದನ್ನೂ ನೀವು ಕೇಳಿರಬಹುದು. ಭೂಮಿಯನ್ನು ಅಕ್ಷವು ನಿಲ್ಲಿಸುವ ಹಾಗೆ, ನಮ್ಮನ್ನೂ ನಿಲ್ಲಿಸುವುದು ಬೆನ್ನುಮೂಳೆ ತಾನೆ?</p>
+
+    <p>ಹಾಗಿದ್ದರೆ ಮೇರುಪರ್ವತ ಎಲ್ಲಿದೆ? ಎಂಬ ಪ್ರಶ್ನೆಗೆ ನಿಮಗೆ ಈಗ ಉತ್ತರ ಸಿಕ್ಕಂತಾಯಿತು. ಪರ್ವತ ಎಂಬುದು ಒಂದು ಅಲಂಕಾರಿಕ ಶಬ್ದ. ಅಲ್ಲಿ ದೇವತೆಗಳಿದ್ದಾರೆ, ಅಸುರರಿದ್ದಾರೆ, ಅಥವಾ ಪಿತೃ ದೇವತೆಗಳಿದ್ದಾರೆ ಎಂಬುದು ಒಂದು ನಂಬಿಕೆ. ಅದು ಬಂಗಾರದಿಂದ ರತ್ನಗಳಿಂದ ಕೂಡಿದೆ ಎಂಬುದೂ ಅತಿಶಯೋಕ್ತಿ. ಆದರೆ ಅದರ ಹಿಂದಿನ ವೈಜ್ಞಾನಿಕ ಸಿದ್ಧಾಂತವೆಂದರೆ ಭೂಮಿಯ ಅಕ್ಷವೇ ಮೇರು. ಅದರ ಮೇಲ್ತುದಿಯೇ ಉತ್ತರ ಧ್ರುವ. ಕೆಳತುದಿಯೇ ದಕ್ಷಿಣ ಧ್ರುವ ಎಂಬುದಷ್ಟೇ!</p>
+
+    <p>ಹಿಂದಿನ ಕಾಲದಲ್ಲಿ ಈ ಪುಸ್ತಕಗಳೆಲ್ಲ ಎಲ್ಲರ ಕೈಗೂ ಸಿಗದೇ ಇದ್ದಾಗ, ನಮ್ಮ ಪರಂಪರೆಯ ಮಾತುಗಳಲ್ಲಿ ವೈಜ್ಞಾನಿಕ ಸತ್ಯಗಳು ಇಲ್ಲವೇ ಇಲ್ಲ; ಅವೆಲ್ಲ ಬರೀ ಕಾಡುಕಗ್ಗ, ಊಹಾಪೋಹ ಎಂದು ತಿಳಿದಿದ್ದವರೇ ಹೆಚ್ಚು. ಆದರೆ ಅಂತರ್ಜಾಲದಲ್ಲಿ ಇಂತಹ ಪುಸ್ತಕಗಳೆಲ್ಲ ಕೈ ಬೆರಳ ತುದಿಯಲ್ಲಿ ದೊರಕುತ್ತವಾದ್ದರಿಂದ ಹುಡುಕಿದರೆ ಹಿಂದಿನ ಪರಂಪರೆಯ ಸತ್ಯಗಳು ಬೆಳಕಿಗೆ ಬರುವುದರಲ್ಲಿ, ಹೆಚ್ಚಿನ ಜನರಿಗೆ ತಿಳಿದುಬರುವುದರಲ್ಲಿ ಸಂದೇಹವಿಲ್ಲ.</p>
+
+    <div class="source-note">
+      <span data-ui="en">Originally published in Indica Today, December 2020. Image credit: Studio Ghibli.</span>
+      <span data-ui="kn">ಮೂಲತಃ Indica Today ನಲ್ಲಿ ಡಿಸೆಂಬರ್ 2020ರಲ್ಲಿ ಪ್ರಕಟಿತ. ಚಿತ್ರ ಕೃಪೆ: Studio Ghibli.</span>
+    </div>
+
+    <div class="article-close">— ಹಂಸಾನಂದಿ</div>
+
+    <div class="tags">
+      <span class="tag">ಮೇರು ಪರ್ವತ</span>
+      <span class="tag">ಆರ್ಯಭಟ</span>
+      <span class="tag">ವರಾಹಮಿಹಿರ</span>
+      <span class="tag">ಭೂಗೋಲ</span>
+      <span class="tag">ಕನ್ನಡ</span>
+      <span class="tag">Meru</span>
+      <span class="tag">Sacred Geography</span>
+      <span class="tag">Ancient India</span>
+    </div>
+
+  </div>
+
+  <a class="back-link" href="https://hamsanandi.github.io/articles/">
+    <span data-ui="en">← Back to Articles</span>
+    <span data-ui="kn">← ಲೇಖನಗಳಿಗೆ ಹಿಂದಿರುಗಿ</span>
+  </a>
+
+</div>
+
+<hr class="section-divider">
+<footer>
+  <span data-ui="en">Hosted on GitHub Pages &nbsp;·&nbsp;</span>
+  <span data-ui="kn">GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ &nbsp;·&nbsp;</span>
+  <a href="https://hamsanandi.github.io/" style="color:var(--gold-light);">hamsanandi</a>
+</footer>
+
+<script>
+document.getElementById('langToggle').addEventListener('click', e => {
+  const btn = e.target.closest('.lang-btn');
+  if (!btn) return;
+  const lang = btn.id === 'btnKN' ? 'kn' : 'en';
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  document.getElementById('btnKN').classList.toggle('active', lang === 'kn');
+  document.body.className = lang === 'kn' ? 'kn' : '';
+});
+</script>
+
+</body>
+</html>
