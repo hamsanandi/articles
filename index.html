@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88; --text: #1a1208; --meta: #8a7055;
+}
+body { font-family: 'EB Garamond', serif; background: var(--bg); color: var(--text); max-width: 860px; margin: 0 auto; padding: 0 0 60px; font-size: 16px; line-height: 1.6; }
+
+/* ── Header ── */
+.page-header { text-align: center; padding: 36px 20px 24px; border-bottom: 1px solid var(--border); position: relative; }
+.page-header::after { content: ''; display: block; height: 2px; width: 120px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); }
+.page-title { font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; }
+.page-title.kn { font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em; text-transform: none; }
+.page-subtitle { font-size: 0.95em; color: var(--gold-dim); margin-top: 6px; font-style: italic; }
+.page-subtitle.kn { font-family: 'Noto Sans Kannada', sans-serif; font-style: normal; }
+
+/* ── Language toggle ── */
+.lang-toggle { position: absolute; top: 24px; right: 24px; background: var(--header-bg); border: 1px solid var(--border-light); border-radius: 20px; padding: 5px 4px; display: flex; gap: 3px; }
+.lang-btn { font-size: 0.75rem; padding: 4px 10px; border-radius: 16px; border: none; background: none; cursor: pointer; color: var(--meta); font-family: 'EB Garamond', serif; transition: all 0.18s; }
+.lang-btn.active { background: var(--gold); color: #fff; font-weight: 600; }
+.lang-btn.kn-btn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.78rem; }
+
+/* ── Back link ── */
+.back-link { display: block; text-align: center; margin: 20px 0 0; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--meta); text-decoration: none; }
+.back-link:hover { color: var(--gold); }
+
+/* ── Article list ── */
+.article-list { padding: 0 20px; margin-top: 32px; }
+
+.article-card { display: block; text-decoration: none; padding: 20px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--section-bg); margin-bottom: 14px; transition: background 0.15s, border-color 0.18s, transform 0.15s, box-shadow 0.15s; position: relative; }
+.article-card:hover { background: var(--header-bg); border-color: var(--border-light); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(139,94,26,0.08); }
+.article-card-title { font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--gold-light); margin-bottom: 6px; line-height: 1.3; }
+.article-card-title.kn { font-family: 'Noto Serif Kannada', serif; font-size: 1.05rem; }
+.article-card-meta { font-size: 0.82em; color: var(--meta); margin-bottom: 8px; }
+.article-card-meta.kn { font-family: 'Noto Sans Kannada', sans-serif; }
+.article-card-desc { font-size: 0.92em; color: var(--text); line-height: 1.6; }
+.article-card-desc.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.85em; }
+.article-card-arrow { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--border-light); font-size: 1.1rem; transition: color 0.18s, transform 0.18s; }
+.article-card:hover .article-card-arrow { color: var(--gold); transform: translateY(-50%) translateX(3px); }
+
+.tag { display: inline-block; margin-top: 8px; margin-right: 5px; padding: 2px 8px; font-size: 0.72em; border: 1px solid var(--border-light); border-radius: 4px; color: var(--meta); background: #fdf6ec; font-family: 'EB Garamond', serif; }
+
+/* ── Empty state ── */
+.empty { text-align: center; color: var(--meta); font-style: italic; padding: 40px 0; font-size: 0.95em; }
+
+/* ── Divider & About ── */
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 40px 20px 0; }
+.about-section { max-width: 620px; margin: 28px auto 0; padding: 0 20px; line-height: 1.8; font-size: 0.95em; text-align: center; color: var(--meta); }
+.about-section.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.9em; }
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+footer { text-align: center; color: var(--meta); font-size: 0.82em; margin-top: 28px; }
+footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="lang-toggle" id="langToggle">
+    <button class="lang-btn active" id="btnEN">EN</button>
+    <button class="lang-btn kn-btn" id="btnKN">ಕನ್ನಡ</button>
+  </div>
+  <div class="page-title" id="pageTitle">Articles</div>
+  <div class="page-subtitle" id="pageSubtitle">Essays and writings on Karnataka Sangeeta, history, and Kannada literature</div>
+  <a class="back-link" href="https://hamsanandi.github.io/" id="backLink">← Hamsanandi</a>
+</div>
+
+<div class="article-list" id="articleList"></div>
+
+<hr class="section-divider">
+<div class="about-section" id="aboutSection">Essays and articles by Ramaprasad KV — originally published on Medium and other platforms. Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank">@hamsanandi</a></div>
+<footer id="footerEl">Hosted on GitHub Pages</footer>
+
+<script>
+const STR = {
+  en: {
+    pageTitle: "Articles",
+    pageTitleClass: "page-title",
+    pageSubtitle: "Essays and writings on Karnataka Sangeeta, history, and Kannada literature",
+    pageSubtitleClass: "page-subtitle",
+    backLink: "← Hamsanandi",
+    titleClass: "article-card-title",
+    metaClass: "article-card-meta",
+    descClass: "article-card-desc",
+    aboutText: 'Essays and articles by Ramaprasad KV — originally published on Medium and other platforms. Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank">@hamsanandi</a>',
+    aboutClass: "about-section",
+    footer: "Hosted on GitHub Pages", footerClass: ""
+  },
+  kn: {
+    pageTitle: "ಲೇಖನಗಳು",
+    pageTitleClass: "page-title kn",
+    pageSubtitle: "ಕರ್ನಾಟಕ ಸಂಗೀತ, ಇತಿಹಾಸ ಮತ್ತು ಕನ್ನಡ ಸಾಹಿತ್ಯದ ಕುರಿತು ಪ್ರಬಂಧಗಳು ಮತ್ತು ಬರಹಗಳು",
+    pageSubtitleClass: "page-subtitle kn",
+    backLink: "← ಹಂಸನಾಂದಿ",
+    titleClass: "article-card-title kn",
+    metaClass: "article-card-meta kn",
+    descClass: "article-card-desc kn",
+    aboutText: 'ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. ಅವರ ಪ್ರಬಂಧಗಳು ಮತ್ತು ಲೇಖನಗಳು — ಮೂಲತಃ Medium ಮತ್ತು ಇತರ ವೇದಿಕೆಗಳಲ್ಲಿ ಪ್ರಕಟಿತ. Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank">@hamsanandi</a>',
+    aboutClass: "about-section kn",
+    footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ", footerClass: "kn"
+  }
+};
+
+/* ── ADD NEW ARTICLES HERE ── */
+const ARTICLES = [
+  {
+    file: "fact-versus-fiction.html",
+    en: {
+      title: "Fact versus Fiction: How to Survive in the Information Age",
+      date: "October 2019",
+      readTime: "8 min read",
+      desc: "Urban legends about Indian history abound in modern media. This essay examines seven specific claims — about Mughal-era food, ancient trade routes, taxation, and more — and traces them back to primary sources.",
+      tags: ["History", "India", "Myth", "Fact vs Fiction"]
+    },
+    kn: {
+      title: "ಸತ್ಯ ಮತ್ತು ಕಲ್ಪನೆ: ಮಾಹಿತಿ ಯುಗದಲ್ಲಿ ಬದುಕುವುದು ಹೇಗೆ",
+      date: "ಅಕ್ಟೋಬರ್ 2019",
+      readTime: "8 ನಿಮಿಷ",
+      desc: "ಆಧುನಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ಭಾರತೀಯ ಇತಿಹಾಸದ ಕುರಿತು ಹಲವಾರು ತಪ್ಪು ನಂಬಿಕೆಗಳು ಹರಡುತ್ತಿವೆ. ಈ ಪ್ರಬಂಧದಲ್ಲಿ ಏಳು ನಿರ್ದಿಷ್ಟ ಹೇಳಿಕೆಗಳನ್ನು ಪ್ರಾಥಮಿಕ ಮೂಲಗಳ ಮೂಲಕ ಪರೀಕ್ಷಿಸಲಾಗಿದೆ.",
+      tags: ["ಇತಿಹಾಸ", "ಭಾರತ", "ಸತ್ಯ vs ಕಲ್ಪನೆ"]
+    }
+  }
+  /* To add a new article, copy the block above and paste it here with a comma */
+];
+
+let lang = 'en';
+
+function render(l) {
+  const s = STR[l];
+  document.getElementById('pageTitle').textContent = s.pageTitle;
+  document.getElementById('pageTitle').className = s.pageTitleClass;
+  document.getElementById('pageSubtitle').textContent = s.pageSubtitle;
+  document.getElementById('pageSubtitle').className = s.pageSubtitleClass;
+  document.getElementById('backLink').textContent = s.backLink;
+  document.getElementById('aboutSection').innerHTML = s.aboutText;
+  document.getElementById('aboutSection').className = s.aboutClass;
+  document.getElementById('footerEl').textContent = s.footer;
+  document.getElementById('footerEl').className = 'footer ' + (s.footerClass || '');
+  document.getElementById('btnEN').classList.toggle('active', l === 'en');
+  document.getElementById('btnKN').classList.toggle('active', l === 'kn');
+
+  const list = document.getElementById('articleList');
+  list.innerHTML = '';
+  if (!ARTICLES.length) {
+    list.innerHTML = `<p class="empty">${l === 'kn' ? 'ಇನ್ನೂ ಯಾವುದೇ ಲೇಖನಗಳಿಲ್ಲ.' : 'No articles yet.'}</p>`;
+    return;
+  }
+  ARTICLES.forEach(a => {
+    const d = a[l];
+    const card = document.createElement('a');
+    card.href = a.file;
+    card.className = 'article-card';
+    card.innerHTML = `
+      <div class="${s.titleClass}">${d.title}</div>
+      <div class="${s.metaClass}">${d.date} &nbsp;·&nbsp; ${d.readTime}</div>
+      <div class="${s.descClass}">${d.desc}</div>
+      <div>${d.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <span class="article-card-arrow">→</span>
+    `;
+    list.appendChild(card);
+  });
+}
+
+document.getElementById('langToggle').addEventListener('click', e => {
+  const btn = e.target.closest('.lang-btn');
+  if (!btn) return;
+  lang = btn.id === 'btnKN' ? 'kn' : 'en';
+  render(lang);
+});
+
+render('en');
+</script>
+
+</body>
+</html>
