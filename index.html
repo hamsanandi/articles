@@ -13,28 +13,19 @@
   --border: #d4c5a9; --border-light: #c0aa88; --text: #1a1208; --meta: #8a7055;
 }
 body { font-family: 'EB Garamond', serif; background: var(--bg); color: var(--text); max-width: 860px; margin: 0 auto; padding: 0 0 60px; font-size: 16px; line-height: 1.6; }
-
-/* ── Header ── */
 .page-header { text-align: center; padding: 36px 20px 24px; border-bottom: 1px solid var(--border); position: relative; }
 .page-header::after { content: ''; display: block; height: 2px; width: 120px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); }
 .page-title { font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; }
 .page-title.kn { font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em; text-transform: none; }
 .page-subtitle { font-size: 0.95em; color: var(--gold-dim); margin-top: 6px; font-style: italic; }
 .page-subtitle.kn { font-family: 'Noto Sans Kannada', sans-serif; font-style: normal; }
-
-/* ── Language toggle ── */
 .lang-toggle { position: absolute; top: 24px; right: 24px; background: var(--header-bg); border: 1px solid var(--border-light); border-radius: 20px; padding: 5px 4px; display: flex; gap: 3px; }
 .lang-btn { font-size: 0.75rem; padding: 4px 10px; border-radius: 16px; border: none; background: none; cursor: pointer; color: var(--meta); font-family: 'EB Garamond', serif; transition: all 0.18s; }
 .lang-btn.active { background: var(--gold); color: #fff; font-weight: 600; }
 .lang-btn.kn-btn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.78rem; }
-
-/* ── Back link ── */
 .back-link { display: block; text-align: center; margin: 20px 0 0; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--meta); text-decoration: none; }
 .back-link:hover { color: var(--gold); }
-
-/* ── Article list ── */
 .article-list { padding: 0 20px; margin-top: 32px; }
-
 .article-card { display: block; text-decoration: none; padding: 20px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--section-bg); margin-bottom: 14px; transition: background 0.15s, border-color 0.18s, transform 0.15s, box-shadow 0.15s; position: relative; }
 .article-card:hover { background: var(--header-bg); border-color: var(--border-light); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(139,94,26,0.08); }
 .article-card-title { font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--gold-light); margin-bottom: 6px; line-height: 1.3; }
@@ -45,13 +36,13 @@ body { font-family: 'EB Garamond', serif; background: var(--bg); color: var(--te
 .article-card-desc.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.85em; }
 .article-card-arrow { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--border-light); font-size: 1.1rem; transition: color 0.18s, transform 0.18s; }
 .article-card:hover .article-card-arrow { color: var(--gold); transform: translateY(-50%) translateX(3px); }
-
 .tag { display: inline-block; margin-top: 8px; margin-right: 5px; padding: 2px 8px; font-size: 0.72em; border: 1px solid var(--border-light); border-radius: 4px; color: var(--meta); background: #fdf6ec; font-family: 'EB Garamond', serif; }
-
-/* ── Empty state ── */
+/* Language availability badge */
+.lang-badge { display: inline-block; margin-top: 8px; margin-right: 6px; padding: 2px 8px; font-size: 0.7em; border-radius: 4px; font-family: 'Cinzel', serif; letter-spacing: 0.06em; vertical-align: middle; }
+.lang-badge.both    { background: #e8f0e0; border: 1px solid #a8c890; color: #3a6020; }
+.lang-badge.en-only { background: #e8ecf8; border: 1px solid #98a8d8; color: #2a3870; }
+.lang-badge.kn-only { background: #f5e8d8; border: 1px solid #c8a878; color: #704020; font-family: 'Noto Sans Kannada', sans-serif; }
 .empty { text-align: center; color: var(--meta); font-style: italic; padding: 40px 0; font-size: 0.95em; }
-
-/* ── Divider & About ── */
 .section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 40px 20px 0; }
 .about-section { max-width: 620px; margin: 28px auto 0; padding: 0 20px; line-height: 1.8; font-size: 0.95em; text-align: center; color: var(--meta); }
 .about-section.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.9em; }
@@ -80,6 +71,11 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 <footer id="footerEl">Hosted on GitHub Pages</footer>
 
 <script>
+
+/* =====================================================================
+   PAGE UI STRINGS — chrome text in both languages
+   Note: Kannada for Hamsanandi is always ಹಂಸಾನಂದಿ (long aa on ಸಾ)
+   ===================================================================== */
 const STR = {
   en: {
     pageTitle: "Articles",
@@ -92,7 +88,8 @@ const STR = {
     descClass: "article-card-desc",
     aboutText: 'Essays and articles by Ramaprasad KV — originally published on Medium and other platforms. Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank">@hamsanandi</a>',
     aboutClass: "about-section",
-    footer: "Hosted on GitHub Pages", footerClass: ""
+    footer: "Hosted on GitHub Pages", footerClass: "",
+    emptyMsg: "No articles yet."
   },
   kn: {
     pageTitle: "ಲೇಖನಗಳು",
@@ -105,99 +102,242 @@ const STR = {
     descClass: "article-card-desc kn",
     aboutText: 'ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. ಅವರ ಪ್ರಬಂಧಗಳು ಮತ್ತು ಲೇಖನಗಳು — ಮೂಲತಃ Medium ಮತ್ತು ಇತರ ವೇದಿಕೆಗಳಲ್ಲಿ ಪ್ರಕಟಿತ. Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank">@hamsanandi</a>',
     aboutClass: "about-section kn",
-    footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ", footerClass: "kn"
+    footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ", footerClass: "kn",
+    emptyMsg: "ಇನ್ನೂ ಯಾವುದೇ ಲೇಖನಗಳಿಲ್ಲ."
   }
 };
 
-/* ── ADD NEW ARTICLES HERE ── */
+
+/* =====================================================================
+   HOW TO ADD ARTICLES
+   =====================================================================
+
+   Each article needs a "langs" field that controls which tab it appears in:
+
+     langs: ["en"]        → English only  — blue badge,  EN tab only
+     langs: ["kn"]        → Kannada only  — amber badge, ಕನ್ನಡ tab only
+     langs: ["en","kn"]   → Both          — green badge, both tabs
+
+   ── HOW THE FILE LINK WORKS ──────────────────────────────────────────
+
+   "file"           Use when BOTH languages are inside ONE html file
+                    (the bilingual toggle pattern used by meru-parvata.html
+                    and battisa-ragagala-parampare.html).
+                    The index auto-appends #en or #kn so the article
+                    opens in the right language automatically.
+
+   "fileEn"/"fileKn" Use INSTEAD OF "file" when each language version
+                    lives in its own separate html file.
+
+   ── CASE 1: English only ─────────────────────────────────────────────
+
+   {
+     langs: ["en"],
+     file: "my-article.html",
+     en: {
+       title:    "My English Title",
+       date:     "January 2024",
+       readTime: "5 min read",
+       desc:     "Short description shown on the card.",
+       tags:     ["Tag1", "Tag2"]
+     }
+   },
+
+   ── CASE 2: Kannada only ─────────────────────────────────────────────
+
+   {
+     langs: ["kn"],
+     file: "my-article.html",
+     kn: {
+       title:    "ನನ್ನ ಕನ್ನಡ ಲೇಖನ",
+       date:     "ಜನವರಿ 2024",
+       readTime: "5 ನಿಮಿಷ",
+       desc:     "ಕಾರ್ಡ್‌ನಲ್ಲಿ ತೋರಿಸುವ ಸಂಕ್ಷಿಪ್ತ ವಿವರಣೆ.",
+       tags:     ["ಟ್ಯಾಗ್"]
+     }
+   },
+
+   ── CASE 3: Both languages, ONE bilingual file ───────────────────────
+   Use this when you ask Claude to build a bilingual article (both
+   languages in a single file with an internal toggle), OR when you
+   supply both translations yourself to Claude for a single file.
+   The article file must follow the #content-kn / #content-en pattern.
+
+   {
+     langs: ["en", "kn"],
+     file: "my-bilingual-article.html",
+     en: {
+       title:    "My Article in English",
+       date:     "February 2024",
+       readTime: "7 min read",
+       desc:     "English description for the card.",
+       tags:     ["Tag1", "Tag2"]
+     },
+     kn: {
+       title:    "ನನ್ನ ಲೇಖನ ಕನ್ನಡದಲ್ಲಿ",
+       date:     "ಫೆಬ್ರವರಿ 2024",
+       readTime: "7 ನಿಮಿಷ",
+       desc:     "ಕನ್ನಡದಲ್ಲಿ ಕಾರ್ಡ್ ವಿವರಣೆ.",
+       tags:     ["ಟ್ಯಾಗ್"]
+     }
+   },
+
+   ── CASE 4: Both languages, SEPARATE files ───────────────────────────
+   Use this when you have two separate html files — one English, one
+   Kannada — rather than a single bilingual file.
+   Use fileEn and fileKn instead of file.
+
+   {
+     langs: ["en", "kn"],
+     fileEn: "my-article-english.html",
+     fileKn: "my-article-kannada.html",
+     en: {
+       title:    "My Article in English",
+       date:     "March 2024",
+       readTime: "6 min read",
+       desc:     "English description.",
+       tags:     ["Tag1"]
+     },
+     kn: {
+       title:    "ನನ್ನ ಕನ್ನಡ ಲೇಖನ",
+       date:     "ಮಾರ್ಚ್ 2024",
+       readTime: "6 ನಿಮಿಷ",
+       desc:     "ಕನ್ನಡ ವಿವರಣೆ.",
+       tags:     ["ಟ್ಯಾಗ್"]
+     }
+   },
+
+   ===================================================================== */
+
 const ARTICLES = [
+
+  /* CASE 1 — English only */
   {
+    langs: ["en"],
     file: "fact-versus-fiction.html",
     en: {
-      title: "Fact versus Fiction: How to Survive in the Information Age",
-      date: "October 2019",
+      title:    "Fact versus Fiction: How to Survive in the Information Age",
+      date:     "October 2019",
       readTime: "8 min read",
-      desc: "Urban legends about Indian history abound in modern media. This essay examines seven specific claims — about Mughal-era food, ancient trade routes, taxation, and more — and traces them back to primary sources.",
-      tags: ["History", "India", "Myth", "Fact vs Fiction"]
-    },
-    kn: {
-      title: "ಸತ್ಯ ಮತ್ತು ಕಲ್ಪನೆ: ಮಾಹಿತಿ ಯುಗದಲ್ಲಿ ಬದುಕುವುದು ಹೇಗೆ",
-      date: "ಅಕ್ಟೋಬರ್ 2019",
-      readTime: "8 ನಿಮಿಷ",
-      desc: "ಆಧುನಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ಭಾರತೀಯ ಇತಿಹಾಸದ ಕುರಿತು ಹಲವಾರು ತಪ್ಪು ನಂಬಿಕೆಗಳು ಹರಡುತ್ತಿವೆ. ಈ ಪ್ರಬಂಧದಲ್ಲಿ ಏಳು ನಿರ್ದಿಷ್ಟ ಹೇಳಿಕೆಗಳನ್ನು ಪ್ರಾಥಮಿಕ ಮೂಲಗಳ ಮೂಲಕ ಪರೀಕ್ಷಿಸಲಾಗಿದೆ.",
-      tags: ["ಇತಿಹಾಸ", "ಭಾರತ", "ಸತ್ಯ vs ಕಲ್ಪನೆ"]
+      desc:     "Urban legends about Indian history abound in modern media. This essay examines seven specific claims — about Mughal-era food, ancient trade routes, taxation, and more — and traces them back to primary sources.",
+      tags:     ["History", "India", "Myth", "Fact vs Fiction"]
     }
-  }, 
-  /* To add a new article, copy the block above and paste it here with a comma */
-{
-    file: "devi-stuti-carnatic.html",
-    en: {
-      title: "ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ದೇವೀ ಸ್ತುತಿ: ಒಂದು ಕಿರುನೋಟ",
-      date: "October 2020",
-      readTime: "8 min read",
-      desc: "Musical compositions about Devi in the Karnataka Sangeeta tradition.",
-      tags: ["History", "India", "Music", "Karnataka Sangeeta"]
-    },
-    kn: {
-      title: "ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ದೇವೀ ಸ್ತುತಿ: ಒಂದು ಕಿರುನೋಟ",
-      date: "ಅಕ್ಟೋಬರ್ 2020",
-      readTime: "8 ನಿಮಿಷ",
-      desc: "ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ದೇವಿಯ ಬಗ್ಗೆ ಇರುವ ವಿಪುಲವಾದ ರಚನೆಗಳ ಬಗ್ಗೆ ಒಂದು ತುಸು ಮಾಹಿತಿಯನ್ನು ಕೊಡುವ ಪ್ರಯತ್ನ ಇಲ್ಲಿದೆ .",
-      tags: ["ಸಂಗೀತ ", "ಭಾರತ", "ಕರ್ನಾಟಕ ಸಂಗೀತ"]
-    }
-  }, 
-  {
-  file: "meru-parvata-kannada.html",
-  en: {
-    title: "Where is Mount Meru?",
-    date: "December 2020",
-    readTime: "6 min read",
-    desc: "A close reading of Aryabhata's Aryabhatiya and Varahamihira's Panchasiddhantika reveals the scientific basis behind the concept of Mount Meru in Indian tradition.",
-    tags: ["Meru", "Ancient India", "Sacred Geography", "Aryabhata"]
   },
-  kn: {
-    title: "ಮೇರುಪರ್ವತ ಎಲ್ಲಿದೆ?",
-    date: "ಡಿಸೆಂಬರ್ 2020",
-    readTime: "6 ನಿಮಿಷ",
-    desc: "ಆರ್ಯಭಟೀಯಂ ಮತ್ತು ಪಂಚಸಿದ್ಧಾಂತಿಕಾ ಗ್ರಂಥಗಳ ಆಧಾರದಲ್ಲಿ ಮೇರು ಪರ್ವತದ ವೈಜ್ಞಾನಿಕ ಅರ್ಥವನ್ನು ತಿಳಿಸುವ ಬರಹ.",
-    tags: ["ಮೇರು", "ಭೂಗೋಲ", "ಆರ್ಯಭಟ"]
+
+  /* CASE 2 — Kannada only */
+  {
+    langs: ["kn"],
+    file: "devi-stuti-carnatic.html",
+    kn: {
+      title:    "ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ದೇವೀ ಸ್ತುತಿ: ಒಂದು ಕಿರುನೋಟ",
+      date:     "ಅಕ್ಟೋಬರ್ 2020",
+      readTime: "8 ನಿಮಿಷ",
+      desc:     "ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ದೇವಿಯ ಬಗ್ಗೆ ಇರುವ ವಿಪುಲವಾದ ರಚನೆಗಳ ಬಗ್ಗೆ ಒಂದು ತುಸು ಮಾಹಿತಿಯನ್ನು ಕೊಡುವ ಪ್ರಯತ್ನ ಇಲ್ಲಿದೆ.",
+      tags:     ["ಸಂಗೀತ", "ಭಾರತ", "ಕರ್ನಾಟಕ ಸಂಗೀತ"]
+    }
+  },
+
+  /* CASE 3 — Bilingual, one file (meru-parvata.html) */
+  {
+    langs: ["en", "kn"],
+    file:  "meru-parvata.html",
+    en: {
+      title:    "Where is Mount Meru?",
+      date:     "December 2020",
+      readTime: "6 min read",
+      desc:     "A close reading of Aryabhata's Aryabhatiya and Varahamihira's Panchasiddhantika reveals the scientific basis behind the concept of Mount Meru in Indian tradition.",
+      tags:     ["Meru", "Ancient India", "Sacred Geography", "Aryabhata"]
+    },
+    kn: {
+      title:    "ಮೇರುಪರ್ವತ ಎಲ್ಲಿದೆ?",
+      date:     "ಡಿಸೆಂಬರ್ 2020",
+      readTime: "6 ನಿಮಿಷ",
+      desc:     "ಆರ್ಯಭಟೀಯಂ ಮತ್ತು ಪಂಚಸಿದ್ಧಾಂತಿಕಾ ಗ್ರಂಥಗಳ ಆಧಾರದಲ್ಲಿ ಮೇರು ಪರ್ವತದ ವೈಜ್ಞಾನಿಕ ಅರ್ಥವನ್ನು ತಿಳಿಸುವ ಬರಹ.",
+      tags:     ["ಮೇರು", "ಭೂಗೋಲ", "ಆರ್ಯಭಟ"]
+    }
+  },
+
+  /* CASE 3 — Bilingual, one file (battisa-ragagala-parampare.html) */
+  {
+    langs: ["en", "kn"],
+    file:  "battisa-ragagala-parampare.html",
+    en: {
+      title:    "The Tradition of the Battīsa Rāgas in Karnataka Sangeeta",
+      date:     "February 2022",
+      readTime: "6 min read",
+      desc:     "A study of the thirty-two celebrated rāgas traced through the writings of Basavanna, Nijaguṇa Shivayōgi, Singarāja, and Purandaradāsa.",
+      tags:     ["Carnatic Music", "Raga History", "Purandaradāsa"]
+    },
+    kn: {
+      title:    "ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ಬೆಳೆದು ಬಂದಿರುವ ಬತ್ತೀಸ ರಾಗಗಳ ಪರಂಪರೆ",
+      date:     "ಫೆಬ್ರವರಿ 2022",
+      readTime: "6 ನಿಮಿಷ",
+      desc:     "ಬಸವಣ್ಣ, ನಿಜಗುಣ ಶಿವಯೋಗಿ, ಸಿಂಗಿರಾಜ ಮತ್ತು ಪುರಂದರ ದಾಸರ ರಚನೆಗಳ ಮೂಲಕ ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ಬತ್ತೀಸ ರಾಗಗಳ ಪರಂಪರೆಯ ಕಿರು ಅಧ್ಯಯನ.",
+      tags:     ["ಬತ್ತೀಸ ರಾಗ", "ಪುರಂದರ ದಾಸರು", "ರಾಗ ಪರಂಪರೆ"]
+    }
   }
-}
-  /* To add a new article, copy the block above and paste it here with a comma */  
-];
+
+  /* ADD NEW ARTICLES ABOVE THIS LINE
+     Remember: add a comma after the closing } of the previous entry */
+
+]; /* end ARTICLES */
+
+
+/* =====================================================================
+   RENDERING ENGINE — no need to edit below this line
+   ===================================================================== */
 
 let lang = 'en';
 
+function langBadge(a) {
+  const both = a.langs.includes('en') && a.langs.includes('kn');
+  if (both)                    return '<span class="lang-badge both">EN · ಕನ್ನಡ</span>';
+  if (a.langs.includes('en'))  return '<span class="lang-badge en-only">EN</span>';
+  return                              '<span class="lang-badge kn-only">ಕನ್ನಡ</span>';
+}
+
+function cardHref(a, l) {
+  /* Separate files per language */
+  if (a.fileEn && a.fileKn) return l === 'en' ? a.fileEn : a.fileKn;
+  /* Bilingual single file — append hash so article opens in right language */
+  if (a.langs.length > 1)   return a.file + '#' + l;
+  /* Single language */
+  return a.file;
+}
+
 function render(l) {
   const s = STR[l];
-  document.getElementById('pageTitle').textContent = s.pageTitle;
-  document.getElementById('pageTitle').className = s.pageTitleClass;
+  document.getElementById('pageTitle').textContent    = s.pageTitle;
+  document.getElementById('pageTitle').className      = s.pageTitleClass;
   document.getElementById('pageSubtitle').textContent = s.pageSubtitle;
-  document.getElementById('pageSubtitle').className = s.pageSubtitleClass;
-  document.getElementById('backLink').textContent = s.backLink;
-  document.getElementById('aboutSection').innerHTML = s.aboutText;
-  document.getElementById('aboutSection').className = s.aboutClass;
-  document.getElementById('footerEl').textContent = s.footer;
-  document.getElementById('footerEl').className = 'footer ' + (s.footerClass || '');
+  document.getElementById('pageSubtitle').className   = s.pageSubtitleClass;
+  document.getElementById('backLink').textContent     = s.backLink;
+  document.getElementById('aboutSection').innerHTML   = s.aboutText;
+  document.getElementById('aboutSection').className   = s.aboutClass;
+  document.getElementById('footerEl').textContent     = s.footer;
+  document.getElementById('footerEl').className       = 'footer ' + (s.footerClass || '');
   document.getElementById('btnEN').classList.toggle('active', l === 'en');
   document.getElementById('btnKN').classList.toggle('active', l === 'kn');
 
   const list = document.getElementById('articleList');
   list.innerHTML = '';
-  if (!ARTICLES.length) {
-    list.innerHTML = `<p class="empty">${l === 'kn' ? 'ಇನ್ನೂ ಯಾವುದೇ ಲೇಖನಗಳಿಲ್ಲ.' : 'No articles yet.'}</p>`;
+
+  const visible = ARTICLES.filter(a => a.langs.includes(l));
+  if (!visible.length) {
+    list.innerHTML = `<p class="empty">${s.emptyMsg}</p>`;
     return;
   }
-  ARTICLES.forEach(a => {
-    const d = a[l];
+
+  visible.forEach(a => {
+    const d    = a[l];
     const card = document.createElement('a');
-    card.href = a.file;
+    card.href      = cardHref(a, l);
     card.className = 'article-card';
     card.innerHTML = `
       <div class="${s.titleClass}">${d.title}</div>
       <div class="${s.metaClass}">${d.date} &nbsp;·&nbsp; ${d.readTime}</div>
       <div class="${s.descClass}">${d.desc}</div>
-      <div>${d.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <div>${langBadge(a)}${d.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
       <span class="article-card-arrow">→</span>
     `;
     list.appendChild(card);
