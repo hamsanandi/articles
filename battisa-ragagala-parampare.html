@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಬತ್ತೀಸ ರಾಗಗಳ ಪರಂಪರೆ / Tradition of the Battīsa Rāgas — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88; --text: #1a1208; --meta: #8a7055;
+}
+body { font-family: 'Noto Serif Kannada', serif; background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.9; }
+.site-nav { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 12px 24px; text-align: center; }
+.site-nav a { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+.nav-sep { color: var(--border-light); margin: 0 10px; }
+.article-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+.article-header { text-align: center; margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--border); position: relative; }
+.article-header::after { content: ''; display: block; height: 2px; width: 100px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); }
+.article-category { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--meta); margin-bottom: 14px; }
+.article-title-kn { font-family: 'Noto Serif Kannada', serif; font-size: 1.85rem; font-weight: 700; color: var(--gold-light); line-height: 1.35; margin-bottom: 14px; }
+.article-title-en { font-family: 'EB Garamond', serif; font-size: 1.85rem; font-weight: 600; color: var(--gold-light); line-height: 1.3; margin-bottom: 14px; display: none; }
+.article-meta { font-size: 0.85em; color: var(--meta); font-family: 'Noto Sans Kannada', sans-serif; }
+.article-meta span { color: var(--border-light); margin: 0 6px; }
+.lang-toggle { display: inline-flex; gap: 3px; background: var(--header-bg); border: 1px solid var(--border-light); border-radius: 20px; padding: 5px 4px; margin-bottom: 16px; cursor: pointer; }
+.lang-btn { font-size: 0.75rem; padding: 4px 10px; border-radius: 16px; border: none; background: none; cursor: pointer; color: var(--meta); font-family: 'EB Garamond', serif; transition: all 0.18s; }
+.lang-btn.active { background: var(--gold); color: #fff; font-weight: 600; }
+.lang-btn.kn-btn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.78rem; }
+#content-kn { display: block; font-family: 'Noto Serif Kannada', serif; }
+#content-en { display: none; font-family: 'EB Garamond', serif; font-size: 1em; line-height: 1.85; }
+.article-body p { margin-bottom: 1.5em; }
+.verse { background: var(--section-bg); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 16px 22px; margin: 1.6em 0; line-height: 2.1; color: var(--text); }
+#content-kn .verse { font-family: 'Noto Serif Kannada', serif; font-size: 1em; }
+#content-en .verse { font-family: 'EB Garamond', serif; font-size: 1.05em; font-style: italic; }
+.verse-source { font-size: 0.78em; color: var(--meta); margin-top: 10px; font-family: 'Noto Sans Kannada', sans-serif; line-height: 1.5; font-style: italic; }
+#content-en .verse-source { font-style: normal; }
+.quote-block { background: var(--header-bg); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin: 1.6em 0; font-size: 0.95em; line-height: 1.9; }
+.quote-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--meta); margin-bottom: 8px; display: block; }
+.raga-list { background: var(--section-bg); border: 1px solid var(--border); border-radius: 6px; padding: 14px 20px; margin: 1.4em 0; font-size: 0.9em; line-height: 1.9; color: var(--meta); }
+#content-kn .raga-list { font-family: 'Noto Sans Kannada', sans-serif; }
+#content-en .raga-list { font-family: 'EB Garamond', serif; }
+.raga-list strong { color: var(--gold-light); }
+#content-kn .raga-list strong { font-family: 'Noto Serif Kannada', serif; }
+.raga-table { width: 100%; border-collapse: collapse; margin: 1.6em 0; font-size: 0.88em; }
+.raga-table th { background: var(--header-bg); color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 8px 12px; text-align: left; border: 1px solid var(--border); }
+.raga-table td { padding: 7px 12px; border: 1px solid var(--border); vertical-align: top; font-family: 'Noto Sans Kannada', sans-serif; line-height: 1.6; }
+#content-en .raga-table td { font-family: 'EB Garamond', serif; }
+.raga-table tr:nth-child(even) td { background: var(--section-bg); }
+.raga-table td.num { color: var(--meta); font-family: 'EB Garamond', serif; text-align: center; width: 42px; }
+.raga-table td.doubt { color: var(--meta); font-style: italic; }
+.source-note { background: var(--section-bg); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; margin: 1.8em 0 1em; font-size: 0.88em; color: var(--meta); font-style: italic; line-height: 1.7; }
+#content-kn .source-note { font-family: 'Noto Sans Kannada', sans-serif; }
+#content-en .source-note { font-family: 'EB Garamond', serif; }
+.article-close { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid var(--border); font-size: 0.88em; color: var(--meta); font-style: italic; text-align: right; }
+#content-kn .article-close { font-family: 'Noto Sans Kannada', sans-serif; }
+.tags { margin-top: 2em; padding-top: 1.2em; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { display: inline-block; padding: 3px 10px; font-size: 0.73em; border: 1px solid var(--border-light); border-radius: 4px; color: var(--meta); background: var(--section-bg); font-family: 'Noto Sans Kannada', sans-serif; }
+.back-link { display: inline-block; margin-top: 36px; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--border-light); }
+.back-link:hover { color: var(--gold-light); border-bottom-color: var(--gold); }
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 32px 0 0; }
+footer { text-align: center; color: var(--meta); font-size: 0.82em; padding: 20px 0 30px; font-family: 'Noto Sans Kannada', sans-serif; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="https://hamsanandi.github.io/">Hamsanandi</a>
+  <span class="nav-sep">·</span>
+  <a href="https://hamsanandi.github.io/articles/" id="navArticles">Articles</a>
+</nav>
+
+<div class="article-wrap">
+  <header class="article-header">
+    <div class="lang-toggle" id="langToggle">
+      <button class="lang-btn" id="btnEN">EN</button>
+      <button class="lang-btn kn-btn active" id="btnKN">ಕನ್ನಡ</button>
+    </div>
+    <div class="article-category" id="articleCategory">ಲೇಖನ · ಕರ್ನಾಟಕ ಸಂಗೀತ · ರಾಗ ಪರಂಪರೆ</div>
+    <h1 class="article-title-kn" id="titleKN">ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ಬೆಳೆದು ಬಂದಿರುವ ಬತ್ತೀಸ ರಾಗಗಳ ಪರಂಪರೆ</h1>
+    <h1 class="article-title-en" id="titleEN">The Tradition of the Battīsa Rāgas in Karnataka Sangeeta</h1>
+    <div class="article-meta">
+      ಹಂಸಾನಂದಿ <span>·</span> <span id="metaDate">ಫೆಬ್ರವರಿ 1, 2022</span>
+      <span>·</span> <span id="metaSource">ಮೂಲತಃ Medium ನಲ್ಲಿ ಪ್ರಕಟಿತ</span>
+    </div>
+  </header>
+
+  <!-- ══ KANNADA CONTENT ══ -->
+  <div id="content-kn" class="article-body">
+
+    <p>ಭಾರತೀಯ ಸಂಗೀತದಲ್ಲಿ ರಾಗಗಳನ್ನು ಹಲವು ರೀತಿಯಲ್ಲಿ ವಿಂಗಡಿಸಿರುವುದು ತಿಳಿದ ವಿಷಯವೇ. ಅದರಲ್ಲಿ ಮೂವತ್ತೆರಡು ರಾಗಗಳ ಒಂದು ವರ್ಗೀಕರಣವು ಕೂಡ ಒಂದು ಪ್ರಸಿದ್ಧವಾದದ್ದು. "ಬತ್ತೀಸ್" ರಾಗಗಳು ಎಂಬ ಹಿಂದೀ ಭಾಷೆಯ ಹೆಸರಿನಲ್ಲಿಯೇ ಇವು ಕನ್ನಡದಲ್ಲಿಯೂ ಇರುವುದು ಕಂಡುಬರುತ್ತದೆ. ಇವು ಸಂಗೀತ ಶಾಸ್ತ್ರಗ್ರಂಥಗಳಲ್ಲಷ್ಟೇ ಅಲ್ಲದೆ ಬೇರೆ ಸಾಹಿತ್ಯ ಕೃತಿಗಳಲ್ಲೂ ಈ ಹೆಸರನ್ನು ನಾವು ನೋಡಬಹುದು.</p>
+
+    <p>ಮೊದಲ ಉದಾಹರಣೆಯಾಗಿ ಭಕ್ತಿ ಭಾಂಡಾರಿ ಬಸವಣ್ಣನವರ (ಕ್ರಿ.ಶ. ೧೧೩೪–೧೧೯೬) ಒಂದು ಬಹುಪ್ರಸಿದ್ಧ ವಚನವನ್ನು ನೋಡೋಣ:</p>
+
+    <div class="verse">
+      ಎನ್ನ ಕಾಯವ ದಂಡಿಗೆಯ ಮಾಡಯ್ಯ<br>
+      ಎನ್ನ ಶಿರವ ಸೋರೆಯ ಮಾಡಯ್ಯ<br>
+      ಎನ್ನ ನರಗಳ ತಂತಿಯ ಮಾಡಯ್ಯ<br>
+      ಎನ್ನ ಬೆರಳ ಕಡ್ಡಿಯ ಮಾಡಯ್ಯ<br>
+      ಬತ್ತೀಸ ರಾಗವ ಹಾಡಯ್ಯ<br>
+      ಉರದಲೊತ್ತಿ ಬಾರಿಸು ಕೂಡಲಸಂಗಮದೇವ!
+      <div class="verse-source">— ಬಸವಣ್ಣ (ಕ್ರಿ.ಶ. ೧೧೩೪–೧೧೯೬)</div>
+    </div>
+
+    <p>ವೀಣೆಯ ಬೇರೆ ಬೇರೆ ಅಂಗಗಳಾದ ದಂಡಿಗೆ (ವೀಣಾದಂಡ), ಸೋರೆ, ತಂತಿಗಳು, ನುಡಿಸುವ ಕಡ್ಡಿಗಳು ಮೊದಲಾದ ಸಂಗೀತ ಸಂಬಂಧೀ ವಿಷಯಗಳನ್ನೂ ಪ್ರಸ್ತಾಪಿಸುವ ಬಸವಣ್ಣನವರು ಈ ವಚನದಲ್ಲಿ 'ಬತ್ತೀಸ ರಾಗವ ಹಾಡಯ್ಯ' ಎಂದು ನುಡಿದರೂ ಕೂಡ ಯಾವ ರಾಗಗಳನ್ನೂ ಹೆಸರಿಸುವುದಿಲ್ಲ. ಇದಲ್ಲದೇ ಇನ್ನು ಬೇರೆ ಯಾವ ವಚನಗಳಲ್ಲೂ ರಾಗಗಳ ಹೆಸರಿನ ಪ್ರಸ್ತಾಪ ಮಾಡಿರುವಂತೆ ನನಗೆ ತಿಳಿದಿಲ್ಲ. ಶಿವಶರಣರು ತಮ್ಮ ವಚನಗಳನ್ನು ಆಗಾಗ ಹಾಡುತ್ತಿದ್ದಿರಬಹು ಎಂಬುದಕ್ಕೂ ಕೂಡ ನಮಗೆ ವಚನಗಳಲ್ಲೆ ಆಧಾರ ದೊರೆಯುತ್ತದೆ (ಉದಾ: ಆನು ಒಲಿದಂತೆ ಪಾಡುವೆ). ಆದರೂ ಹಾಡುವುದಕ್ಕಿಂತ ಹೆಚ್ಚಾಗಿ ಮಾತಿನಂತೆಯೇ ಹೇಳುವುದೇ ಪದ್ಧತಿ ಆಗಿದ್ದಿರಬೇಕು. ವಚನ ಎಂಬ ಪದದ ಅರ್ಥವು ಕೂಡ ಮಾತು, ಗದ್ಯ ಎಂಬುದಾಗಿ ಇರುವುದನ್ನು ನೆನೆಯಬಹುದು. ಹಾಗಾಗಿ, ಸಂಗೀತದ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ವಿವರಗಳು ವಚನಗಳಲ್ಲಿ ಕಾಣದಿದ್ದರೆ ಅದರಲ್ಲಿ ಅಚ್ಚರಿಯಿಲ್ಲ. ಹಾಗಿದ್ದರೂ, ಸಕಲೇಶ ಮಾದರಸನೆಂಬ ವಚನಕಾರರು ಸಂಗೀತಗಾರರಾಗಿದ್ದರೆಂದೂ, ವೀಣಾವಾದನ ಚತುರರಾಗಿದ್ದರೆಂದೂ ತಿಳಿಯಲು ಆಧಾರಗಳು ಇವೆ ಎಂಬ ವಿಷಯವನ್ನು ಇಲ್ಲಿ ಹೇಳಬಯಸುವೆ.</p>
+
+    <p>ಬಸವಣ್ಣನವರ ನಂತರ ಸುಮಾರು ಇನ್ನೂರೈವತ್ತು ವರ್ಷಗಳ ಕಾಲ ಕಳೆದು, ಎಂದರೆ ಸಾಮಾನ್ಯ ಶಕ ೧೪೫೦ರ ಸುಮಾರಿನಲ್ಲಿ, ಕೊಳ್ಳೇಗಾಲ ಪ್ರದೇಶದಲ್ಲಿ ಬಾಳಿದ ಶ್ರೀ ನಿಜಗುಣ ಶಿವಯೋಗಿಗಳ ವಿವೇಕ ಚಿಂತಾಮಣಿ ಎಂಬ ಗ್ರಂಥದಲ್ಲಿ ಈ ಬತ್ತೀಸ ರಾಗಗಳು "ಮೂವತ್ತೆರಡು ರಾಗಗಳು" ಎಂಬ ಹೆಸರಿನಲ್ಲಿ ಕಂಡುಬರುತ್ತದೆ. ಪುರಾಣಗಳಂತೆ ವಿಶ್ವಕೋಶಾತ್ಮಕವಾದ ವಿವೇಕ ಚಿಂತಾಮಣಿಯಲ್ಲಿ ಹಲವಾರು ವಿಷಯಗಳ ಬಗ್ಗೆ ವಿವರಗಳುಂಟು. ಅದರಲ್ಲಿ ಸಂಗೀತ ನೃತ್ಯಗಳ ಬಗ್ಗೆ ಇರುವ ಅಧ್ಯಾಯದಲ್ಲಿ ಈ ಕೆಳಗಿನ ವಿವರ ನಮಗೆ ಸಿಗುತ್ತದೆ. ಮೊದಲಿಗೆ ನೂರೈವತ್ತೇಳು ರಾಗಗಳನ್ನು ಹೆಸರಿಸಿದ ನಂತರ ನಿಜಗುಣ ಶಿವಯೋಗಿಗಳು ಹೀಗೆ ಹೇಳುತ್ತಾರೆ:</p>
+
+    <div class="quote-block">
+      <span class="quote-label">ವಿವೇಕ ಚಿಂತಾಮಣಿ — ನಿಜಗುಣ ಶಿವಯೋಗಿ (~ಸಾ.ಶ. ೧೪೫೦)</span>
+      "ಬಳಿಕ ಈ ಸಮಸ್ತ ರಾಗಂಗಳೊಳಗೆ ರಾಮಕ್ರಿ, ಭೂಪಾಳಿ, ವಸಂತ, ನಾಟಿ, ಸಾಳಗ, ಭೌಳಿ, ಕಾಂಬೋದಿ, ಗುಜ್ಜರಿ, ಭೈರವಿ, ಗುಂಡಕ್ರಿ, ಮಲಹರಿ, ಧನ್ಯಾಸಿ, ಲಲಿತೆ, ಫಲಮಂಜರಿ, ಬಂಗಾಳ, ದೇಶಿ, ಮೇಘರಂಜಿ, ಕುರಂಜಿ, ಆಹರಿ, ಶ್ರೀರಾಗ, ದೇವಗಾಂಧಾರಿ, ಪಹಡಿ, ಗೌಳ, ಶಂಕರಾಭರಣ, ಭುಲ್ಲರಿ, ದೇಶಾಕ್ಷಿ, ವರಾಳಿ, ಸಿಂಧುರಾಮಕ್ರಿ, ದೇವಗುಪ್ತಿ, ಆರಭಿ, ನಾರಾಯಣಿ, ಮಂಗಳಕೌಶಿ ಎಂಬ ಮೂವತ್ತೆರಡು ರಾಗಂಗಳೇ ಪ್ರಸಿದ್ಧಮಾಗಿಹುದು."
+    </div>
+
+    <p>ಇಂದಿಗೂ ಈ ಪಟ್ಟಿಯಲ್ಲಿರುವ ಹಲವು ರಾಗಗಳು ಸುಪರಿಚಿತವಾಗಿರುವುದನ್ನು ಗಮನಿಸಬಹುದು. ರಾಗಗಳು ಕಾಲಕಾಲಕ್ಕೆ ಪ್ರಸಿದ್ಧವಾಗುವುದೂ, ಹಾಗೇ ಕಣ್ಮರೆಯಾಗುವುದೂ ನಡೆದುಕೊಂಡೇ ಬಂದಿರುವ ವಿಷಯವಾದ್ದರಿಂದ, ಈ ಪಟ್ಟಿಯಲ್ಲಿ ಒಂದೆರಡು ರಾಗಗಳನ್ನು ಗುರುತಿಸಲು ಮೇಲ್ನೋಟಕ್ಕೇ ಸಾಧ್ಯವಾಗದೇ ಇತರೆ ಶಾಸ್ತ್ರ ಗ್ರಂಥಗಳ ಸಹಾಯ ಪಡೆಯಬೇಕಾಗಬಹುದಷ್ಟೇ.</p>
+
+    <p>ನಿಜಗುಣ ಶಿವಯೋಗಿಗಳ ನಂತರ ಸುಮಾರು ಐದಾರು ದಶಕಗಳ ನಂತರ ಬಂದ (~ಸಾ.ಶ. ೧೫೦೦) ಸಿಂಗಿರಾಜ (ಶೃಂಗಿರಾಜ) ಎಂಬ ಕವಿ ತನ್ನ ಸಿಂಗಿರಾಜಪುರಾಣದ ೩೮ನೇ ಸಂಧಿಯಲ್ಲಿ ನಾಟಕ ಶಾಲೆಯ ವೃತ್ತಾಂತವೊಂದನ್ನು ವರ್ಣಿಸುವಲ್ಲಿ ಈ ಕೆಳಗಿನ ಷಟ್ಪದಿಗಳು ಕಂಡುಬರುತ್ತವೆ:</p>
+
+    <div class="verse">
+      ಸಾರನಾದದ ಜನನ ತಾಣಮಂ ನೆರೆಯರಿದು<br>
+      ತಾರಮಂದ್ರದ ಮಧ್ಯ ಸಪ್ತಸ್ವರಂಗಳಂ<br>
+      ತೋರಿ ಇಪ್ಪತ್ತೆರಡು ಶ್ರುತಿ ಷಾಡವಾದಿ ಶ್ರುತಿಪೂರ್ಣ ದೇಸೀ ಮಾರ್ಗದ<br>
+      ಸಾರಮಂ ತಿಳಿದವನಿಬದ್ಧಂ ವಿಬದ್ಧಗಳ<br>
+      ಸೇರುವೆಯೊಳತಿ ಶುದ್ಧ ಮಿರ್ಶ್ರ ಸಂಕೀರ್ಣಗಳ<br>
+      ನಾರೈದು ನವರಸದಿ ಪಾಡುವ ವಿದಗ್ಧ ಗಾನಾಂಗನೆಯರೊಪ್ಪಿರ್ದರು
+      <div class="verse-source">(ಸಂಧಿ ೩೮, ಪದ್ಯ ೧೦ — ಸಿಂಗಿರಾಜಪುರಾಣ)</div>
+    </div>
+
+    <div class="verse">
+      ಮಾಳವ ಶ್ರೀ ತೋಡಿ ಧನ್ಯಾಸಿ ನಾಟಿ ಬಂ<br>
+      ಗಾಳ ಭೈರವಿ ಸಿಂಧು ದೇಶಿ ಹಿಂದೋಳ ನಾ<br>
+      ರಣಿ ಗೌಳ ಸೌರಾಷ್ಟ್ರ ಗುರ್ಜರಿ ವಸಂತ ಸಾವೇರಿ ಛಾಯಾ — — — —<br>
+      ಗೌಳ ಮಲಹರಿ ಲಳಿತೆ ಬಹುಳಿ ಗುರ್ಜರಿ ಲಲಿತೆ<br>
+      ಗೌಳ ಮಂಗಳಕೌಸಿ ಮೇಘರಂಜನಿಯು ಭೂ<br>
+      ಪಾಳಿ ಮೊದಲಾದ ಬತ್ತೀಸ ರಾಗಂಗಳಂ ಪಾಡುತಿರ್ದರು ಸತಿಯರು
+      <div class="verse-source">(ಸಂಧಿ ೩೮, ಪದ್ಯ ೧೧ — ಸಿಂಗಿರಾಜಪುರಾಣ)</div>
+    </div>
+
+    <p>ಈ ಎರಡನೆಯ ಪದ್ಯದಲ್ಲಿ ಬತ್ತೀಸ ರಾಗವೆಂದೇ ಹೇಳಿ ಹಲವು ರಾಗಗಳನ್ನು ಹೆಸರಿಸಲಾಗಿದೆ. ಆದರೂ ಷಟ್ಪದಿಯ ಮೂರನೇ ಸಾಲಿನಲ್ಲಿ ಕಂಡುಬರುವ ಛಂದೋದೋಷದಿಂದ, ಒಂದೆರಡು ಹೆಸರು ಬಿಟ್ಟು ಹೋಗಿರಬಹುದೆಂದು ಊಹಿಸಿ, ಇಲ್ಲಿ ಮೂವತ್ತೆರಡೂ ರಾಗಗಳನ್ನು ಹೆಸರಿಸಿಲ್ಲ ಎಂದಷ್ಟೇ ಹೇಳಬಹುದು. ಮಾಳವ ಮತ್ತು ಶ್ರೀ ಎರಡು ರಾಗಗಳೋ ಅಥವಾ ಮಾಳವಶ್ರೀ ಎಂಬುದೊಂದೇ ರಾಗವೋ, ದೇಶಿ ಮತ್ತೆ ಹಿಂದೋಳಗಳೆಂಬ ಎರಡು ರಾಗಗಳೋ ಅಥವಾ ದೇಶಿ ಹಿಂದೋಳವೋ, ಮತ್ತೆ ಲಲಿತೆ ಹಾಗೂ ಲಳಿತೆ ಬೇರೆ ಬೇರೆ ರಾಗಗಳೇ? ಲಲಿತೆ ಮತ್ತು ಲಲಿತೆಗೌಳ ಎಂಬ ರಾಗಗಳಿದ್ದವೇ? — ಈ ಪ್ರಶ್ನೆಗಳೂ ಮೂಡುತ್ತದೆ. ಹಾಗಿದ್ದರೂ, ಬತ್ತೀಸ ರಾಗಗಳ ಪರಂಪರೆ ಮುಂದುವರೆದುಕೊಂಡು ಬಂದಿದೆ ಎಂಬುದು ಸಿದ್ಧವಾಗುತ್ತದೆ.</p>
+
+    <p>ಇನ್ನು ಹರಿದಾಸರ ಕಡೆಗೆ ಹೋಗೋಣ. ಕರ್ನಾಟಕ ಸಂಗೀತಕ್ಕೆ ಹರಿದಾಸರ ಕೊಡುಗೆ ಎಲ್ಲರಿಗೂ ತಿಳಿದದ್ದೇ. ನಿಜಗುಣಶಿವಯೋಗಿ–ಸಿಂಗಿರಾಜರ ಸಮಕಾಲೀನರೇ ಆದ ಶ್ರೀಪಾದರಾಜರು (ಜನನ ~ಸಾ.ಶ. ೧೪೦೦) ತಮ್ಮ 'ಲಾಲಿ ಗೋವಿಂದ ಲಾಲಿ' ಎಂಬ ರಚನೆಯಲ್ಲಿ ಕಲ್ಯಾಣಿ, ಆನಂದ ಭೈರವಿ ಮತ್ತು ದೇವಗಾಂಧಾರ ರಾಗಗಳನ್ನು ಹೆಸರಿಸುತ್ತಾರೆ. ಇನ್ನು ಹದಿನೈದನೇ ಶತಮಾನದ ಕೊನೆಯ ಭಾಗಕ್ಕೆ ಹೋದರೆ ಸಾ.ಶ. ೧೪೮೪ರಲ್ಲಿ ಜನಿಸಿದ ಪುರಂದರ ದಾಸರು ತಮಗೆ ಮೂವತ್ತೈದು–ನಲವತ್ತು ವರ್ಷಗಳಾಗುವ ಸಮಯದಲ್ಲಿ ಹರಿದಾಸರಾಗಿ ಹಂಪೆಗೆ ಬಂದದ್ದೂ, ವ್ಯಾಸರಾಯರ ಶಿಷ್ಯರಾಗಿದ್ದೂ, ನಂತರ ಹರಿದಾಸರ ಪರಂಪರೆಯ ಹಾಗೂ ಕರ್ನಾಟಕ ಸಂಗೀತಕ್ಕೆ ಅತಿ ಪ್ರಮುಖರಾಗಿ ಗುರುತಿಸಲ್ಪಟ್ಟಿರುವುದೂ ಜಗದ್ಪ್ರಸಿದ್ಧ.</p>
+
+    <p>ಪುರಂದರದಾಸರು ನಾಲ್ಕು ಲಕ್ಷದ ಎಪ್ಪತ್ತೈದು ಸಾವಿರ ರಚನೆಗಳನ್ನು ಮಾಡಿದ್ದಾರೆಂದು ಪ್ರತೀತಿ. ಆದರೆ, ಈಗ ನಮಗೆ ದೊರಕುವುದು ಒಂದೆರಡು ಸಾವಿರಗಳಷ್ಟು ಮಾತ್ರ. ಪುರಂದರದಾಸರನ್ನು ನಾವು 'ಕರ್ನಾಟಕ ಸಂಗೀತ ಪಿತಾಮಹ' ಎಂದು ಕರೆಯುವುದು ನಿಜವಾದರೂ, ಅವರು ತಮ್ಮ ರಚನೆಗಳನ್ನು ಹಾಡುತ್ತಿದ್ದ ಮೂಲ ಮಟ್ಟು, ಬಹುಪಾಲು ರಚನೆಗಳಿಗೆ ನಮ್ಮ ಕಾಲದವರೆಗೆ ಉಳಿದಿಲ್ಲದಿರುವುದು ದುರ್ದೈವವೇ ಸರಿ. ಹೀಗಿದ್ದರೂ, ಒಂದೆರಡು ಸಾವಿರ ರಚನೆಗಳ ಸಾಹಿತ್ಯವಾದರೂ ಉಳಿದಿದೆಯಲ್ಲ ಎಂಬುದು ಸಮಾಧಾನದ ವಿಚಾರ. ಅವರ ಹಾಡುಗಳಲ್ಲಿರುವ ಒಳಗಿನ ಕುರುಹುಗಳಿಂದ, ಅವರ ಕಾಲದ ಸಾಮಾಜಿಕ, ಧಾರ್ಮಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಸಂಗತಿಗಳ ಬಗ್ಗೆ ನಾವು ಅರಿತು ಕೊಳ್ಳಬಹುದು. ಈ ಮೊದಲು ನೋಡಿದ ಸಿಂಗಿರಾಜ, ಅಥವಾ ಬಸವಣ್ಣನವರು ಸಂಗೀತಗಾರರಲ್ಲ. ಆದರೆ ಪುರಂದರದಾಸರು ಸಂಗೀತಗಾರರಾದ್ದರಿಂದ ಅವರ ರಚನೆಗಳಲ್ಲಿ ನಮಗೆ ತಿಳಿಯಬೇಕಾದ ಸಂಗೀತದ ವಿಚಾರಗಳು ವಿಪುಲವಾಗಿವೆ.</p>
+
+    <p>ಪುರಂದರದಾಸರ ಕಾಲದ ರಾಗ-ತಾಳಗಳು, ವಾದ್ಯಗಳು, ಹಾಡುವ ಬಗೆ ಈ ಮೊದಲಾದುವುಗಳನ್ನು ಅವರ ರಚನೆಗಳೊಳಗಿರುವ ಅಂತರಿಕ ಆಧಾರಗಳಿಂದ ನಾವು ಪಡೆಯಬಹುದು. ಉದಾಹರಣೆಗೆ, 'ತಾಳ ಮೇಳಗಳಿದ್ದು ಪ್ರೇಮವಿಲ್ಲದ ಗಾನ ಕೇಳನೋ ಹರಿ ತಾಳನೋ', 'ತಾಳ ಬೇಕು ತಕ್ಕ ಮೇಳ ಬೇಕು', 'ಯತಿ ಪ್ರಾಸವಿರಬೇಕು ಗತಿಗೆ ನಿಲ್ಲಿಸಬೇಕು' ಎನ್ನುವಂತಹ ಸಾಲುಗಳನ್ನು ನಾವು ಅವರ ರಚನೆಗಳಲ್ಲಿ ನೋಡುತ್ತೇವೆ. ಅಂತಹ ಸಂಗೀತ ಅಂಶಗಳನ್ನು ಹೊಂದಿದ ಪುರಂದರದಾಸರ ರಚನೆಗಳಲ್ಲಿ, 'ತುತ್ತುರು ತೂರೆಂದು ಬತ್ತೀಸ ರಾಗಗಳನ್ನು' ಎಂದು ಮೊದಲಾಗುವ ಹಾಡೂ ಒಂದು. ಅದನ್ನೀಗ ಇಲ್ಲಿ ನೋಡೋಣ — ಆ ಹಾಡಿನ ಪಲ್ಲವಿ ಮತ್ತು ಮೊದಲ ಚರಣ:</p>
+
+    <div class="verse">
+      ತುತ್ತುರು ತೂರೆಂದು ಬತ್ತೀಸ ರಾಗಗಳನು<br>
+      ಚಿತ್ತಜ ಜನಕ ತನ್ನ ಕೊಳಲನೂದಿದನು ‖ಪ‖<br><br>
+      ಗೌಳ ನಾಟಿ ಆಹೇರಿ ಗುರ್ಜರಿ ಮಾಳವಿ ಸಾರಂಗರಾಗ<br>
+      ಕೇಳಿ ರಮಣಿಯರತಿ ದೂರದಿಂದ<br>
+      ಫಲಮಂಜರಿ ಗೌಳಿ ದೇಶಾಕ್ಷಿ ರಾಗಂಗಳನು<br>
+      ನಳಿನನಾಭನು ತನ್ನ ಕೊಳಲಲ್ಲೂದಿದನು ‖
+      <div class="verse-source">— ಪುರಂದರ ದಾಸರು (ಸಾ.ಶ. ೧೪೮೪–೧೫೬೪)</div>
+    </div>
+
+    <p>ಕೊಳಲನ್ನು ನುಡಿಸುವಾಗ ತುರ್-ತುರ್ ಎಂಬ ಸದ್ದಿನೊಡನೆ ಬರುವಂತಹ ರಂಜಕ ಪ್ರಯೋಗಗಳನ್ನು ಮಾಡುವ ಹಲವು ಕೊಳಲು ವಾದಕರನ್ನು ಇಂದು ನಾವು ನೋಡಿದ್ದೇವೆ. ಪಾಶ್ಚಾತ್ಯ ಸಂಗೀತದಲ್ಲಿ ಇಂತಹ ನುಡಿಸಾಣಿಕೆಗೆ staccato ಎಂದು ಕರೆಯುತ್ತಾರೆ. ಕೃಷ್ಣನು ಒಬ್ಬ ಚತುರ ಕೊಳಲು ನುಡಿಸುವ ಸಂಗೀತಗಾರನಾಗಿದ್ದ ಎನ್ನುವುದು ಪರಂಪರೆಯಿಂದ ಬಂದ ನಂಬಿಕೆ. ೧೫–೧೬ನೇ ಶತಮಾನದಲ್ಲಿ ಕೃಷ್ಣನ ಬಗ್ಗೆ ಹಾಡುವ ಪುರಂದರದಾಸರು ಕೊಳಲು ನುಡಿಸುವಲ್ಲಿ ಇಂತಹ ಪ್ರಯೋಗಗಳ ಬಗ್ಗೆ ಬರೆದಿದ್ದಾರೆಂದರೆ, ಅಂತಹ ಪ್ರಯೋಗಗಳನ್ನು ಕೊಳಲುವಾದಕರು ಸುಮಾರು ಐದುನೂರು ವರ್ಷಗಳಿಂದಲಾದರೂ ಮಾಡಿಕೊಂಡೇ ಬಂದಿದ್ದಾರೆ ಎನ್ನುವುದು ಮನದಟ್ಟಾಗುತ್ತದೆ. ಅಂದರೆ, ಪುರಂದರರು ತಾವು ಕಂಡ ಕೊಳಲು ನುಡಿಸುವ ವಿಧಾನವೊಂದನ್ನು ಕೃಷ್ಣನ ಕೊಳಲಲ್ಲಿ ತೋರಿಸಿದ್ದಾರೆಂದು ಹೇಳಬಹುದು. ಈ ಕಾರಣಕ್ಕಾಗಿಯೇ ದಾಸ ಸಾಹಿತ್ಯವನ್ನು ನಾವು ಆ ಕಾಲಕ್ಕೊಂದು ಕನ್ನಡಿ ಎಂದು ಹೇಳುವುದು ಸರಿಯಾದ ಮಾತು.</p>
+
+    <p>ಅದರ ಜೊತೆಗೆ ಪುರಂದರ ದಾಸರು ಈ ರಚನೆಯಲ್ಲಿ ಬತ್ತೀಸ ರಾಗಗಳ ಪ್ರಸ್ತಾಪ ಮಾಡಿದ್ದಾರೆ. ಮತ್ತೆ ಆ ಮೂವತ್ತೆರಡೂ ರಾಗಗಳನ್ನು ಅವರು ಈ ಹಾಡಿನಲ್ಲಿ ಹೆಸರಿಸುವುದಿಲ್ಲವಾದರೂ ಮೊದಲನೆಯ ಚರಣದಲ್ಲಿ ಈ ಒಂಬತ್ತು ರಾಗಗಳನ್ನು ನಾವು ಕಾಣುತ್ತೇವೆ:</p>
+
+    <div class="raga-list">
+      <strong>ತುತ್ತುರು ತೂರೆಂದು</strong> — ಮೊದಲ ಚರಣದ ರಾಗಗಳು:<br>
+      ೧. ಗೌಳ &nbsp;&nbsp; ೨. ನಾಟಿ &nbsp;&nbsp; ೩. ಆಹೇರಿ &nbsp;&nbsp; ೪. ಗುರ್ಜರಿ &nbsp;&nbsp; ೫. ಮಾಳವಿ &nbsp;&nbsp;
+      ೬. ಸಾರಂಗ &nbsp;&nbsp; ೭. ಫಲಮಂಜರಿ &nbsp;&nbsp; ೮. ಗೌಳಿ &nbsp;&nbsp; ೯. ದೇಶಾಕ್ಷಿ
+    </div>
+
+    <p>ಪುರಂದರ ದಾಸರು ಇನ್ನೂ ಕೆಲವು ರಚನೆಗಳಲ್ಲಿ ರಾಗಗಳನ್ನು ಹೆಸರಿಸಿರುವುದು ನಮಗೆ ಅದೃಷ್ಟದ ಸಂಗತಿ. ಉದಾಹರಣೆಗೆ, 'ನಳಿನಜಾಂಡ ತಲೆಯ ತೂಗಿ' ಎಂಬ ರಚನೆಯ ಒಂದು ಚರಣದಲ್ಲಿ ಹೀಗೆ ಹೇಳುತ್ತಾರೆ:</p>
+
+    <div class="verse">
+      ಮಾರವಿ ದೇಸಿ ಗುರ್ಜರಿ ಭೈರವಿ ಗೌರಿ ನಾಟಿಸಾವೇರಿ ಆಹೇರಿ<br>
+      ಪೂರವಿ ಕಾಂಬೋದಿ ಪಾಡಿ ದೇಶಾಕ್ಷಿ ಶಂಕರಾಭರಣ ಮಾಳವ |<br>
+      ವರಾಳಿ ಕಲ್ಯಾಣಿ ತೋಡಿ ಮುಖಾರಿ ಯರಳಿ ವಸಂತ ಬೌಳಿ ಧನ್ಯಾಸಿ<br>
+      ಸೌರಾಷ್ಟ್ರ ಗುಂಡಕ್ರಿಯ ರಾಮಕ್ರಿಯ ಮೇಘ ಕುರಂಜಿಯ ಪಾಡಲು ನೋಡಿ ‖
+      <div class="verse-source">— 'ನಳಿನಜಾಂಡ ತಲೆಯ ತೂಗಿ', ಪುರಂದರ ದಾಸರು</div>
+    </div>
+
+    <div class="raga-list">
+      <strong>ನಳಿನಜಾಂಡ ತಲೆಯ ತೂಗಿ</strong> — ಹೊಸ ರಾಗಗಳು:<br>
+      ೧೦. ಮಾರವಿ &nbsp;&nbsp; ೧೧. ದೇಶಿ &nbsp;&nbsp; ೧೨. ಭೈರವಿ &nbsp;&nbsp; ೧೩. ಸಾವೇರಿ &nbsp;&nbsp; ೧೪. ಪೂರವಿ<br>
+      ೧೫. ಕಾಂಭೋಜಿ &nbsp;&nbsp; ೧೬. ಪಾಡಿ &nbsp;&nbsp; ೧೭. ಶಂಕರಾಭರಣ &nbsp;&nbsp; ೧೮. ಮಾಳವ &nbsp;&nbsp; ೧೯. ವರಾಳಿ<br>
+      ೨೦. ಕಲ್ಯಾಣಿ &nbsp;&nbsp; ೨೧. ತೋಡಿ &nbsp;&nbsp; ೨೨. ಮುಖಾರಿ &nbsp;&nbsp; ೨೩. ವಸಂತ &nbsp;&nbsp; ೨೪. ಬೌಳಿ<br>
+      ೨೫. ಧನ್ಯಾಸಿ &nbsp;&nbsp; ೨೬. ಸೌರಾಷ್ಟ್ರ &nbsp;&nbsp; ೨೭. ಗುಂಡಕ್ರಿಯ &nbsp;&nbsp; ೨೮. ರಾಮಕ್ರಿಯ &nbsp;&nbsp; ೨೯. ಮೇಘ &nbsp;&nbsp; ೩೦. ಕುರಂಜಿ
+    </div>
+
+    <p>ಈ ಮೇಲಿನ ಚರಣದಲ್ಲಿ ಇರುವ ಯರಳಿ ಎಂಬುದೂ ಒಂದು ರಾಗದ ಹೆಸರೇ, ಅಥವಾ ಪಾಠದೋಷವೇ, ಅದು ರಾಗವೇ ಆಗಿದ್ದರೆ ಅದರ ಈಗಿನ ಹೆಸರೇನಿದ್ದಿರಬಹುದು ಎಂದು ಸುಲಭವಾಗಿ ಪತ್ತೆ ಆಗುವಂತಿಲ್ಲ. ಇನ್ನು ಮಾಳವವೂ ಮಾಳವಿಯೂ ಒಂದೇ ರಾಗವೋ, ಬೇರೆ ರಾಗಗಳೋ ಎಂದು ತಿಳಿಯುವುದೂ ಕಷ್ಟ. ಆದರೆ, ತುಸುವೇ ಬೇರೆ ಬೇರೆ ಹೆಸರಿನ ರಾಗಗಳು ನಮ್ಮ ಸಂಗೀತದಲ್ಲಿ ಇರುವುದಂತೂ ಉಂಟಲ್ಲ! ಉದಾಹರಣೆಗೆ, ಈಗಾಗಲೇ ನೋಡಿದ 'ತುತ್ತುರು ತೂರೆಂದು' ಎನ್ನುವ ರಚನೆಯಲ್ಲೇ, ಒಂದೇ ಚರಣದಲ್ಲೇ ಪುರಂದರ ದಾಸರು ಗೌಳ ಮತ್ತು ಗೌಳಿ ಎಂಬ ಎರಡು ರಾಗಗಳನ್ನು ಹೇಳಿದ್ದಾರೆ. ಇಲ್ಲಿ ಮೂಲ ಪ್ರತಿಗಳನ್ನು ನೋಡದೇ, ಗೌಳಿಯು ಬೌಳಿಯೇ ಎಂಬ ಅನುಮಾನವನ್ನು ಮಾಡಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ.</p>
+
+    <p>ಇನ್ನು 'ಅಂಗನೆಯರೆಲ್ಲರು ನೆರೆದು' ಎಂದು ಮೊದಲಾಗುವ ರಚನೆಯನ್ನು ನೋಡೋಣ:</p>
+
+    <div class="verse">
+      ಅಂಗನೆಯರೆಲ್ಲ ನೆರೆದು ಚಪ್ಪಾಳಿಕ್ಕುತ ದಿವ್ಯ<br>
+      ಮಂಗಳ ನಾಮವ ಪಾಡಿ ರಂಗನ ಕುಣಿಸುವರು<br><br>
+      ಪಾಡಿ ಮಲ್ಹಾರಿ ಭೈರವಿ ಸಾರಂಗಿ ದೇಶಿ<br>
+      ಗುಂಡಕ್ರಿಯೆ ಗುರ್ಜರಿ ಕಲ್ಯಾಣಿ ರಾಗದಿ<br>
+      ತಂಡ ತಂಡದಲಿ ನೆರೆದು ರಂಗನ ಉಡಿಯ ಘಂಟೆ<br>
+      ಘಣ್ ಘಣ್ ಘಣ್ ಘಣಿರೆಂದು ಹಿಡಿದು ಕುಣಿಸುವರು<br><br>
+      ತಿತ್ತಿರಿ ಮೌಳಿ ತಾಳದಂಡಿಗೆ ಮದ್ದಲೆ<br>
+      ಉತ್ತಮದ ಶಂಖ ಶಬ್ದ ನಾದಗಳಿಂದ<br>
+      ಸುತ್ತ ಮುತ್ತಿ ನಾರಿಯರು ತಥೈ ತಥೈ ಥೈಯೆಂದು<br>
+      ಅರ್ತಿಯಿಂದ ಕುಣಿಸುವರು ಪರವಸ್ತುವ ಹಿಡಿದು
+      <div class="verse-source">— 'ಅಂಗನೆಯರೆಲ್ಲರು ನೆರೆದು', ಪುರಂದರ ದಾಸರು</div>
+    </div>
+
+    <p>ಸಾರಂಗಿ ಎಂಬುದು ಸಾರಂಗ ಎಂಬ ರಾಗವೇ ಎಂದು ಭಾವಿಸಿದರೆ, ಈ ರಚನೆಯಲ್ಲಿ ಬಂದಿರುವ ಮಲ್ಹಾರಿ ಎಂಬ ರಾಗವೊಂದನ್ನು ಬಿಟ್ಟು ಉಳಿದವೆಲ್ಲ ಮೊದಲಿನ ಎರಡು ರಚನೆಗಳಲ್ಲೇ ಕಂಡುಬಂದಿವೆಂದು ತಿಳಿಯುವುದು. ಹಾಗಾಗಿ <strong>೩೧. ಮಲಹರಿ</strong> ಎಂದು ಇಟ್ಟುಕೊಳ್ಳಬಹುದು. ಇದಲ್ಲದೇ ಈ ರಚನೆಯಲ್ಲಿ ಬೇರೆ ಬೇರೆ ಸಂಗೀತ ವಾದ್ಯಗಳ ಹೆಸರುಗಳು ಕೂಡ ಬಂದಿರುವುದನ್ನು ವಿಶೇಷವಾಗಿ ಗಮನಿಸಬಹುದು.</p>
+
+    <p>ಪುರಂದರ ದಾಸರು 'ರಂಗ ಕೊಳಲಲೂದಲಾಗಿ' ಎನ್ನುವ ಇನ್ನೊಂದು ಪದದಲ್ಲಿಯೂ, ಅವನ ಕೊಳಲ ನಾದಕ್ಕೆ ಹೇಗೆ ಪ್ರಾಣಿ ಪಕ್ಷಿಗಳೂ, ನಿರ್ಜೀವ ವಸ್ತುಗಳೂ ಮರುಳಾದವು ಎಂದು ವಿವರಿಸುತ್ತಾರೆ. ಅದರ ಕಡೆಯಲ್ಲಿ, ಅಂಕಿತ ಬರುವ ಚರಣದ ಎರಡು ಸಾಲುಗಳು ಹೀಗಿವೆ:</p>
+
+    <div class="verse">
+      ಧಾಮ ವನಮಾಲೆ ಬಹಿರ್ಭೂಷಿತ ಸ್ವಾಮಿ ಪುರಂದರ ವಿಟ್ಠಲರಾಯನು<br>
+      ರಾಮಕ್ರಿಯ ಮೇಘರಂಜನಿ ಪಾಡೆ ಸಾಮವೇದ ನಮೋ ನಮೋ ಎನ್ನೆ
+      <div class="verse-source">— 'ರಂಗ ಕೊಳಲಲೂದಲಾಗಿ', ಪುರಂದರ ದಾಸರು</div>
+    </div>
+
+    <p>ಇಲ್ಲಿ ಹೇಳಿದ ರಾಮಕ್ರಿಯ ಎನ್ನುವ ರಾಗವನ್ನು ಆಗಲೇ ಪಟ್ಟಿ ಮಾಡಿದ್ದೇವೆ. ಉಳಿದದ್ದೆಂದರೆ <strong>೩೨. ಮೇಘರಂಜನಿ</strong>. ಇದು ಈ ಮೊದಲೇ ಹೇಳಿದ ಮೇಘ ಎಂಬ ಹೆಸರಿನ ರಾಗವೇ ಅಲ್ಲವೇ ಎಂಬುದನ್ನು ಇದಮಿತ್ಥಂ ಎಂದು ಹೇಳಲು ಬರುತ್ತಿಲ್ಲ. ಆದರೂ ಪುರಂದರದಾಸರ ರಚನೆಗಳಿಂದಲೇ ಹೆಕ್ಕಿ ತೆಗೆದ ಈ ಮೂವತ್ತೆರಡು ರಾಗಗಳು ಪೂರ್ವ ಪ್ರಸಿದ್ಧ ಬತ್ತೀಸ ರಾಗಗಳಿಗೂ ಬಹುಪಾಲು ಹೊಂದಿಕೊಳ್ಳುತ್ತಿದ್ದರೂ, ಹಿಂದಿನ ಪಟ್ಟಿಗಳಿಗಿಂತ ಬೇರೆ ಆಗಿರುವುದರಿಂದ ಬಹುಶಃ ಇದು ಹದಿನಾರನೇ ಶತಮಾನದ ಮೊದಲ ಭಾಗದಲ್ಲಿ ಪ್ರಸಿದ್ಧವಾದ ಬತ್ತೀಸ ರಾಗಗಳಾಗಿದ್ದಿರಬಹುದು ಎನ್ನುವುದು ನನ್ನ ಊಹೆ.</p>
+
+    <p>ಕಾಲ-ಕಾಲಕ್ಕೆ ಜನರ ಮೆಚ್ಚಿಗೆ ಪಡೆಯುವ ರಾಗಗಳು ಬದಲಾಗುವುದು ಸಹಜವೂ ಆಗಿದೆ. ಹಾಗಾಗಿ ಬಸವಣ್ಣನವರು ಹೇಳಿದ ಬತ್ತೀಸ ರಾಗಗಳೂ, ನಂತರದ ನಿಜಗುಣಶಿವಯೋಗಿಗಳ — ಸಿಂಗಿರಾಜನ ಕಾಲದ ಬತ್ತೀಸ ರಾಗಗಳೂ, ಪುರಂದರ ದಾಸರ ಕಾಲದ ಬತ್ತೀಸ ರಾಗಗಳೂ ಒಂದೇ ಆಗಿರಬೇಕಿಲ್ಲ.</p>
+
+    <p>ಪುರಂದರ ದಾಸರ ರಚನೆಗಳಲ್ಲಿ ಕಂಡು ಬರುವ ಈ ಸಾಕ್ಷಿಗಳಿಂದ, ಅವರ ಕಾಲದಲ್ಲಿದ್ದ ಬತ್ತೀಸ ರಾಗಗಳು ಈ ಬರಹದಲ್ಲಿರುವ ಪಟ್ಟಿಯಂತೆ ಇದ್ದಿರಬಹುದು ಎಂದು ಊಹಿಸಬಹುದು. ಅದು ಸರಿಯಲ್ಲ ಎಂದು ಹೇಳುವುದಕ್ಕೆ ಸಾಕ್ಷಿ-ಆಧಾರಗಳು ಸಿಗುವವರೆಗೂ, ಪುರಂದರದಾಸರ ರಚನೆಗಳಿಂದ ಹೆಕ್ಕಿದ ಈ ಪಟ್ಟಿಯನ್ನು ಸುಮಾರು ಸಾ.ಶ. ೧೫೫೦ ನೇ ವರ್ಷದ ಸುಮಾರಿನಲ್ಲಿ ಬತ್ತೀಸ ರಾಗಗಳೆಂದು ಕರೆಯಲ್ಪಡುತ್ತಿದ್ದ ಮೂವತ್ತೆರಡು ಪ್ರಸಿದ್ಧ ರಾಗಗಳು ಎಂದು ಲೆಕ್ಕಿಸುವುದರಲ್ಲಿ ತಪ್ಪೇನಿಲ್ಲ ಎಂದು ನನ್ನ ಭಾವನೆ.</p>
+
+    <p>ಈ ಕೆಳಗಿನ ಪಟ್ಟಿಯಲ್ಲಿ ಈ ಬರಹದಲ್ಲಿ ನೋಡಿದ ಎಲ್ಲ ರಾಗಗಳ ಹೆಸರುಗಳನ್ನೂ ಹೋಲಿಸಲಾಗಿದೆ. ಆಸಕ್ತರಿಗೆ ರಾಗಗಳ ಬೆಳವಣಿಗೆಯ ಒಂದು ಕುರುಹಾಗಿ ಕಾಣಬಹುದೆಂದು ಭಾವಿಸಿದ್ದೇನೆ. ಎಲ್ಲಿ ರಾಗದ ಹೆಸರು ಅನುಮಾನಾಸ್ಪದವಾಗಿದೆಯೋ ಅಲ್ಲಿ ಪ್ರಶ್ನಾರ್ಥಕ ಚಿಹ್ನೆಯಿಂದ (?) ಸೂಚಿಸಿದ್ದೇನೆ. ಒಟ್ಟು 'ಬತ್ತೀಸ ರಾಗ'ದ ಯಾದಿಯಲ್ಲಿ ಸುಮಾರು ೪೫ ರಾಗಗಳಿವೆ. ಇಂದಿಗೂ ಇವುಗಳಲ್ಲಿ ಬಹುಪಾಲು ಪ್ರಸಿದ್ಧ ರಾಗಗಳೇ ಆಗಿದ್ದು, ಇದರಿಂದ ನಮ್ಮ ಸಂಗೀತ ಪರಂಪರೆ ಹೇಗೆ 'ಹೊಸ ಚಿಗುರು–ಹಳೆ ಬೇರು ಕೂಡಿದರೆ ಮರ ಸೊಬಗು' ಎಂಬ ಸಾಧುವಾಕ್ಯಕ್ಕೆ ಅನುಗುಣವಾಗಿಯೇ ಇದೆ ಎಂದು ನಾವಿಲ್ಲಿ ಮನಗಾಣಬಹುದು.</p>
+
+    <p style="font-family:'Noto Sans Kannada',sans-serif; font-size:0.88em; color:var(--meta); margin-bottom:0.8em;">ಕೆಳಗಿನ ಪಟ್ಟಿ: ವಿವಿಧ ಕಾಲಘಟ್ಟಗಳಲ್ಲಿ ಬತ್ತೀಸ ರಾಗಗಳೆನಿಸಿದ ರಾಗಗಳ ಹೋಲಿಕೆ</p>
+
+    <table class="raga-table">
+      <thead><tr><th>ಸಂಖ್ಯೆ</th><th>ನಿಜಗುಣ ಶಿವಯೋಗಿ (~೧೪೫೦)</th><th>ಸಿಂಗಿರಾಜ (~೧೫೦೦)</th><th>ಪುರಂದರದಾಸ (~೧೫೫೦)</th></tr></thead>
+      <tbody>
+        <tr><td class="num">೧</td><td>ರಾಮಕ್ರಿ</td><td></td><td>ರಾಮಕ್ರಿಯ</td></tr>
+        <tr><td class="num">೨</td><td>ಭೂಪಾಳಿ</td><td>ಭೂಪಾಳಿ</td><td></td></tr>
+        <tr><td class="num">೩</td><td>ವಸಂತ</td><td>ವಸಂತ</td><td>ವಸಂತ</td></tr>
+        <tr><td class="num">೪</td><td>ನಾಟಿ</td><td>ನಾಟಿ</td><td>ನಾಟಿ</td></tr>
+        <tr><td class="num">೫</td><td>ಸಾಳಗ</td><td></td><td>ಸಾರಂಗ, ಸಾರಂಗಿ</td></tr>
+        <tr><td class="num">೬</td><td>ಭೌಳಿ</td><td>ಬಹುಳಿ</td><td>ಬೌಳಿ</td></tr>
+        <tr><td class="num">೭</td><td>ಕಾಂಬೋದಿ</td><td></td><td>ಕಾಂಭೋಜಿ</td></tr>
+        <tr><td class="num">೮</td><td>ಗುಜ್ಜರಿ</td><td>ಗುರ್ಜರಿ</td><td>ಗುರ್ಜರಿ</td></tr>
+        <tr><td class="num">೯</td><td>ಭೈರವಿ</td><td>ಭೈರವಿ</td><td>ಭೈರವಿ</td></tr>
+        <tr><td class="num">೧೦</td><td>ಗುಂಡಕ್ರಿ</td><td></td><td>ಗುಂಡಕ್ರಿಯ, ಗುಂಡಕ್ರಿಯೆ</td></tr>
+        <tr><td class="num">೧೧</td><td>ಮಲಹರಿ</td><td>ಮಲಹರಿ</td><td>ಮಲ್ಹಾರಿ</td></tr>
+        <tr><td class="num">೧೨</td><td>ಧನ್ಯಾಸಿ</td><td>ಧನ್ಯಾಸಿ</td><td>ಧನ್ಯಾಸಿ</td></tr>
+        <tr><td class="num">೧೩</td><td>ಲಲಿತೆ</td><td>ಲಳಿತೆ</td><td></td></tr>
+        <tr><td class="num">೧೪</td><td>ಫಲಮಂಜರಿ</td><td></td><td>ಫಲಮಂಜರಿ</td></tr>
+        <tr><td class="num">೧೫</td><td>ಬಂಗಾಳ</td><td>ಬಂಗಾಳ</td><td></td></tr>
+        <tr><td class="num">೧೬</td><td>ದೇಶಿ</td><td>ದೇಶಿ</td><td>ದೇಶಿ</td></tr>
+        <tr><td class="num">೧೭</td><td>ಮೇಘರಂಜಿ</td><td>ಮೇಘರಂಜನಿ</td><td>ಮೇಘ, ಮೇಘರಂಜನಿ</td></tr>
+        <tr><td class="num">೧೮</td><td>ಕುರಂಜಿ</td><td></td><td>ಕುರಂಜಿ</td></tr>
+        <tr><td class="num">೧೯</td><td>ಆಹರಿ</td><td></td><td>ಆಹೇರಿ</td></tr>
+        <tr><td class="num">೨೦</td><td>ಶ್ರೀರಾಗ</td><td>ಶ್ರೀ</td><td></td></tr>
+        <tr><td class="num">೨೧</td><td>ದೇವಗಾಂಧಾರಿ</td><td></td><td></td></tr>
+        <tr><td class="num">೨೨</td><td>ಪಹಡಿ</td><td></td><td>ಪಾಡಿ</td></tr>
+        <tr><td class="num">೨೩</td><td>ಗೌಳ</td><td>ಗೌಳ</td><td>ಗೌಳ</td></tr>
+        <tr><td class="num">೨೪</td><td>ಶಂಕರಾಭರಣ</td><td></td><td>ಶಂಕರಾಭರಣ</td></tr>
+        <tr><td class="num">೨೫</td><td class="doubt">ಭುಲ್ಲರಿ ?</td><td></td><td></td></tr>
+        <tr><td class="num">೨೬</td><td>ದೇಶಾಕ್ಷಿ</td><td></td><td>ದೇಶಾಕ್ಷಿ</td></tr>
+        <tr><td class="num">೨೭</td><td>ವರಾಳಿ</td><td></td><td>ವರಾಳಿ</td></tr>
+        <tr><td class="num">೨೮</td><td>ಸಿಂಧುರಾಮಕ್ರಿ</td><td class="doubt">ಸಿಂಧು ?</td><td></td></tr>
+        <tr><td class="num">೨೯</td><td>ದೇವಗುಪ್ತಿ</td><td></td><td></td></tr>
+        <tr><td class="num">೩೦</td><td>ಆರಭಿ</td><td></td><td></td></tr>
+        <tr><td class="num">೩೧</td><td>ನಾರಾಯಣಿ</td><td>ನಾರಣಿ</td><td></td></tr>
+        <tr><td class="num">೩೨</td><td>ಮಂಗಳಕೌಶಿ</td><td>ಮಂಗಳಕೌಸಿ</td><td></td></tr>
+        <tr><td class="num">೩೨/೩೩</td><td></td><td>ಮಾಳವ</td><td>ಮಾಳವ</td></tr>
+        <tr><td class="num">೩೨/೩೪</td><td></td><td>ತೋಡಿ</td><td>ತೋಡಿ</td></tr>
+        <tr><td class="num">೩೨/೩೫</td><td></td><td>ಹಿಂದೋಳ</td><td></td></tr>
+        <tr><td class="num">೩೨/೩೬</td><td></td><td>ಸೌರಾಷ್ಟ್ರ</td><td>ಸೌರಾಷ್ಟ್ರ</td></tr>
+        <tr><td class="num">೩೨/೩೭</td><td></td><td>ಸಾವೇರಿ</td><td>ಸಾವೇರಿ</td></tr>
+        <tr><td class="num">೩೨/೩೮</td><td></td><td class="doubt">ಛಾಯಾಗೌಳ ?</td><td></td></tr>
+        <tr><td class="num">೩೨/೩೯</td><td></td><td class="doubt">ಲಲಿತೆಗೌಳ ?</td><td></td></tr>
+        <tr><td class="num">೩೨/೪೦</td><td></td><td></td><td>ಗೌಳಿ</td></tr>
+        <tr><td class="num">೩೨/೪೧</td><td></td><td></td><td>ಪೂರವಿ</td></tr>
+        <tr><td class="num">೩೨/೪೨</td><td></td><td></td><td class="doubt">ಮಾಳವಿ, ಮಾರವಿ?</td></tr>
+        <tr><td class="num">೩೨/೪೩</td><td></td><td></td><td>ಕಲ್ಯಾಣಿ</td></tr>
+        <tr><td class="num">೩೨/೪೪</td><td></td><td></td><td>ಮುಖಾರಿ</td></tr>
+        <tr><td class="num">೩೨/೪೫</td><td></td><td></td><td class="doubt">ಯರಳಿ?</td></tr>
+      </tbody>
+    </table>
+
+    <div class="source-note">ಮೂಲತಃ Medium ನಲ್ಲಿ ಫೆಬ್ರವರಿ 2022ರಲ್ಲಿ ಪ್ರಕಟಿತ.</div>
+    <div class="article-close">— ಹಂಸಾನಂದಿ</div>
+    <div class="tags">
+      <span class="tag">ಬತ್ತೀಸ ರಾಗ</span><span class="tag">ಕರ್ನಾಟಕ ಸಂಗೀತ</span>
+      <span class="tag">ಪುರಂದರ ದಾಸರು</span><span class="tag">ರಾಗ ಪರಂಪರೆ</span>
+      <span class="tag">ಹರಿದಾಸರು</span><span class="tag">Carnatic Music</span><span class="tag">Raga History</span>
+    </div>
+  </div><!-- #content-kn -->
+
+  <!-- ══ ENGLISH CONTENT ══ -->
+  <div id="content-en" class="article-body">
+
+    <p>The classification of rāgas in Indian music takes many forms, and one of the most enduring is the grouping of thirty-two rāgas known as the <em>Battīsa</em> — the word is Hindi for "thirty-two," and it has passed unchanged into Kannada usage. References to these thirty-two rāgas appear not only in musicological treatises but across a wide range of literary works.</p>
+
+    <p>As a first example, consider the celebrated <em>vachana</em> of Basavanna (CE 1134–1196), the great saint-philosopher of the Vīrashaiva tradition:</p>
+
+    <div class="verse">
+      Make my body the lute's neck, O Lord,<br>
+      Make my head the gourd,<br>
+      Make my nerves the strings,<br>
+      Make my fingers the plectrum —<br>
+      And sing the thirty-two rāgas,<br>
+      Press it to your chest and play, O Lord of Kūḍalasaṅgama!
+      <div class="verse-source">— Basavanna (CE 1134–1196); translation Hamsanandi</div>
+    </div>
+
+    <p>Although Basavanna invokes the various parts of the vīṇā — the neck (daṇḍige), the gourd (sore), the strings (tantige), and the playing stick (kaḍḍi) — and speaks of the thirty-two rāgas, he names none of them. To my knowledge, specific rāga names do not appear in the other vacanas either. It is likely that the Shiva-sharanas sometimes sang their vacanas, as certain vacanas themselves suggest (for example, "I sing as it pleases me"). However, the spoken-prose mode seems to have been more common — the word <em>vachana</em> itself means "speech" or "prose." The fact that Sakalēsha Mādarasa, one of the vacana composers, was a skilled musician and vīṇā player is, however, attested.</p>
+
+    <p>About two and a half centuries after Basavanna, around CE 1450, the encyclopaedic work <em>Vivēka Chintāmaṇi</em> by Śrī Nijaguṇa Shivayōgi of the Koḷḷēgāla region preserves the thirty-two rāgas under the heading "mūvatteraḍu rāgagaḷu" (thirty-two rāgas). In the chapter on music and dance, after listing one hundred and fifty-seven rāgas, Nijaguṇa Shivayōgi writes:</p>
+
+    <div class="quote-block">
+      <span class="quote-label">Vivēka Chintāmaṇi — Nijaguṇa Shivayōgi (~CE 1450)</span>
+      "Of all these rāgas, the thirty-two that are celebrated are: Rāmakri, Bhūpāḷi, Vasanta, Nāṭi, Sāḷaga, Bhauḷi, Kāmbōdi, Gujjari, Bhairavi, Guṇḍakri, Malahari, Dhanyāsi, Lalite, Phalamaṃjari, Baṃgāḷa, Dēshi, Mēgharaṃji, Kuraṃji, Āhari, Shrīrāga, Dēvagāndhāri, Pahaḍi, Gauḷa, Shankarābharaṇa, Bhullari, Dēshākshi, Varāḷi, Siṃdhurāmakri, Dēvagupti, Ārabhi, Nārāyaṇi, Maṃgaḷakauśi."
+    </div>
+
+    <p>Even today, many of the rāgas in this list are well known. Since rāgas rise and fall in popularity across generations, one or two in this list may not be immediately identifiable without consulting other musicological sources.</p>
+
+    <p>About five or six decades after Nijaguṇa Shivayōgi, the poet Singarāja (Shṛṃgirāja, ~CE 1500) in the 38th canto of his <em>Singarājapurāṇa</em>, while describing the scene of a theatre hall, writes the following two <em>shaṭpadi</em> (six-line) verses:</p>
+
+    <div class="verse">
+      Knowing well the birthplace of the pure nāda,<br>
+      Showing the seven svaras in their high, low and middle registers,<br>
+      The twenty-two śrutis, the pūrṇa, deśī and mārga forms,<br>
+      Knowing the bound and free structures,<br>
+      The pure, mixed and compound varieties —<br>
+      Distinguished women sang with all nine rasas.
+      <div class="verse-source">(Canto 38, verse 10 — Singarājapurāṇa)</div>
+    </div>
+
+    <div class="verse">
+      Māḷava, Shrī, Tōḍi, Dhanyāsi, Nāṭi,<br>
+      Bāṃgāḷa, Bhairavi, Sindhu, Dēshi, Hindōḷa,<br>
+      Nāraṇi, Gauḷa, Saurāshṭra, Gurjari, Vasanta, Sāvēri, Chāyā — — —<br>
+      Gauḷa, Malahari, Laḷite, Bahuḷi, Gurjari, Lalite,<br>
+      Gauḷa, Maṃgaḷakausi, Mēgharaṃjani and<br>
+      Bhūpāḷi — with these thirty-two rāgas and more the women sang.
+      <div class="verse-source">(Canto 38, verse 11 — Singarājapurāṇa)</div>
+    </div>
+
+    <p>The second verse explicitly names these as the battīsa rāgas and lists several. However, a metrical defect in the third line suggests that one or two names may have been lost. Questions also arise: are Māḷava and Shrī two separate rāgas or is Māḷavashri one rāga? Are Dēshi and Hindōḷa two rāgas or is Dēshi-Hindōḷa one? Are Lalite and Laḷite different rāgas? Did rāgas called Lalite and Lalitegauḷa exist? Despite these open questions, the continuity of the battīsa rāga tradition is clearly established.</p>
+
+    <p>Now let us turn to the Haridāsas. Their contribution to Karnataka Sangeeta is well known. Shrīpādarāja (~CE 1400), a contemporary of Nijaguṇa Shivayōgi and Singarāja, names the rāgas Kalyāṇi, Ānanda Bhairavi, and Dēvagāndhāra in his composition <em>Lāli Govinda Lāli</em>. Moving to the late fifteenth century, Purandaradāsa, born in CE 1484, arrived at Hampi as a Haridāsa after the age of thirty-five or forty, became a disciple of Vyāsarāya, and went on to become the most celebrated figure in both the Haridāsa tradition and Karnataka Sangeeta — a fact known the world over.</p>
+
+    <p>It is said that Purandaradāsa composed four hundred and seventy-five thousand compositions. Of these, only one or two thousand survive today. Though we call him "the patriarch of Karnataka Sangeeta," it is a matter of deep regret that the original tunes to which he sang most of his compositions have not come down to us. Even so, the preservation of the texts of a thousand or two compositions is a cause for gratitude. From the internal evidence in his songs, we can learn a great deal about the social, religious, and cultural life of his time. Unlike Singarāja or Basavanna, who were not themselves musicians, Purandaradāsa was a practising musician — and so his compositions are rich in musical references.</p>
+
+    <p>The rāgas, tāḷas, instruments, and modes of singing of Purandaradāsa's era can all be recovered from internal evidence in his compositions. Lines such as "A song that has tāḷa and mēḷa but no devotion — Hari will not accept it," "tāḷa is needed, a fitting mēḷa is needed," and "yati and prāsa must be present, the gait must be steady" appear across his works. Among the compositions that contain such musical observations is one that begins "tuturu tūreṃdu battīsa rāgagaḷanu" — let us look at it now. Here is its pallavi and first charaṇa:</p>
+
+    <div class="verse">
+      With the sound tuturu-tūru, playing the thirty-two rāgas,<br>
+      The father of Manmatha played his flute. ‖Pallavi‖<br><br>
+      Gauḷa, Nāṭi, Āhēri, Gurjari, Māḷavi, Sāraṃgarāga —<br>
+      hearing this, the women came from afar;<br>
+      Phalamaṃjari, Gauḷi, Dēshākshi rāgas —<br>
+      the Lotus-naveled one played them on his flute. ‖
+      <div class="verse-source">— Purandaradāsa (CE 1484–1564)</div>
+    </div>
+
+    <p>The staccato-like technique of flute playing — producing the rapid "tur-tur" sound — is something we hear from skilled flautists today. In Western music this technique is called staccato. Krishna's mastery of the flute is a belief handed down through tradition — none of us has seen him play. That a composer of the fifteenth–sixteenth century, writing about Krishna, should describe such a playing technique in detail tells us that flautists have been using it for at least five hundred years. In other words, Purandaradāsa was projecting onto Krishna's flute a playing style he himself observed in his own time. This is precisely why we call Dāsa literature "a mirror of its age."</p>
+
+    <p>In this composition, Purandaradāsa invokes the battīsa rāgas. Although he does not name all thirty-two, the first charaṇa alone gives us nine:</p>
+
+    <div class="raga-list">
+      <strong>"Tuturu tūreṃdu"</strong> — rāgas in the first charaṇa:<br>
+      1. Gauḷa &nbsp;&nbsp; 2. Nāṭi &nbsp;&nbsp; 3. Āhēri &nbsp;&nbsp; 4. Gurjari &nbsp;&nbsp; 5. Māḷavi &nbsp;&nbsp;
+      6. Sāraṃga &nbsp;&nbsp; 7. Phalamaṃjari &nbsp;&nbsp; 8. Gauḷi &nbsp;&nbsp; 9. Dēshākshi
+    </div>
+
+    <p>We are fortunate that Purandaradāsa names rāgas in several other compositions as well. In a charaṇa of "Naḷinajāṃḍa taleyya tūgi" he writes:</p>
+
+    <div class="verse">
+      Māravi, Dēsi, Gurjari, Bhairavi, Gauri, Nāṭi, Sāvēri, Āhēri,<br>
+      Pūravi, Kāmbōdi, Pāḍi, Dēshākshi, Shankarābharaṇa, Māḷava,<br>
+      Varāḷi, Kalyāṇi, Tōḍi, Mukhāri, Yaraḷi, Vasanta, Bauḷi, Dhanyāsi,<br>
+      Saurāshṭra, Guṃḍakriya, Rāmakriya, Mēgha, Kuraṃji — hear them sung.
+      <div class="verse-source">— "Naḷinajāṃḍa taleyya tūgi", Purandaradāsa</div>
+    </div>
+
+    <div class="raga-list">
+      <strong>"Naḷinajāṃḍa taleyya tūgi"</strong> — new rāgas (excluding those already listed):<br>
+      10. Māravi &nbsp;&nbsp; 11. Dēshi &nbsp;&nbsp; 12. Bhairavi &nbsp;&nbsp; 13. Sāvēri &nbsp;&nbsp; 14. Pūravi<br>
+      15. Kāmbhōji &nbsp;&nbsp; 16. Pāḍi &nbsp;&nbsp; 17. Shankarābharaṇa &nbsp;&nbsp; 18. Māḷava &nbsp;&nbsp; 19. Varāḷi<br>
+      20. Kalyāṇi &nbsp;&nbsp; 21. Tōḍi &nbsp;&nbsp; 22. Mukhāri &nbsp;&nbsp; 23. Vasanta &nbsp;&nbsp; 24. Bauḷi<br>
+      25. Dhanyāsi &nbsp;&nbsp; 26. Saurāshṭra &nbsp;&nbsp; 27. Guṃḍakriya &nbsp;&nbsp; 28. Rāmakriya &nbsp;&nbsp; 29. Mēgha &nbsp;&nbsp; 30. Kuraṃji
+    </div>
+
+    <p>Whether "Yaraḷi" in the above charaṇa is a rāga name or a scribal corruption, and if it is a rāga, what it might be called today, cannot easily be determined. Whether Māḷava and Māḷavi are the same rāga or two different ones is also unclear. Our tradition does have rāgas with subtly different names — witness Gauḷa and Gauḷi appearing in the very same charaṇa of "Tuturu tūreṃdu." Without access to original manuscripts, one cannot even conclusively rule out the possibility that Gauḷi is in fact Bauḷi.</p>
+
+    <p>Now let us look at "Aṃganeiyarellaru neredu":</p>
+
+    <div class="verse">
+      All the women gathered, clapping their hands,<br>
+      Singing auspicious names, they made Raṃga dance.<br><br>
+      In the rāgas Pāḍi, Malhāri, Bhairavi, Sāraṃgi, Dēshi,<br>
+      Guṃḍakriye, Gurjari, Kalyāṇi —<br>
+      gathering in groups, holding the bell at Raṃga's waist,<br>
+      ghaṇ-ghaṇ-ghaṇ-ghaṇir — they made him dance.<br><br>
+      With tittiri, mauḷi, tāḷadaṃḍige, maddaḷe,<br>
+      noble conch and the sound of nāda —<br>
+      the women surrounding him, crying "tathai-tathai-thai",<br>
+      with devotion they made the Supreme One dance.
+      <div class="verse-source">— "Aṃganeiyarellaru neredu", Purandaradāsa</div>
+    </div>
+
+    <p>Assuming Sāraṃgi here is the rāga Sāraṃga, then apart from Malhāri, all the rāgas in this composition have already appeared in the previous two. So we add <strong>31. Malahari</strong>. This composition is also notable for the names of various musical instruments that appear in it.</p>
+
+    <p>In yet another composition, "Raṃga koḷalalūdalāgi," Purandaradāsa describes how animals, birds, and inanimate objects became entranced by Krishna's flute music. In the final charaṇa, just before the signature, appear these two lines:</p>
+
+    <div class="verse">
+      The Lord adorned with the forest garland — Purandara Viṭṭhalarāya —<br>
+      As he sang Rāmakriya and Mēgharaṃjani, the Sāmaveda cried "namo namo."
+      <div class="verse-source">— "Raṃga koḷalalūdalāgi", Purandaradāsa</div>
+    </div>
+
+    <p>The rāga Rāmakriya is already on our list. That leaves <strong>32. Mēgharaṃjani</strong>. Whether this is the same as the Mēgha mentioned earlier cannot be stated with certainty. Even so, these thirty-two rāgas gleaned from Purandaradāsa's own compositions largely correspond to the historically known battīsa rāgas — yet differ enough from earlier lists to suggest that this was the set of thirty-two celebrated rāgas in the early sixteenth century. That, at any rate, is my conjecture.</p>
+
+    <p>It is natural that the rāgas most favoured by audiences should change from generation to generation. The battīsa rāgas of Basavanna's era, those of the Nijaguṇa Shivayōgi–Singarāja era, and those of Purandaradāsa's era need not be identical.</p>
+
+    <p>From the evidence in Purandaradāsa's compositions, we may tentatively reconstruct the battīsa rāgas of his time as the list presented in this essay. Until evidence to the contrary emerges, there seems no harm in treating this list — derived directly from his compositions — as the thirty-two rāgas celebrated around CE 1550.</p>
+
+    <p>The table below compares all the rāga names encountered across the three periods discussed. Names that are uncertain are marked with (?). The full "battīsa rāga" roster across all sources amounts to approximately forty-five rāgas — the majority of them still well known today. This shows how our musical tradition has lived up to the Kannada proverb: <em>"hosha chiguru — haḷe bēru kūḍidare mara sobagu"</em> — "new shoots and old roots together make the tree beautiful."</p>
+
+    <p style="font-size:0.88em; color:var(--meta); margin-bottom:0.8em; font-family:'EB Garamond',serif; font-style:italic;">Table: Comparison of rāgas listed as the Battīsa across three historical periods</p>
+
+    <table class="raga-table">
+      <thead><tr><th>#</th><th>Nijaguṇa Shivayōgi (~1450)</th><th>Singarāja (~1500)</th><th>Purandaradāsa (~1550)</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Rāmakri</td><td></td><td>Rāmakriya</td></tr>
+        <tr><td class="num">2</td><td>Bhūpāḷi</td><td>Bhūpāḷi</td><td></td></tr>
+        <tr><td class="num">3</td><td>Vasanta</td><td>Vasanta</td><td>Vasanta</td></tr>
+        <tr><td class="num">4</td><td>Nāṭi</td><td>Nāṭi</td><td>Nāṭi</td></tr>
+        <tr><td class="num">5</td><td>Sāḷaga</td><td></td><td>Sāraṃga, Sāraṃgi</td></tr>
+        <tr><td class="num">6</td><td>Bhauḷi</td><td>Bahuḷi</td><td>Bauḷi</td></tr>
+        <tr><td class="num">7</td><td>Kāmbōdi</td><td></td><td>Kāmbhōji</td></tr>
+        <tr><td class="num">8</td><td>Gujjari</td><td>Gurjari</td><td>Gurjari</td></tr>
+        <tr><td class="num">9</td><td>Bhairavi</td><td>Bhairavi</td><td>Bhairavi</td></tr>
+        <tr><td class="num">10</td><td>Guṇḍakri</td><td></td><td>Guṃḍakriya, Guṃḍakriye</td></tr>
+        <tr><td class="num">11</td><td>Malahari</td><td>Malahari</td><td>Malhāri</td></tr>
+        <tr><td class="num">12</td><td>Dhanyāsi</td><td>Dhanyāsi</td><td>Dhanyāsi</td></tr>
+        <tr><td class="num">13</td><td>Lalite</td><td>Laḷite</td><td></td></tr>
+        <tr><td class="num">14</td><td>Phalamaṃjari</td><td></td><td>Phalamaṃjari</td></tr>
+        <tr><td class="num">15</td><td>Baṃgāḷa</td><td>Baṃgāḷa</td><td></td></tr>
+        <tr><td class="num">16</td><td>Dēshi</td><td>Dēshi</td><td>Dēshi</td></tr>
+        <tr><td class="num">17</td><td>Mēgharaṃji</td><td>Mēgharaṃjani</td><td>Mēgha, Mēgharaṃjani</td></tr>
+        <tr><td class="num">18</td><td>Kuraṃji</td><td></td><td>Kuraṃji</td></tr>
+        <tr><td class="num">19</td><td>Āhari</td><td></td><td>Āhēri</td></tr>
+        <tr><td class="num">20</td><td>Shrīrāga</td><td>Shrī</td><td></td></tr>
+        <tr><td class="num">21</td><td>Dēvagāndhāri</td><td></td><td></td></tr>
+        <tr><td class="num">22</td><td>Pahaḍi</td><td></td><td>Pāḍi</td></tr>
+        <tr><td class="num">23</td><td>Gauḷa</td><td>Gauḷa</td><td>Gauḷa</td></tr>
+        <tr><td class="num">24</td><td>Shankarābharaṇa</td><td></td><td>Shankarābharaṇa</td></tr>
+        <tr><td class="num">25</td><td class="doubt">Bhullari ?</td><td></td><td></td></tr>
+        <tr><td class="num">26</td><td>Dēshākshi</td><td></td><td>Dēshākshi</td></tr>
+        <tr><td class="num">27</td><td>Varāḷi</td><td></td><td>Varāḷi</td></tr>
+        <tr><td class="num">28</td><td>Siṃdhurāmakri</td><td class="doubt">Sindhu ?</td><td></td></tr>
+        <tr><td class="num">29</td><td>Dēvagupti</td><td></td><td></td></tr>
+        <tr><td class="num">30</td><td>Ārabhi</td><td></td><td></td></tr>
+        <tr><td class="num">31</td><td>Nārāyaṇi</td><td>Nāraṇi</td><td></td></tr>
+        <tr><td class="num">32</td><td>Maṃgaḷakauśi</td><td>Maṃgaḷakausi</td><td></td></tr>
+        <tr><td class="num">32/33</td><td></td><td>Māḷava</td><td>Māḷava</td></tr>
+        <tr><td class="num">32/34</td><td></td><td>Tōḍi</td><td>Tōḍi</td></tr>
+        <tr><td class="num">32/35</td><td></td><td>Hindōḷa</td><td></td></tr>
+        <tr><td class="num">32/36</td><td></td><td>Saurāshṭra</td><td>Saurāshṭra</td></tr>
+        <tr><td class="num">32/37</td><td></td><td>Sāvēri</td><td>Sāvēri</td></tr>
+        <tr><td class="num">32/38</td><td></td><td class="doubt">Chāyāgauḷa ?</td><td></td></tr>
+        <tr><td class="num">32/39</td><td></td><td class="doubt">Lalitegauḷa ?</td><td></td></tr>
+        <tr><td class="num">32/40</td><td></td><td></td><td>Gauḷi</td></tr>
+        <tr><td class="num">32/41</td><td></td><td></td><td>Pūravi</td></tr>
+        <tr><td class="num">32/42</td><td></td><td></td><td class="doubt">Māḷavi, Māravi ?</td></tr>
+        <tr><td class="num">32/43</td><td></td><td></td><td>Kalyāṇi</td></tr>
+        <tr><td class="num">32/44</td><td></td><td></td><td>Mukhāri</td></tr>
+        <tr><td class="num">32/45</td><td></td><td></td><td class="doubt">Yaraḷi ?</td></tr>
+      </tbody>
+    </table>
+
+    <div class="source-note" style="font-family:'EB Garamond',serif;">Originally published on Medium, February 2022.</div>
+    <div class="article-close" style="font-family:'EB Garamond',serif;">— Hamsanandi</div>
+    <div class="tags">
+      <span class="tag">Battīsa Rāgas</span><span class="tag">Carnatic Music</span>
+      <span class="tag">Purandaradāsa</span><span class="tag">Raga History</span>
+      <span class="tag">Haridāsas</span><span class="tag">Karnataka Sangeeta</span>
+    </div>
+
+  </div><!-- #content-en -->
+
+  <a class="back-link" href="https://hamsanandi.github.io/articles/" id="backLink">← Back to Articles</a>
+
+</div><!-- .article-wrap -->
+
+<hr class="section-divider">
+<footer id="footerEl">Hosted on GitHub Pages &nbsp;·&nbsp; <a href="https://hamsanandi.github.io/" style="color:var(--gold-light);">hamsanandi</a></footer>
+
+<script>
+const STR = {
+  kn: {
+    navArticles: "ಲೇಖನಗಳು",
+    category: "ಲೇಖನ · ಕರ್ನಾಟಕ ಸಂಗೀತ · ರಾಗ ಪರಂಪರೆ",
+    date: "ಫೆಬ್ರವರಿ 1, 2022",
+    source: "ಮೂಲತಃ Medium ನಲ್ಲಿ ಪ್ರಕಟಿತ",
+    backLink: "← ಲೇಖನಗಳಿಗೆ ಹಿಂದಿರುಗಿ",
+    footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ"
+  },
+  en: {
+    navArticles: "Articles",
+    category: "Essay · Karnataka Sangeeta · Raga History",
+    date: "February 1, 2022",
+    source: "Originally published on Medium",
+    backLink: "← Back to Articles",
+    footer: "Hosted on GitHub Pages"
+  }
+};
+
+function switchLang(l) {
+  const s = STR[l];
+  document.getElementById('btnEN').classList.toggle('active', l === 'en');
+  document.getElementById('btnKN').classList.toggle('active', l === 'kn');
+  document.getElementById('content-kn').style.display = l === 'kn' ? 'block' : 'none';
+  document.getElementById('content-en').style.display = l === 'en' ? 'block' : 'none';
+  document.getElementById('titleKN').style.display = l === 'kn' ? 'block' : 'none';
+  document.getElementById('titleEN').style.display = l === 'en' ? 'block' : 'none';
+  document.getElementById('articleCategory').textContent = s.category;
+  document.getElementById('metaDate').textContent = s.date;
+  document.getElementById('metaSource').textContent = s.source;
+  document.getElementById('navArticles').textContent = s.navArticles;
+  document.getElementById('backLink').textContent = s.backLink;
+  document.getElementById('footerEl').innerHTML = s.footer + ' &nbsp;·&nbsp; <a href="https://hamsanandi.github.io/" style="color:var(--gold-light);">hamsanandi</a>';
+  document.documentElement.lang = l;
+}
+
+document.getElementById('langToggle').addEventListener('click', e => {
+  const btn = e.target.closest('.lang-btn');
+  if (!btn) return;
+  switchLang(btn.id === 'btnEN' ? 'en' : 'kn');
+});
+
+const hash = window.location.hash.replace('#', '');
+switchLang(hash === 'en' ? 'en' : 'kn');
+</script>
+
+</body>
+</html>
