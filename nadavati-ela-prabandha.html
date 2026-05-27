@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reconstructing the Nādāvatī Elā of Mānasollāsa</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88;
+  --text: #1a1208; --meta: #8a7055;
+  --tara: #cc0000; --mandra: #007700; --akara: #6600aa;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'EB Garamond', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px 60px; font-size: 17px; line-height: 1.75;
+}
+
+/* ── Header ── */
+.article-header {
+  text-align: center; padding: 36px 0 28px;
+  border-bottom: 1px solid var(--border); margin-bottom: 32px; position: relative;
+}
+.article-header::after {
+  content: ''; display: block; height: 2px; width: 100px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+}
+.article-title {
+  font-family: 'EB Garamond', serif; font-size: 1.65rem; font-weight: 600;
+  color: var(--gold-light); line-height: 1.35; margin-bottom: 14px;
+}
+.article-subtitle { font-size: 1rem; color: var(--meta); font-style: italic; margin-bottom: 16px; }
+.article-author {
+  font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-dim);
+}
+.article-nav {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  margin-top: 18px;
+}
+.article-nav a {
+  font-family: 'EB Garamond', serif; font-size: 0.85rem;
+  color: var(--meta); text-decoration: none; padding: 3px 10px;
+  border: 1px solid var(--border); border-radius: 3px; transition: all 0.15s;
+}
+.article-nav a:hover { background: var(--header-bg); color: var(--gold); }
+
+/* ── Abstract ── */
+.abstract {
+  background: var(--section-bg); border-left: 4px solid var(--gold);
+  padding: 18px 22px; border-radius: 0 6px 6px 0; margin-bottom: 36px;
+  font-size: 0.96rem; line-height: 1.8;
+}
+.abstract-label {
+  font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold-dim); margin-bottom: 10px;
+}
+
+/* ── Sections ── */
+.section { margin-bottom: 36px; }
+h2 {
+  font-family: 'EB Garamond', serif; font-size: 1.25rem; font-weight: 600;
+  color: var(--gold-light); margin: 40px 0 14px;
+  padding-bottom: 6px; border-bottom: 1px solid var(--border);
+}
+h3 {
+  font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 600;
+  color: var(--gold-dim); margin: 28px 0 10px; font-style: italic;
+}
+p { margin-bottom: 14px; }
+p + p { text-indent: 0; }
+
+/* ── Devanagari block ── */
+.devanagari-block {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem; line-height: 2.0;
+  background: var(--section-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 18px 22px; margin: 22px 0; border-radius: 0 6px 6px 0;
+}
+.devanagari-block .label {
+  font-family: 'EB Garamond', serif; font-size: 0.8rem;
+  font-style: italic; color: var(--gold-dim); margin-bottom: 8px;
+  display: block; font-weight: 600;
+}
+.devanagari-block p {
+  margin-bottom: 8px; font-size: 1.05rem;
+}
+
+/* ── Kannada sahitya block ── */
+.sahitya-block {
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.05rem; line-height: 2.1;
+  background: var(--section-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 18px 22px; margin: 22px 0; border-radius: 0 6px 6px 0;
+}
+.sahitya-block .pada-label {
+  font-family: 'EB Garamond', serif; font-size: 0.82rem;
+  font-style: italic; font-weight: 600; color: var(--gold-dim);
+  margin: 14px 0 4px; display: block;
+}
+.sahitya-block .pada-label:first-child { margin-top: 0; }
+.sahitya-block .dhruva-label {
+  font-family: 'EB Garamond', serif; font-size: 0.82rem;
+  font-style: italic; font-weight: 600; color: var(--gold);
+  text-align: right; display: block; margin-top: -4px; margin-bottom: 6px;
+}
+.roman-block {
+  font-family: 'EB Garamond', serif; font-size: 0.95rem; font-style: italic;
+  line-height: 1.9; background: var(--header-bg);
+  padding: 14px 20px; margin: 4px 0 18px; border-radius: 4px;
+}
+.roman-block .pada-label {
+  font-style: normal; font-weight: 600; color: var(--gold-dim);
+  font-size: 0.82rem; display: block; margin-bottom: 4px;
+}
+
+/* ── Notation tables ── */
+.notation-wrap {
+  overflow-x: auto; margin: 22px 0;
+}
+.notation-label {
+  font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--meta); margin-bottom: 8px;
+}
+.notation-table {
+  border-collapse: collapse; font-size: 0.88rem;
+  font-family: 'Noto Sans Kannada', sans-serif;
+  background: var(--section-bg); border: 1px solid var(--border);
+  min-width: 100%;
+}
+.notation-table th {
+  background: var(--header-bg); padding: 5px 10px;
+  font-family: 'EB Garamond', serif; font-size: 0.78rem; font-weight: 600;
+  color: var(--meta); border: 1px solid var(--border);
+  white-space: nowrap; text-align: center;
+}
+.notation-table td {
+  padding: 4px 8px; border: 1px solid var(--border);
+  text-align: center; vertical-align: middle; white-space: nowrap;
+  line-height: 1.5;
+}
+.notation-table tr.swara-row td { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem; }
+.notation-table tr.sahitya-row td {
+  font-family: 'Noto Serif Kannada', serif; font-size: 0.82rem; color: var(--meta);
+}
+.notation-table tr.roman-row td {
+  font-family: 'EB Garamond', serif; font-style: italic; font-size: 0.85rem; color: var(--meta);
+}
+.notation-table tr.spacer-row td { height: 8px; background: var(--header-bg); border: none; }
+.t { color: var(--tara); font-weight: 600; }
+.m { color: var(--mandra); font-style: italic; }
+.g { color: var(--akara); font-style: italic; } /* gamaka / ākāra */
+
+/* ── Gaṇa analysis table ── */
+.gana-table-wrap { overflow-x: auto; margin: 22px 0; }
+.gana-table {
+  border-collapse: collapse; width: 100%; font-size: 0.88rem;
+}
+.gana-table th {
+  background: var(--header-bg); padding: 7px 12px;
+  border: 1px solid var(--border); font-family: 'EB Garamond', serif;
+  font-weight: 600; font-size: 0.85rem; color: var(--gold-light);
+  text-align: center;
+}
+.gana-table td {
+  padding: 6px 10px; border: 1px solid var(--border);
+  font-family: 'Noto Serif Devanagari', serif; font-size: 0.95rem;
+  text-align: center; vertical-align: middle;
+}
+.gana-table td.row-label {
+  font-family: 'EB Garamond', serif; font-size: 0.88rem;
+  font-style: italic; color: var(--meta); text-align: left;
+}
+.gana-table tr:nth-child(odd) td { background: var(--section-bg); }
+
+/* ── Footnotes ── */
+.footnotes {
+  margin-top: 48px; padding-top: 20px;
+  border-top: 1px solid var(--border); font-size: 0.88rem;
+  color: var(--meta); line-height: 1.7;
+}
+.footnotes-label {
+  font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px;
+  display: block;
+}
+.footnote { margin-bottom: 8px; }
+sup { font-size: 0.72em; vertical-align: super; color: var(--gold-dim); }
+.fn-ref { color: var(--gold-dim); text-decoration: none; font-size: 0.75em; vertical-align: super; }
+
+/* ── Bibliography ── */
+.bibliography {
+  margin-top: 36px; padding: 18px 22px;
+  background: var(--section-bg); border: 1px solid var(--border); border-radius: 6px;
+  font-size: 0.9rem; line-height: 1.8;
+}
+.bibliography-label {
+  font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; display: block;
+}
+.bib-item { margin-bottom: 12px; padding-left: 20px; text-indent: -20px; }
+.bib-item.kn { font-family: 'Noto Serif Kannada', serif; font-size: 0.88rem; }
+
+/* ── Inline styles ── */
+em, i { font-style: italic; }
+strong { font-weight: 600; }
+.kn { font-family: 'Noto Serif Kannada', serif; }
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 40px 0;
+}
+.youtube-link {
+  display: inline-block; margin: 16px 0;
+  background: var(--gold); color: #fff; text-decoration: none;
+  padding: 8px 18px; border-radius: 4px; font-size: 0.9rem;
+  font-family: 'EB Garamond', serif; transition: background 0.15s;
+}
+.youtube-link:hover { background: var(--gold-light); }
+.note-box {
+  background: var(--section-bg); border: 1px solid var(--border-light);
+  border-left: 3px solid var(--gold-dim); border-radius: 0 4px 4px 0;
+  padding: 12px 16px; margin: 16px 0; font-size: 0.9rem;
+  font-style: italic; color: var(--meta);
+}
+footer {
+  text-align: center; color: var(--meta); margin-top: 40px;
+  font-size: 0.8rem; padding-top: 16px; border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="article-header">
+  <div class="article-title">
+    Reconstructing the <em>Nādāvatī Elā</em> of <em>Mānasollāsa</em>:<br>
+    A Study of Early Compositional Thought in South Indian Art Music
+  </div>
+  <div class="article-author">Ramaprasad K V (Kauśikēśa)</div>
+  <nav class="article-nav">
+    <a href="#abstract">Abstract</a>
+    <a href="#intro">1. Introduction</a>
+    <a href="#manasollasa">2. Mānasollāsa</a>
+    <a href="#ela">3. Elā Prabandha</a>
+    <a href="#scholarship">4. Previous Scholarship</a>
+    <a href="#description">5. Description</a>
+    <a href="#analysis">6. Analysis</a>
+    <a href="#reconstruction">7. Reconstruction</a>
+    <a href="#conclusion">8. Conclusion</a>
+  </nav>
+</div>
+
+<!-- ── ABSTRACT ── -->
+<div class="abstract" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p>The extant compositional repertoire of Karnāṭaka Saṅgīta is dominated by forms that have become popular in the last few centuries, while many compositions from earlier times are known primarily through textual and musicological sources. This paper undertakes a theoretical and musical reconstruction of one type of <em>Elā prabandha</em>, a historical compositional form described in <em>Mānasollāsa</em>, a twelfth-century Sanskrit treatise (also known as <em>Abhilāṣitārtha Cintāmaṇi</em>) written by the Cālukya ruler Someśvara.</p>
+</div>
+
+<!-- ── 1. INTRODUCTION ── -->
+<div class="section" id="intro">
+  <h2>1. Introduction</h2>
+  <p>The textual tradition of Indian musicological writing begins with the <em>Nātyaśastra</em>. Within this historical continuum, <em>Mānasollāsa</em> composed in the late twelfth century CE occupies a particularly significant position. It offers a valuable window into earlier conceptions of musical form and classification.</p>
+  <p>The present study focuses on one of the compositional types, the <em>Nādāvatī Elā</em> described in the <em>Mānasollāsa</em>, examining its formal organization and proposing a reconstruction in a form that could be performed today.</p>
+</div>
+
+<!-- ── 2. MĀNASOLLĀSA ── -->
+<div class="section" id="manasollasa">
+  <h2>2. <em>Mānasollāsa</em> and Early Compositional Classification</h2>
+  <p>The <em>Gīta-vinoda</em> section of the <em>Mānasollāsa</em> provides a detailed account of the music practices of Someśvara's times. Here the author includes discussions of <em>rāga</em>, prosody (<em>chandas</em>), and a wide range of compositional forms.</p>
+  <p>Someśvara describes poetic meters used in several literary languages and outlines multiple categories of musical compositions collectively referred to as <em>prabandhas</em>. These <em>prabandhas</em> are metrically and structurally organized into different types. A notable feature of <em>Mānasollāsa</em> is the inclusion of example lyrics for many of the <em>prabandha</em> he describes. The diversity of compositions attests both to the richness of compositional forms and to the importance accorded to systematic classification.</p>
+</div>
+
+<!-- ── 3. ELĀ PRABANDHA ── -->
+<div class="section" id="ela">
+  <h2>3. The <em>Elā Prabandha</em></h2>
+  <p>Among the many classes of <em>prabandhas</em> described in <em>Mānasollāsa</em>, the <em>Elā prabandha</em> is of particular interest. Some of the <em>Elā prabandhas</em>, as defined in this text, exhibit structural and aesthetic features that suggest a closer relationship to later compositional forms in Karnāṭaka Saṅgīta such as the <em>pada</em>, <em>dāru</em>, <em>tillānā</em>, and <em>kṛti</em>.</p>
+  <p><em>Mānasollāsa</em> classifies <em>Elā prabandhas</em> on structural grounds into three categories: <em>Gaṇaila</em>, <em>Mātraila</em>, and <em>Varṇaila</em>. In the <em>Gaṇaila</em> type of <em>Elā prabandhas</em>, the text is constructed according to specific <em>gaṇa</em><a href="#fn1" class="fn-ref">¹</a> patterns within the metrical scheme. Four types of <em>Gaṇaila</em> are enumerated: <em>Nādāvatī</em>, <em>Nandāvatī</em>, <em>Bhadrāvatī</em>, and <em>Haṃsāvatī</em>.</p>
+  <p>The present study is concerned exclusively with the <em>Nādāvatī Elā</em>.</p>
+</div>
+
+<!-- ── 4. PREVIOUS SCHOLARSHIP ── -->
+<div class="section" id="scholarship">
+  <h2>4. Previous Scholarship and Scope of the Present Study</h2>
+  <p>This work builds upon the study by Aniruddha et al.,<a href="#fn-bib" class="fn-ref">*</a> which presents a detailed textual and structural analysis of the <em>Nādāvatī</em> and <em>Nandāvatī Elā prabandhas</em> as described in <em>Mānasollāsa</em>. While that study does not attempt a musical reconstruction, it provides an essential foundation for understanding the formal characteristics of these compositions.</p>
+  <p>The present paper extends this line of inquiry by proposing a historically informed musical reconstruction of a <em>Nādāvatī Elā</em>. Given the absence of notated music (<em>svaralipi</em>) in <em>Mānasollāsa</em>, this reconstruction necessarily remains hypothetical; nevertheless, it is grounded in textual prescriptions concerning metrical structure and organization.</p>
+</div>
+
+<!-- ── 5. DESCRIPTION ── -->
+<div class="section" id="description">
+  <h2>5. Description of the <em>Nādāvatī Elā prabandha</em> as given in the <em>Mānasollāsa</em></h2>
+  <p>In Chapter 16 of the fourth <em>vimśati</em> (<em>Gīta-vinoda</em>), Someśvara presents a detailed account of <em>Elā prabandhas</em> in verses 440–524 of the <em>Mānasollāsa</em>. Verses 440–447 establish a general structural template applicable to <em>Elā prabandhas</em>. Verses 448–451 specify the formal constraints of the <em>Nādāvatī Elā</em> (a subtype within the <em>Gaṇaila</em> class).</p>
+
+  <h3>5.1 General Structure of the <em>Elā prabandha</em></h3>
+  <p>Someśvara defines the formal components of an <em>Elā prabandha</em> as comprising four principal sections: <em>udgrāha</em>, <em>melāpaka</em>, <em>dhruva</em>, and <em>ābhoga</em> (v. 440). The <em>udgrāha</em>, so called because the song "takes off" from it, serves as the opening section, while the <em>melāpaka</em> functions as a connective passage joining the <em>udgrāha</em> and the <em>dhruva</em> (v. 441). The <em>dhruva</em> is characterized as a recurring and invariant section within the composition, and its concluding portion is designated as the <em>ābhoga</em> (v. 442).</p>
+  <p>These terms are stated to apply to all <em>gītas</em> (songs), although the inclusion of the <em>melāpaka</em> and <em>ābhoga</em> is described as optional (v. 443). Structurally, the <em>udgrāha</em> comprises two <em>padas</em><a href="#fn2" class="fn-ref">²</a> employing alliteration (<em>anuprāsa</em>), followed by a <em>gamaka</em>, and then another <em>pada</em> describing the subject matter of the composition. The <em>melāpaka</em>, when present, is to be rendered with ornamental <em>gamakas</em> (vv. 444–445). The <em>dhruva</em> that follows is explicitly stated to be free of <em>gaṇa</em> restrictions (vv. 446–447). The <em>ābhoga</em>, which typically contains the composer's signature, is sung thereafter, and the composition concludes with a repetition of the <em>dhruva</em>.</p>
+
+  <h3>5.2 Structural Features of the <em>Nādāvatī Elā</em></h3>
+  <p>Following this generic exposition, verses 448–451 describe the structural features specific to the <em>Nādāvatī Elā prabandha</em>. Verse 448 explains the method by which the eight possible <em>gaṇas</em> (<em>ya, ma, ta, ra, ja, bha, na, sa</em>) are encoded through particular lexical indicators.</p>
+  <p>In the <em>Nādāvatī Elā</em>, a <em>pada</em> is constructed using five <em>bha-gaṇas</em> and one <em>na-gaṇa</em> (v. 449), accompanied by another <em>pada</em> employing <em>anuprāsa</em>. The composition consists of three such <em>pādas</em> in total<a href="#fn3" class="fn-ref">³</a> (v. 450). Verses 452–453 prescribe that a properly constructed <em>Nādāvatī Elā</em> should be set to an appropriate <em>rāga</em> and rendered in <em>manda tāla</em>, with the intended aesthetic effect being the evocation of <em>śṛṅgāra rasa</em> in <em>kaiśikī vṛtti</em>, i.e., a graceful manner of delivery.</p>
+
+  <h3>5.3 Example of a <em>Nādāvatī Elā prabandha</em> in the <em>Mānasollāsa</em></h3>
+  <p>Immediately following verse 450, the <em>Mānasollāsa</em> presents an example of a <em>Nādāvatī Elā prabandha</em>.<a href="#fn4" class="fn-ref">⁴</a></p>
+
+  <div class="devanagari-block">
+    <span class="label">। उद्ग्राहः ।</span>
+    <p>यौवनभूषितगोपवधूमुखपद्ममधुकर ।</p>
+    <p>श्यामलविग्रहकान्तिविनिर्जितनव्यजलधर ।</p>
+    <p>[ प्रयोग ] ।</p>
+    <p>देवकीनन्दन शृङ्गारसदन ॥१॥</p>
+    <br>
+    <p>स्मेरसरोरुहकेसरसञ्चयपिञ्जरवसन ।</p>
+    <p>केलिलसत्कमलानयनाम्बुजविभ्रमभवन ।</p>
+    <p>[ प्रयोग ] ।</p>
+    <p>दुग्धाम्बुधिकृतशयन  दलितपुण्डरीकनयन ॥२॥</p>
+    <br>
+    <p>कौस्तुभरत्नमरीचिकदम्बकभासुर वरद ।</p>
+    <p>पाहि पुरन्दरमन्दिरगीतसुखावहबिरुद ॥३॥</p>
+    <br>
+    <span class="label">। मेलापकः ।</span>
+    <p>[ …. ] ।</p>
+    <br>
+    <span class="label">। ध्रुवः ।</span>
+    <p>परम कुसुमशरजनन विमोहितनिखिलभुवन ।</p>
+    <p>उत्पत्तिस्थितिकारण प्रभो नारायण ॥</p>
+    <br>
+    <span class="label">। आभोगः ।</span>
+    <p>आ सोमेश्वरदेवविरचिता एला नादावती ॥</p>
+  </div>
+</div>
+
+<!-- ── 6. ANALYSIS ── -->
+<div class="section" id="analysis">
+  <h2>6. Analysis of the Example in the <em>Mānasollāsa</em></h2>
+
+  <h3>6.1 Formal Segmentation and Compositional Function</h3>
+  <p>The example provided in the <em>Mānasollāsa</em> is explicitly labeled according to the four-part template: <em>udgrāha</em>, <em>melāpaka</em>, <em>dhruva</em>, and <em>ābhoga</em>, indicating the practical usage of the terminology rather than merely abstract taxonomy. In particular, the <em>dhruva</em> is singled out as the element that "repeats itself many times" and remains invariant; the explicit marking of <em>dhruva</em> therefore provides a clear indication that it was repeated after each <em>pāda</em> (stanza). The inclusion of <em>melāpaka</em> and <em>ābhoga</em>, which are optional components for <em>gītas</em> in general, probably indicates that Someśvara wanted to illustrate a "fully articulated" <em>Nādāvatī Elā prabandha</em>.</p>
+
+  <h3>6.2 Constraint and Freedom: the Distribution of <em>gaṇa</em> Regulation</h3>
+  <p>The defining feature of <em>Gaṇaila Elā prabandhas</em> as given in the <em>Mānasollāsa</em> is the construction of <em>padas</em> under specified <em>gaṇa</em> patterns. The <em>Nādāvatī</em> subtype is specified as employing five <em>bha-gaṇas</em> and one <em>na-gaṇa</em> in the construction of a <em>pada</em> (v. 449). The <em>dhruva</em> is explicitly exempted from <em>gaṇa</em> restrictions.</p>
+  <p>The first two lines of each <em>pāda</em> of the composition follow the <em>gaṇa</em> restrictions, as shown below:</p>
+
+  <div class="gana-table-wrap">
+    <table class="gana-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="5">5 <em>bha-gaṇas</em> (ऽ । ।)</th>
+          <th>1 <em>na-gaṇa</em> (। । ।)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-label" style="font-family:'EB Garamond',serif"><em>pāda</em> 1</td>
+          <td>यौवन</td><td>भूषित</td><td>गोपव</td><td>धूमुख</td><td>पद्मम</td><td>धुकर</td>
+        </tr>
+        <tr>
+          <td class="row-label"></td>
+          <td>श्यामल</td><td>विग्रह</td><td>कान्तिवि</td><td>निर्जित</td><td>नव्यज</td><td>लधर</td>
+        </tr>
+        <tr>
+          <td class="row-label" style="font-family:'EB Garamond',serif"><em>pāda</em> 2</td>
+          <td>स्मेरस</td><td>रोरुह</td><td>केसर</td><td>सञ्चय</td><td>पिञ्जर</td><td>वसन</td>
+        </tr>
+        <tr>
+          <td class="row-label"></td>
+          <td>केलिल</td><td>सत्कम</td><td>लानय</td><td>नाम्बुज</td><td>विभ्रम</td><td>भवन</td>
+        </tr>
+        <tr>
+          <td class="row-label" style="font-family:'EB Garamond',serif"><em>pāda</em> 3</td>
+          <td>कौस्तुभ</td><td>रत्नम</td><td>रीचिक</td><td>दम्बक</td><td>भासुर</td><td>वरद</td>
+        </tr>
+        <tr>
+          <td class="row-label"></td>
+          <td>पाहि पु</td><td>रन्दर</td><td>मन्दिर</td><td>गीतसु</td><td>खावह</td><td>बिरुद</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6.3 The Role of <em>anuprāsa</em> and <em>gamaka</em></h3>
+  <p>The text specifies that the <em>udgrāha</em> contains two <em>padas</em> "with alliteration," followed by a <em>gamaka</em>, and then another <em>pada</em> describing the object of the composition; when present, the <em>melāpaka</em> is likewise to be ornamented with <em>gamakas</em>. While some <em>anuprāsa</em> is seen in the example, it does not exhibit extensive alliteration. Since no notations are given, we cannot determine the exact <em>gamaka</em> or <em>prayoga</em> that was employed. A plausible reading is to imagine either precomposed svara patterns of equal length to other lines of the composition, or the performer would apply their <em>manodharma</em> to improvise with <em>gamakas</em> to fill the said space. This parallels similar practice in certain composition types in Hindustani music today.</p>
+
+  <h3>6.4 Performance Prescription: <em>rāga</em>, <em>tāla</em>, and Aesthetic Aim</h3>
+  <p>The <em>Mānasollāsa</em> prescribes that the <em>Nādāvatī Elā</em> should be set to an appropriate <em>rāga</em> and rendered in <em>manda tāla</em>, with the aim of evoking <em>śṛṅgāra rasa</em> in <em>kaiśikī vṛtti</em> (a graceful style). A discussion of <em>manda tāla</em> is outside the scope of this paper. Some manuscripts specify the <em>rāga</em> as <em>ṭakka</em>. Overall, the goal is to use a <em>rāga</em> and <em>tāla</em> appropriate to the subject of the composition — in this case, to create a romantic mode and a graceful delivery.</p>
+
+  <h3>6.5 Interim Synthesis</h3>
+  <p>The foregoing analysis yields a compact working model: the <em>Nādāvatī Elā</em> is described as a multi-<em>pāda</em> form with specified <em>gaṇa</em> constraints and alliterative design in the <em>udgrāha</em>, articulated by <em>gamaka</em>-marked transitions, expanded through optional connective and closing components (<em>melāpaka</em>, <em>ābhoga</em>), and anchored by a recurrent, invariant <em>dhruva</em> that is exempt from <em>gaṇa</em> restrictions. This provides the foundation for the reconstruction proposed in the subsequent section.</p>
+</div>
+
+<!-- ── 7. RECONSTRUCTION ── -->
+<div class="section" id="reconstruction">
+  <h2>7. Musical Reconstruction: Composing a New <em>Nādāvatī Elā prabandha</em></h2>
+
+  <h3>7.1 Aim and Status of the Reconstruction</h3>
+  <p>The reconstruction proceeds on two complementary levels. First, a newly composed Kannada <em>sāhitya</em> is presented to make the formal grammar of the <em>Nādāvatī Elā</em> explicit. Second, a notated melodic outline is supplied so that the piece may be sung within contemporary Karnāṭaka Saṅgīta practice, while preserving the sectional structure and aesthetic orientation prescribed by the treatise. Taken together, these layers are offered as a proof of concept rather than an attempt at strict historical stylistic reconstruction.</p>
+
+  <h3>7.2 Textual Realization: <em>sāhitya</em></h3>
+  <p>The newly composed Kannada <em>sāhitya</em> is a controlled textual instantiation designed to make the structure of the prabandha legible. Structurally, the setting follows a multi-<em>pāda</em> design articulated by a recurrent <em>dhruva</em> and a concluding <em>ābhoga</em>. The <em>dhruva</em> is written out at each point of recurrence. The Kannada text is presented alongside Roman transliteration and a brief English prose summary.</p>
+  <p>In accordance with the <em>Mānasollāsa</em> prescription, <em>gaṇa</em> regulations are not followed in the recurrent <em>dhruva</em> and concluding <em>ābhoga</em> portions.</p>
+
+  <div class="sahitya-block">
+    <span class="pada-label">ಉದ್ಗ್ರಾಹ — Udgrāha</span>
+    ಹಾದಿಯ ಮಕ್ಕಳು ಆಟವನಾಡದೆ ಹಾಗೆ ಕುಳಿತಿರೆ ।।<br>
+    ಬೀದಿಯ ಗೋವ್ಗಳು ಮೇವನು ಮೆಲ್ಕುವುದಾಗಲೆ ಮರೆಯೆ ॥<br>
+    ನಾದವನೊಯ್ದಿದೆ ಮೆಲ್ಲಗೆ ಬೀಸುವ ಗಾಳಿಯು ಮುದದೆ ॥ ೧ ॥<br>
+    <span class="dhruva-label">ಧ್ರುವ ↓</span>
+    ಕರೆಯುತಲಿದೆ ಆ ಕೊಳಲಿನ ಸವಿಯಿಂಚರ ॥<br>
+    ಧರೆಯಲಿ ತಾ ಅಳಿಸುತ್ತಲಿ ನಲವಿನ ಬರ ॥
+
+    <span class="pada-label" style="margin-top:18px">ಪಾದ ೨</span>
+    ತೇಲಿ ಬರುತ್ತಿರೆ ಮೋಹನ ರಾಗವು ಮೋಹಕವಹುದೆ ॥<br>
+    ಬಾಳನು ಕಾಡುವ ಗೋಳುಗಳೆಲ್ಲವ ತಾನು ಮರೆಸಿದೆ ॥<br>
+    ಕೇಳುತಲಿದ್ದರೆ ಕಾಣುವೆ ಸ್ವರ್ಗವನೀಧರೆಯೊಳಗೆ ॥ ೨॥<br>
+    <span class="dhruva-label">ಧ್ರುವ ↓</span>
+    ಕರೆಯುತಲಿದೆ ಆ ಕೊಳಲಿನ ಸವಿಯಿಂಚರ ॥<br>
+    ಧರೆಯಲಿ ತಾನಳಿಸುತಲಿದೆ ನಲವಿನ ಬರ ॥
+
+    <span class="pada-label" style="margin-top:18px">ಪಾದ ೩</span>
+    ವೇಣುವಿನೋದನ ಕೃಷ್ಣನ ಗಾನವ ಕೇಳೆಲೆ ಚದುರೆ ॥<br>
+    ಹುಣ್ಣಿಮೆ ಸಂಜೆಯ ವೇಳೆಗೆ ಹಬ್ಬಿಸಿ ಪ್ರೇಮವನಿಳೆಗೆ ॥<br>
+    ಹೆಣ್ಣುಗಳೆಲ್ಲರು ಗೋಕುಲ ಗೊಲ್ಲನನಿಟ್ಟು ಮನದಲೆ ॥ ೩॥<br>
+    <span class="dhruva-label">ಧ್ರುವ ↓</span>
+    ಕರೆಯುತಲಿದೆ ಆ ಕೊಳಲಿನ ಸವಿಯಿಂಚರ ॥<br>
+    ಧರೆಯಲಿ ತಾನಳಿಸುತಲಿದೆ ನಲವಿನ ಬರ ॥
+
+    <span class="pada-label" style="margin-top:18px">ಆಭೋಗ — Ābhoga</span>
+    ಕೌಶಿಕೇಶನು ಕಾಂತಿರೂಪನು ನಿಂದಿರಲಾ ಯಮುನೆಯ ದಡದಲಿ ॥<br>
+    <span class="dhruva-label">ಧ್ರುವ ↓</span>
+    ಕರೆಯುತಲಿದೆ ಆ ಕೊಳಲಿನ ಸವಿಯಿಂಚರ ॥<br>
+    ಧರೆಯಲಿ ತಾನಳಿಸುತಲಿದೆ ನಲವಿನ ಬರ ॥
+  </div>
+
+  <div class="roman-block">
+    <span class="pada-label">Udgrāha:</span>
+    hādiya makkaḷu āṭavanāḍade hāge kuḷitire ||<br>
+    bīdiya gōvgaḷu mēvanu melkuvudāgalē mareye ||<br>
+    nādavanoydide mellage bīsuvā gāliyu mudade || 1 ||<br><br>
+    <span class="pada-label">Dhruva:</span>
+    kareyutalide ā koḷalina saviyiñcara ||<br>
+    dhareyali tā aḷisuttalide nalavina bara || dhruva ||<br><br>
+    tēli baruttire mōhana rāgavu mōhakavahude ||<br>
+    bāḷanu kāḍuva gōḷugaḷellava tānu maresside ||<br>
+    kēḷutaliddare kāṇuve svargavanīdhareyoḷage || 2 ||<br><br>
+    vēṇuvinōdana kṛṣṇana gānava kēḷele cadure ||<br>
+    huṇṇime sañjeya vēḷege habbisi prēmavanilēge ||<br>
+    heṇṇugaḷellaru gōkula gollananiṭṭu manadale || 3 ||<br><br>
+    <span class="pada-label">Ābhoga:</span>
+    kauśikēśanu kāntirūpanu nindiralā yamuneya daḍadali ||
+  </div>
+
+  <div class="note-box">
+    <strong>Note on <em>gaṇa</em> structure:</strong> All <em>pādas</em> follow the pattern of 5 <em>bha-gaṇas</em> (ऽ । ।) + 1 <em>na-gaṇa</em> (। । ।) in the first two lines. The <em>dhruva</em> and <em>ābhoga</em> do not follow the same <em>gaṇa</em> structure, in accordance with the <em>Mānasollāsa</em> prescription. The composer's signature <em>Kauśikēśa</em> appears in the <em>ābhoga</em>. The <em>sāhitya</em> generates a romantic mood (<em>śṛṅgāra rasa</em>) as prescribed by the treatise — the text portrays the sound of Krishna's flute as a force that stills the surrounding world, set in Gokula on a moonlit evening, culminating in Krishna by the Yamunā.
+  </div>
+
+  <h3>7.3 Musical Realization of <em>Nādāvatī Elā</em></h3>
+  <p>The present reconstruction supplies a notated melodic outline for the <em>sāhitya</em> presented in Section 7.2, aiming to test its musical realizability within contemporary Karnāṭaka Saṅgīta practice. The notation is intentionally minimal, functioning as a baseline for singability and svara–<em>sāhitya</em> alignment rather than as a fully ornamented prescription. A performer may add judicious <em>sangatis</em>.</p>
+  <p>The reconstruction sets the composition in <em>Mohana rāga</em> and <em>Rūpaka tāla</em>. While the textual prescription specifies performance in <em>manda tāla</em>, the present setting adopts the alternate reading that allows an "appropriate rāga" and prioritizes rāga–text congruence in service of the treatise's stated aesthetic aim. Mohana suits the mood of the <em>sāhitya</em> presented here.</p>
+  <p>In the notation tables: <span class="t">tārasthāyi svaras are shown in red</span>, <span class="m">mandrasthāyi svaras in green</span>, and <span class="g">ākāra passages in purple</span>. The first two <em>pādas</em> have identical <em>varṇamettu</em>; in the first <em>pāda</em> the <em>gamaka</em>/<em>prayoga</em> segment is sung as svaras (shown in italics below), while in the second <em>pāda</em> the corresponding segment is sung in <em>ākāra</em> (shown in purple).</p>
+
+  <p class="notation-label" style="margin-top:24px">Notation — Pāda 1 &amp; 2 (Rūpaka Tāla)</p>
+  <div class="notation-wrap">
+    <table class="notation-table">
+      <thead>
+        <tr>
+          <th>āvarta 1</th><th>āvarta 1</th><th>āvarta 1</th>
+          <th>āvarta 2</th><th>āvarta 2</th><th>āvarta 2</th>
+          <th>āvarta 3</th><th>āvarta 3</th><th>āvarta 3</th>
+          <th>āvarta 4</th><th>āvarta 4</th><th>āvarta 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Pada 1, line 1 -->
+        <tr class="swara-row">
+          <td>ದಾ</td><td>ಪ ದ</td><td>ಪಾ</td>
+          <td>ಗ ರಿ</td><td>ಸಾ</td><td><strong>ಪ ದ</strong></td>
+          <td>ಸಾ</td><td>ರಿ ಗ</td><td>ದಾ</td>
+          <td>ಗ ಗ</td><td>ದ ಪ</td><td>ದಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಹಾ</td><td>ದಿಯ</td><td>ಮ</td>
+          <td>ಕ್ಕಳು</td><td>ಆ</td><td>ಟ ವ</td>
+          <td>ನಾ</td><td>ಡ ದೆ</td><td>ಹಾ</td>
+          <td>ಗೆ ಕು</td><td>ಳಿತಿ</td><td>ರೆ</td>
+        </tr>
+        <!-- Pada 1, line 2 -->
+        <tr class="swara-row">
+          <td><strong>ಸಾ</strong></td><td>ದ ಪ</td><td>ಗಾ</td>
+          <td>ರಿ ರಿ</td><td>ರೀ</td><td>ಪ ಗ</td>
+          <td>ರೀ</td><td>ಸ <strong>ದ</strong></td><td>ಸಾ</td>
+          <td>ಗ ರಿ</td><td>ಗ ರಿ</td><td>ಸಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಬೀ</td><td>ದಿಯ</td><td>ಗೋ</td>
+          <td>ವ್ಗಳು</td><td>ಮೇ</td><td>ವನು</td>
+          <td>ಮೆ</td><td>ಲ್ಕುವು</td><td>ದಾ</td>
+          <td>ಗಲೆ</td><td>ಮ ರೆ</td><td>ಯೆ</td>
+        </tr>
+        <!-- Gamaka line (pada 1 = svaras, pada 2 = akara) -->
+        <tr class="swara-row">
+          <td><em>ರಿ ಗ</em></td><td><em>ದ ಪ</em></td><td><em>ಗ ರಿ</em></td>
+          <td><em>ಪಾ</em></td><td><em>ದಪ</em></td><td><em><span class="t">ಸ</span> ದ</em></td>
+          <td><em><span class="t">ಗ ರಿ</span></em></td><td><em><span class="t">ಸಾ</span></em></td><td><em><span class="t">ರಿ</span> ದ</em></td>
+          <td><em>, <span class="t">ಸ</span></em></td><td><em>, <span class="t">ಪ</span></em></td><td><em>, <span class="t">ದ</span></em></td>
+        </tr>
+        <!-- Pada 1, line 3 -->
+        <tr class="swara-row">
+          <td><strong><span class="t">ಗಾ</span></strong></td><td><strong><span class="t">ರಿ</span> ಸ</strong></td><td><strong><span class="t">ರೀ</span></strong></td>
+          <td><strong><span class="t">ಸ</span></strong> ದ</td><td><strong><span class="t">ಸಾ</span></strong></td><td>ದ ಪ</td>
+          <td>ದಾ</td><td>ಪ ಗ</td><td><strong><span class="t">ಸಾ</span></strong></td>
+          <td>ದ ಪ</td><td>ಗ ರಿ</td><td>ಸಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ನಾ</td><td>ದವ</td><td>ನೊ</td>
+          <td>ಯ್ದಿದೆ</td><td>ಮೆ</td><td>ಲ್ಲಗೆ</td>
+          <td>ಬೀ</td><td>ಸುವ</td><td>ಗಾ</td>
+          <td>ಳಿ ಯು</td><td>ಮುದ</td><td>ದೆ</td>
+        </tr>
+        <tr class="spacer-row"><td colspan="12"></td></tr>
+        <!-- Pada 2, line 1 (identical varṇamettu) -->
+        <tr class="swara-row">
+          <td>ದಾ</td><td>ಪ ದ</td><td>ಪಾ</td>
+          <td>ಗ ರಿ</td><td>ಸಾ</td><td><strong>ಪ ದ</strong></td>
+          <td>ಸಾ</td><td>ರಿ ಗ</td><td>ದಾ</td>
+          <td>ಗ ಗ</td><td>ದ ಪ</td><td>ದಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ತೇ</td><td>ಲಿ ಬ</td><td>ರು</td>
+          <td>ತ್ತಿ ರೆ</td><td>ಮೋ</td><td>ಹನ</td>
+          <td>ರಾ</td><td>ಗ ವು</td><td>ಮೋ</td>
+          <td>ಹ ಕ</td><td>ವಹು</td><td>ದೆ</td>
+        </tr>
+        <tr class="swara-row">
+          <td><strong>ಸಾ</strong></td><td>ದ ಪ</td><td>ಗಾ</td>
+          <td>ರಿ ರಿ</td><td>ರೀ</td><td>ಪ ಗ</td>
+          <td>ರೀ</td><td>ಸ <strong>ದ</strong></td><td>ಸಾ</td>
+          <td>ಗ ರಿ</td><td>ಗ ರಿ</td><td>ಸಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಬಾ</td><td>ಳ ನು</td><td>ಕಾ</td>
+          <td>ಡುವ</td><td>ಗೋ</td><td>ಳುಗ</td>
+          <td>ಳೆ</td><td>ಲ್ಲವ</td><td>ತಾ</td>
+          <td>ನುಮ</td><td>ರೆಸಿ</td><td>ದೆ</td>
+        </tr>
+        <!-- Akara line (pada 2) -->
+        <tr class="swara-row">
+          <td><em>ರಿ ಗ</em></td><td><em>ದ ಪ</em></td><td><em>ಗ ರಿ</em></td>
+          <td><em>ಪಾ</em></td><td><em>ದಪ</em></td><td><em><span class="t">ಸ</span> ದ</em></td>
+          <td><em><span class="t">ಗ ರಿ</span></em></td><td><em><span class="t">ಸಾ</span></em></td><td><em><span class="t">ರಿ</span> ದ</em></td>
+          <td><em>, <span class="t">ಸ</span></em></td><td><em>, <span class="t">ಪ</span></em></td><td><em>, <span class="t">ದ</span></em></td>
+        </tr>
+        <tr class="sahitya-row" style="color:var(--akara)">
+          <td>ಅ -</td><td>ಅ -</td><td>ಅ -</td>
+          <td>ಆ -</td><td>ಆ -</td><td>ಅ -</td>
+          <td>ಅ -</td><td>ಅ -</td><td>ಅ -</td>
+          <td>ಅ -</td><td>ಅ -</td><td>ಅ -</td>
+        </tr>
+        <tr class="swara-row">
+          <td><strong><span class="t">ಗಾ</span></strong></td><td><strong><span class="t">ರಿ</span> ಸ</strong></td><td><strong><span class="t">ರೀ</span></strong></td>
+          <td><strong><span class="t">ಸ</span></strong> ದ</td><td><strong><span class="t">ಸಾ</span></strong></td><td>ದ ಪ</td>
+          <td>ದಾ</td><td>ಪ ಗ</td><td><strong><span class="t">ಸಾ</span></strong></td>
+          <td>ದ ಪ</td><td>ಗ ರಿ</td><td>ಸಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಕೇ</td><td>ಳುತ</td><td>ಲಿ</td>
+          <td>ದ್ದರೆ</td><td>ಕಾ</td><td>ಣುವೆ</td>
+          <td>ಸ್ವ</td><td>ರ್ಗವ</td><td>ನೀ</td>
+          <td>ಧ ರೆ</td><td>ಯೊಳ</td><td>ಗೆ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="notation-label" style="margin-top:28px">Notation — Pāda 3 (Triśra naḍe → Caturaśra naḍe)</p>
+  <div class="notation-wrap">
+    <table class="notation-table">
+      <thead>
+        <tr>
+          <th colspan="3">āvarta 1 (triśra naḍe)</th>
+          <th colspan="3">āvarta 2 (triśra naḍe)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="swara-row">
+          <td>ಸಾ ರೀ ರೀ</td><td>ಗಾ ಗಾ ಗಾ</td><td>ಪಾ ಪಾ ಪಾ</td>
+          <td>ದಾ ದಾ ದಾ</td><td><span class="t">ಸಾ ಸಾ</span> ದಾ</td><td><em><span class="t">ಗ</span> ರಿ <span class="t">ಗಾ</span></em></td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ವೇ ಣು ವಿ</td><td>ನೋದನ</td><td>ಕೃ ಷ್ಣ ನ</td>
+          <td>ಗಾ ನ ವ</td><td>ಕೇ ಳೆ ಲೆ</td><td>ಚದುರೆ</td>
+        </tr>
+        <tr class="swara-row">
+          <td>ಪಾ ಪ ಪಾ</td><td><span class="t">ರೀ ರೀ ರೀ</span></td><td><span class="t">ಸಾ ಸಾ ಸಾ</span></td>
+          <td>ದಾ ದಾ ದಾ</td><td><span class="t">ಸಾ</span> ದಾ ಪಾ</td><td>ಗ ರಿ ಸಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಹುಣ್ಣಿ ಮೆ</td><td>ಸಂಜೆಯ</td><td>ವೇಳೆ ಗೆ</td>
+          <td>ಹ ಬ್ಬಿ ಸಿ</td><td>ಪ್ರೇಮವ</td><td>ನಿ ಳೆ ಗೆ</td>
+        </tr>
+        <tr class="spacer-row"><td colspan="6"></td></tr>
+        <tr>
+          <td colspan="6" style="font-family:'EB Garamond',serif; font-style:italic; font-size:0.85rem; color:var(--meta); padding:6px 10px; text-align:left;">
+            Third pada returns to caturaśra naḍe:
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notation-wrap" style="margin-top:8px">
+    <table class="notation-table">
+      <thead>
+        <tr>
+          <th colspan="3">āvarta 1 (caturaśra)</th>
+          <th colspan="3">āvarta 2 (caturaśra)</th>
+          <th colspan="3">āvarta 3 (caturaśra)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="swara-row">
+          <td><span class="t">ಗಾ ರೀ</span></td><td><span class="t">ಸಾ</span> ದಾ</td><td>ದಾ ದಾ</td>
+          <td><span class="t">ರೀ ಸಾ</span></td><td>ದಾ ಪಾ</td><td>ಪಾ ಪಾ</td>
+          <td>ದಾ ಪಾ</td><td>ಗ ರಿ ರೀ</td><td>ಸಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಹೆ ಣ್ಣು</td><td>ಗ ಳೆ</td><td>ಲ್ಲ ರು</td>
+          <td>ಗೋಕು</td><td>ಲ ಗೊ</td><td>ಲ್ಲ ನ</td>
+          <td>ನಿ ಟ್ಟು</td><td>ಮ ನ ದ</td><td>ಲೆ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="notation-label" style="margin-top:28px">Notation — Dhruva</p>
+  <div class="notation-wrap">
+    <table class="notation-table">
+      <thead>
+        <tr>
+          <th colspan="3">āvarta 1</th>
+          <th colspan="4">āvarta 2</th>
+          <th colspan="3">āvarta 3</th>
+          <th colspan="3">āvarta 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="swara-row">
+          <td><strong>ಪ ದ</strong></td><td>ಸ ರಿ</td><td>ಗ ಗ</td>
+          <td>ದಾ</td><td>ಪ ಗ</td><td></td><td>ಪ ದ</td>
+          <td><span class="t"><strong>ಸ</strong></span> ದ</td><td>ಪಾ</td><td>ದ <span class="t"><strong>ಸ</strong></span></td>
+          <td><span class="t"><strong>ಸಾ</strong></span></td><td><span class="t"><strong>ರಿ</strong></span> ದ</td><td><span class="t"><strong>ಸಾ</strong></span></td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಕ ರೆ</td><td>ಯು ತ</td><td>ಲಿದೆ</td>
+          <td>ಆ</td><td>ಕೊಳ</td><td></td><td>ಲಿನ</td>
+          <td>ಸ ವಿ</td><td>ಯಿಂ</td><td>ಚ ರ</td>
+          <td>ಆ -</td><td>ಆ -</td><td>ಆ -</td>
+        </tr>
+        <tr class="swara-row">
+          <td>ದ <span class="t"><strong>ರಿ</strong></span></td><td><span class="t"><strong>ಸ</strong></span> ದ</td><td><span class="t"><strong>ಸಾ</strong></span></td>
+          <td>ದ ದ</td><td><span class="t"><strong>ರಿ ಸ</strong></span></td><td></td><td>ದ ಪ</td>
+          <td>ದ ಪ</td><td>ಗ ರಿ</td><td>ಗ ಸ</td>
+          <td>ಸಾ</td><td>ರಿ <span class="t"><strong>ದ</strong></span></td><td>ಸಾ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಧ ರೆ</td><td>ಯ ಲಿ</td><td>ತಾ</td>
+          <td>ಅಳಿ</td><td>ಸು -</td><td></td><td>ತ್ತ ಲಿ</td>
+          <td>ನ ಲ</td><td>ವಿ ನ</td><td>ಬ ರ</td>
+          <td>ಆ -</td><td>ಆ -</td><td>ಆ -</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="notation-label" style="margin-top:28px">Notation — Ābhoga</p>
+  <div class="notation-wrap">
+    <table class="notation-table">
+      <thead>
+        <tr>
+          <th colspan="3">āvarta 1</th>
+          <th colspan="3">āvarta 2</th>
+          <th colspan="3">āvarta 3</th>
+          <th colspan="3">āvarta 4</th>
+          <th colspan="3">āvarta 5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="swara-row">
+          <td>ಸಾ</td><td>ರೀ</td><td>ದ ಪ</td>
+          <td>ಗ ರಿ</td><td>ಪಾ</td><td>ದಾ</td>
+          <td><span class="t"><strong>ಸ</strong></span> ದ</td><td>ಪ ಗ</td><td><span class="t"><strong>ಸಾ</strong></span></td>
+          <td>ದ ಪ</td><td>ಗಾ</td><td><span class="t"><strong>ರಿ ಸ</strong></span></td>
+          <td>ದ ಪ</td><td>ಗ ರಿ</td><td>ಸ ರಿ</td>
+        </tr>
+        <tr class="sahitya-row">
+          <td>ಕೌ</td><td>ಶಿ</td><td>ಕೇ -</td>
+          <td>ಶನು</td><td>ಕಾಂ</td><td>ತಿ</td>
+          <td>ರೂ</td><td>ಪನು</td><td>ನಿಂ</td>
+          <td>ದಿರ</td><td>ಲಾ</td><td>ಯಮು</td>
+          <td>ನೆಯ</td><td>ದಡ</td><td>ದಲಿ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:20px">The word <em>Kauśikēśa</em> in the <em>ābhoga</em> is the composer's signature.</p>
+
+  <div style="margin-top:20px">
+    <a href="https://www.youtube.com/watch?v=rIEzp9AJHrY" target="_blank" class="youtube-link">
+      ▶ Listen — Rendition by Dr Ragini Sanath
+    </a>
+  </div>
+</div>
+
+<!-- ── 8. CONCLUSION ── -->
+<div class="section" id="conclusion">
+  <h2>8. Conclusion</h2>
+  <p>This study has presented a reconstruction of a <em>Nādāvatī Elā</em>, demonstrating that the compositional grammar described in the <em>Mānasollāsa</em> can be operationalized as a performable musical object under explicitly stated assumptions. Because several Haridāsa compositions exhibit repeated metrical designs and extensive alliteration, further comparative work may help determine whether any of the <em>Elā prabandhas</em> described in the <em>Mānasollāsa</em> and related musicological texts informed (directly or indirectly) the compositional practice of Haridāsa authors.</p>
+  <p>Finally, the recurrent <em>dhruva</em> of the <em>Nādāvatī Elā</em> invites a functional comparison with the <em>pallavi</em> of present-day <em>kṛtis</em>, while the closing <em>ābhoga</em> may be compared — cautiously — to the <em>anupallavi</em>. Such comparisons are heuristic rather than genealogical: they help articulate structural analogies between premodern <em>prabandha</em> templates and later compositional practices.</p>
+
+  <div class="note-box" style="margin-top:24px">
+    <strong>Transliteration and Usage Note:</strong> Sanskrit technical terms are rendered in a simplified IAST-consistent scholarly style (<em>Mānasollāsa, prabandha, rāga, tāla, vṛtta, gaṇa</em>).
+  </div>
+</div>
+
+<!-- ── FOOTNOTES ── -->
+<div class="footnotes" id="fn1">
+  <span class="footnotes-label">Notes</span>
+  <div class="footnote" id="fn1">
+    <sup>1</sup> A <em>gaṇa</em> is a metrical foot — a unit of prosodic syllables with defined heavy (ऽ) and light (।) patterns. The eight classical <em>gaṇas</em> are <em>ya, ma, ta, ra, ja, bha, na, sa</em>.
+  </div>
+  <div class="footnote" id="fn2">
+    <sup>2</sup> <em>Pada</em>, here, means a line of the composition, and is distinct from <em>pāda</em> which is a stanza of the composition comprising multiple <em>padas</em>.
+  </div>
+  <div class="footnote" id="fn3">
+    <sup>3</sup> The distinction between <em>pada</em> and <em>pāda</em> can be clearly understood with verse 450.
+  </div>
+  <div class="footnote" id="fn4">
+    <sup>4</sup> The author is thankful for the reading provided by Aniruddha et al., as the Kannada translation published by Karnataka Sanskrit University lacks some details and contains conflicting readings.
+  </div>
+</div>
+
+<!-- ── BIBLIOGRAPHY ── -->
+<div class="bibliography" id="fn-bib">
+  <span class="bibliography-label">Bibliography</span>
+  <div class="bib-item kn">ಶ್ರೀ ಸೋಮೇಶ್ವರಭೂಪತಿ ವಿರಚಿತ <em>ಮಾನಸೋಲ್ಲಾಸ</em>. ಸಂಪಾದಕ: ಪ್ರೊ. ಮಲ್ಲೇಪುರಂ ಜಿ. ವೆಂಕಟೇಶ. ಕರ್ನಾಟಕ ಸಂಸ್ಕೃತ ವಿಶ್ವವಿದ್ಯಾಲಯದ ಪ್ರಕಟಣೆ.</div>
+  <div class="bib-item kn"><em>ಏಳೆ — ಒಂದು ಸಂಗೀತ ಶಾಸ್ತ್ರೀಯ ಅಧ್ಯಯನ</em>. ಡಾ. ರಾ. ಸತ್ಯನಾರಾಯಣ. ಬ್ರಹ್ಮವಿದ್ಯಾ ಪ್ರಕಟಣೆ.</div>
+  <div class="bib-item">Aniruddha Ramaurthy, Kondi; Nagendra, Pavana R. N.; and Ramasubramanian, K. "Nādāvatī and Nandāvatī: A Study on Two Prabandhas with a Critical Edition of Their Examples from the Mānasollāsa." <em>Kalākalpa: IGNCA Journal of Arts</em> VIII, no. 1 (Guru Purnima 2023).</div>
+</div>
+
+<footer>
+  hamsanandi.github.io &nbsp;·&nbsp; Ramaprasad K V
+</footer>
+
+</body>
+</html>
