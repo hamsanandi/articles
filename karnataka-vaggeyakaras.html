@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaggeyakaras from Karnataka — Hamsanandi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Kannada:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:           #faf8f4;
+      --bg-alt:       #f2efe8;
+      --text:         #1a1612;
+      --text-muted:   #6b6356;
+      --accent:       #8b4513;
+      --accent-light: #c87941;
+      --border:       #d9d0c0;
+      --blockquote-bg: #f5f1e8;
+      --link:         #7a3b10;
+      --link-hover:   #4a2008;
+      --tag-bg:       #ede8de;
+      --tag-text:     #5c4a35;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 18px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top Nav ── */
+    .site-nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .site-nav .brand {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .site-nav .brand:hover { color: var(--accent); }
+    .site-nav .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+    .site-nav .nav-links a:hover { color: var(--accent); }
+
+    /* ── Article wrapper ── */
+    article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    /* ── Meta / breadcrumb ── */
+    .article-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.6rem;
+      align-items: center;
+    }
+    .article-meta span::before { content: "·"; margin-right: 0.6rem; }
+    .article-meta span:first-child::before { content: ""; margin: 0; }
+
+    /* ── Heading ── */
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 2.2rem;
+      line-height: 1.5;
+    }
+
+    /* ── Divider ── */
+    .rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+    .rule-ornament {
+      text-align: center;
+      color: var(--accent-light);
+      font-size: 1.2rem;
+      margin: 2.4rem 0;
+      letter-spacing: 0.4em;
+    }
+
+    /* ── Body text ── */
+    p { margin-bottom: 1.4rem; }
+
+    /* ── Links ── */
+    a { color: var(--link); text-decoration-color: var(--border); }
+    a:hover { color: var(--link-hover); text-decoration-color: var(--accent-light); }
+
+    /* ── Blockquote / verse ── */
+    blockquote {
+      background: var(--blockquote-bg);
+      border-left: 3px solid var(--accent-light);
+      margin: 2rem 0;
+      padding: 1.2rem 1.6rem 1.2rem 1.8rem;
+      border-radius: 0 4px 4px 0;
+    }
+    blockquote p {
+      margin-bottom: 0.6rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+    blockquote .attribution {
+      font-style: normal;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Kannada script */
+    .kn {
+      font-family: 'Noto Serif Kannada', 'Noto Sans Kannada', serif;
+      font-size: 1.05em;
+      line-height: 1.9;
+    }
+
+    /* ── Section note (parenthetical) ── */
+    .editorial-note {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.4rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 2.4rem;
+      line-height: 1.65;
+    }
+
+    /* ── Image ── */
+    figure {
+      margin: 2.4rem 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+    }
+    figcaption {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      font-style: italic;
+    }
+
+    /* ── Sanskrit / transliteration verse block ── */
+    .verse-block {
+      background: var(--blockquote-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+      font-style: italic;
+    }
+    .verse-block .devanagari {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 1rem;
+      font-style: normal;
+    }
+    .verse-block .translation {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      font-style: italic;
+    }
+    .verse-block .translation-credit {
+      font-size: 0.82rem;
+      color: var(--accent-light);
+      font-style: normal;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Tags ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.78rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+    }
+    .back-link:hover { color: var(--accent); }
+    .back-link::before { content: "← "; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 600px) {
+      article { padding: 2rem 1.2rem 4rem; }
+      .site-nav { padding: 0.8rem 1.2rem; }
+      blockquote { padding: 1rem 1rem 1rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="brand" href="https://hamsanandi.github.io/">Hamsanandi</a>
+    <div class="nav-links">
+      <a href="https://hamsanandi.github.io/articles/">Articles</a>
+    </div>
+  </nav>
+
+  <article>
+    <a class="back-link" href="https://hamsanandi.github.io/articles/">Back to Articles</a>
+
+    <div class="article-meta">
+      <span>Article</span>
+      <span>Karnataka Sangeeta</span>
+      <span>Vaggeyakaras</span>
+    </div>
+
+    <h1>Vaggeyakaras from Karnataka</h1>
+    <p class="subtitle">A speech delivered at an event celebrating the composers from Karnataka, at the Livermore temple.</p>
+
+    <div class="editorial-note">
+      This is the edited text version of a speech made at an event celebrating the composers from Karnataka. Throughout the article, honorifics for all the composers and musicians are not mentioned — this is not to be treated as any mark of disrespect. Only a partial list of composers is mentioned, due to limitations of time and the author's awareness.
+    </div>
+
+    <hr class="rule" />
+
+    <p>The term <em>vaggeyakara</em> refers to someone who creates both the <em>mAtu</em> and <em>dhatu</em> — that is, both the lyrical and musical content of a composition. It encompasses a larger meaning than the English word <em>composer</em>, which normally refers to the creation of the music part only. However, here I may use the word vaggeyakara and composer somewhat interchangeably.</p>
+
+    <div class="rule-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+    <p>We can see indications of Indian classical music splitting into two streams by the 13th century. The split probably started right after the time of Sharngadeva, who wrote his text <em>Sangita Ratnakara</em>. By the time of Pandarika Vithala, around 1600 CE, we can sense the split having been completed, making the two streams quite distinct and distinguishable from each other. The name Karnataka Sangeeta is a more recent entry though. One of the reasons that this stream was called Karnataka Sangeeta seems to be the contribution of musicians, scholars and vaggeyakaras hailing from the Karnata samrajya or the Vijayanagara empire.</p>
+
+    <p>Throughout India's history, there have been different centres of music and culture. The contribution of musicians who hailed from the current-day Karnataka region is immense. The Vijayanagara kingdom, centred in current-day Karnataka, was a hub for arts and culture. Performing artists from various places made their way to Vijayanagara to receive royal support.</p>
+
+    <p>Sage Vidyaranya, who was instrumental in the establishment of the kingdom, was himself a musician and a musicologist of merit. The first indications of the classification of ragas into melas (or groups) can be attributed to him. The latter-day scholars and performers from Vijayanagara enhanced the textual framework of Vidyaranya. The <em>Kalanidhi vyakhyana</em> to <em>Sangita Ratnakara</em> by Kallinatha, and the <em>Swaramela Kalanidhi</em> by his grandson Ramamatya give a good indication of the musical practices during the Vijayanagara times (14th to 16th century).</p>
+
+    <p>Music is a performance-oriented art where <em>shastra</em> (theory) follows <em>prayoga</em> (performance). New experiments happen all the time, and once they are accepted by rasikas, they get codified into texts and treatises. All these shastrakaras (musicologists) could not have existed in a vacuum. Those works became necessary to document what was happening around them. While Indian classical music is <em>manodharma</em> or improvisation-oriented, it is also true that it needs good compositions to anchor these improvisational ideas.</p>
+
+    <p>Here is a thing I want to clarify: if the texts seem to come from royal patronage, it does not mean music was limited to royalty. It only means that their patronage was necessary to write and preserve such works documenting the active music scene in the society of those times. The corpus of musical texts from 15th- and 16th-century Vijayanagara, and even earlier times. confirms that there was no dearth of performers or composers during this time, and it could not have been a limited royal engagement.</p>
+
+    <p>Back in the 12th century, even before Vidyaranya, we have some indication that at least some vachanas of the shivasharanas of Karnataka were sung, from the internal evidence within the vachanas of Akkamahadevi and Basavanna. But we have absolutely no idea how they might have been sung. One or two centuries later, almost contemporary to Vidyaranya and Kallinatha, there were a number of Haridasas who revolutionised music as we know it. Unfortunately the original melodic structure of most Haridasa compositions is known only in a skeletal form, and the curent day renditions of devaranamas are modelled after much later compositions after their times.</p>
+
+    <p>Haridasas introduced many new types of compositions, including the Ugabhoga and Suladi. Starting off with Narahari Tirtha, we later had Sripadaraya, Vyasaraya, Purandara Dasa, Kanakadasa, Vijayadasa, and many other Haridasas who composed thousands of compositions from the 13th to the 19th century. Although we cannot say for sure, Sripadaraja was probably the first vaggeyakara who thought of concepts like Ragamudre (raga signature). In a devaranama — <em>Laali Govinda Laali</em> — he has three charanas that indicate the ragamudra as Devagandhara, Ananda Bhairavi and Kalyani.</p>
+
+    <div class="rule-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+    <p>The centre of Karnataka Sangeeta moved from Vijayanagara to Thanjavur after the fall of the empire. The beginning of the Thanjavur tradition can be traced back to Vijayanagara too. Thanjavur was given as a principality to Chevvappa Nayaka by Achyutaraya, the king of Vijayanagara. Ministers of the Nayaks of Tanjavur — such as Govinda Dikshita and his son, the well-known Venkatamakhi — were not only able administrators but also expert musicians and musicologists.</p>
+
+    <p>We can easily say that Venkatamakhi, who was also a Kannadiga, with his work <em>Chaturdandi Prakashika</em> written around 1650 CE, paved the way for new thinking in terms of the creation of new ragas in Karnataka Sangeeta. In the 18th century, we know that Haridasa compositions were very popular in Thanjavur. It is well documented that Tyagaraja was greatly influenced by Purandara Dasa's devaranamas. Knowing how the Karnataka Sangeeta Trimurtis — Tyagaraja, Muthuswami Dikshita and Syama Shastry — influenced our music post the 18th century, and the fact that the work of Venkatamakhi was instrumental in setting them up to do what they did with our music, tells a great deal about Venkatamakhi's influence on Karnataka Sangeeta as we know it today.</p>
+
+    <p>With the taking over of Thanjavur by the British, the cultural hub shifted again to Mysuru. The Odeyars of Mysuru, similar to the Nayakas and Bhosales of Thanjavur, were not only patrons of music and arts but practitioners themselves. Mummadi Krishnaraja Odeyar was himself a composer of merit. Nalvadi Krishnaraja Odeyar was trained in music too. And the last maharaja of Mysore, Jayachamaraja Odeyar, could be called the real jewel in the crown of this family. He composed about one hundred kritis. Taking a cue from the style of Muthuswami Dikshitar in the use of Sanskrit as the medium for lyrics and the use of madhyama kala sahitya, and on the other side following Tyagaraja in the choice of ragas and innovation in trying out unheard melodies, his compositions have become quite popular over the decades.</p>
+
+    <p>Of course the courts of Krishnaraja Odeyar and Jayachamaraja Odeyar in the first half of the 20th century encouraged and hosted a great many composers — such as Mysore Vasudevacharya, Harikesanallur Muthiah Bhagavatar, Mysore Sadashivarayar, and Veene Sheshanna — whose compositions are very well known and popular today. The influence of the Trinity is invariably seen in the compositions of the Mysore court period.</p>
+
+    <p>Even the composition type Javali apparently came into vogue in the Mysore court post-Tippu times. And, although we normally associate Tyagaraja with the "invention" of the new form of composition we call <em>kriti</em> these days, almost 120 years before Tyagaraja, a poet called Govinda Vaidya, in one of his Kannada works, talks about musicians singing kritis!</p>
+
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/VeenaSheshanna.jpg/400px-VeenaSheshanna.jpg" alt="Veene Sheshanna" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <div style="display:none; padding:2rem; background:var(--bg-alt); border:1px solid var(--border); border-radius:3px; color:var(--text-muted); font-style:italic; font-size:0.9rem;">
+        [Veene Sheshanna — image from Wikipedia]
+      </div>
+      <figcaption>Veene Sheshanna (Image from Wikipedia)</figcaption>
+    </figure>
+
+    <p>Apart from them there were other composers like Veena Venkatagiriyappa, Veena Venkatasubbaiah, Veena Shamanna, Veena Subbanna, Bidaram Krishnappa, T Chowdayya, Veena Raja Rao, Belakavadi Srinivasa Iyengar, and Veena Shivaramaiah. The last two are notable for having composed in all 72 raganga ragas.</p>
+
+    <p>By this time, it was the end of Royal Mysore, but thankfully the vaggeyakara tradition has continued. N Channakeshvaiah and C Rangaiah, both disciples of Mysore Vasudevacharya, composed many varnas, krtis, ragamalikas, and tillanas. D Subbaramaiah — and his disciples Vasantha Madhavi and Ramaratnam — are both composers of their own merit. Ballari Sheshachar among the Ballari brothers also has many compositions to his credit.</p>
+
+    <p>Many current-day performing artists hailing from Karnataka — such as Nagamani Srinath, RN Sreelatha, and Padmacharan — have composed several compositions. Other performers such as Tirumale Srinivas, R K Padmanabha, and Nagavalli Nagaraj have set to music many Haridasa and other songs. And T K Govindarao has composed many of his own compositions as well as set many Haridasa compositions to music.</p>
+
+    <p>At this point we should also remember the poet Pu Ti Na, who was not a performing artist in the conventional sense but composed many wonderful compositions in his musical plays such as <em>Gokula Nirgamana</em>. Poet D V Gundappa also suggested ragas to the poems in his work <em>Antahpura Geete</em>, written about the various madanika sculptures in the Belur temple. However, I am not sure if the complete melodic structure for those songs was suggested by him.</p>
+
+    <p>Thankfully, the trend is still continuing. Ashok Madhav, originally from Karnataka and a long-time Pittsburgh resident, has composed several hundred compositions. Srikanth Murthy, from Karnataka and currently in the UK, has to his credit many compositions in Kannada, Tamizh, Sanskrit and Sanketi languages. I am also very happy to say that with the encouragement of the artist community in the Bay Area, I have had the fortune of composing about 90+ compositions, which include Varna, Swarajathi, Tillana, Javali, Pada, Kritis, Kautuva and Ragamalikas.</p>
+
+    <div class="rule-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+    <p>When there are such great compositions of past masters, one may ask what is the need for new compositions. In fact, Sangeeta Kalanidhi R K Srikanthan opined that when there are hundreds of great compositions of composers like Tyagaraja which are not being sung, there is no need for new compositions as such. I am sure many others would share that opinion too. However, I would like to counter that with this Sanskrit verse of Jagannath Pathak:</p>
+
+    <div class="verse-block">
+      <div class="devanagari">
+        कियद्वारं क्रौञ्चा इह न निहता व्याधविशिखैः<br />
+        परं काव्यं रामायणमिदम् इहैक समुदितम् ।<br />
+        स कर्ता कालोsसौ स च हृदयवान् सा च कविता<br />
+        समेत्य द्द्योतन्ते यदि वलति वाणीविलसितम् ॥
+      </div>
+      <div class="translation">
+        Since the beginning of time, how many Krauncha birds have been felled by arrows?<br />
+        But the Ramayana arose only once.<br />
+        The concoction of time, a soulful poet and his words —<br />
+        with a touch of Vani's grace — to brew the broth of heady poetry.
+        <div class="translation-credit">English translation by Suhas Mahesh</div>
+      </div>
+    </div>
+
+    <p>What this verse says about poetry is also true about musical compositions. We just do not know when the right situation will arise, along with the grace of Goddess Saraswathi. Just for a moment, consider what would have happened if Tyagaraja had thought there were plenty of good compositions of Purandara Dasa, Ramadasa and Annamayya, and had not made any of his own! Think what would have happened if Balamuralikrishna and Lalgudi Jayaraman had thought there were plenty of excellent compositions of the Trinity and had not composed any of theirs! So it is all the more desirable to continue the quest for more and more music.</p>
+
+    <p>I will conclude with a Kannada translation of that very Sanskrit verse, replacing the word <em>kavitā</em> with <em>rachanā</em> to make it more generic:</p>
+
+    <blockquote>
+      <p class="kn">ಕೊಂಚೆವಕ್ಕಿಗಳೆನಿತೊ ಸಿಲುಕಿವೆ ಬೇಡ ಹೊಡೆದಿಹ ಬಾಣಕೆ</p>
+      <p class="kn">ಮುಂಚೆ ರಾಮಾಯಣವು ಮಾತ್ರವು ಹುಟ್ಟಿತೊಂದೇ ಬಾರಿಗೆ</p>
+      <p class="kn">ಕೊಂಚ ಕಾಲವು ಒಳ್ಳೆ ಮನಸಿನ ಕವಿಯ ಪದಗಳ ಜೊತೆಯಲಿ</p>
+      <p class="kn">ಸಂಚುಮಾಡಲುಬೇಕು ಸರಸತಿಯೊಡನೆ ಸೊಬಗಿನ ರಚನೆಗೆ</p>
+    </blockquote>
+
+    <p>I would like to thank the organizers for giving me an opportunity to share a few things with you all.</p>
+
+    <blockquote>
+      <p class="kn">ಎಂದರೋ ಮಹಾನುಭಾವುಲು ಅಂದರಿಕಿ ವಂದನಮುಲು। ನಮಸ್ಕಾರ</p>
+    </blockquote>
+
+    <div class="tags">
+      <span class="tag">Karnataka Sangeeta</span>
+      <span class="tag">Vaggeyakaras</span>
+      <span class="tag">Carnatic Music</span>
+      <span class="tag">Haridasas</span>
+      <span class="tag">Mysore Court</span>
+      <span class="tag">Vijayanagara</span>
+      <span class="tag">Composers</span>
+    </div>
+  </article>
+
+  <footer>
+    Hosted on GitHub Pages &middot; <a href="https://hamsanandi.github.io/">hamsanandi</a>
+  </footer>
+
+</body>
+</html>
