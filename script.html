@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಲಿಪಿ ಮತ್ತು ಭಾಷೆ — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88; --text: #1a1208; --meta: #8a7055;
+}
+body { font-family: 'Noto Serif Kannada', serif; background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.9; }
+.site-nav { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 12px 24px; text-align: center; }
+.site-nav a { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+.nav-sep { color: var(--border-light); margin: 0 10px; }
+.article-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+.article-header { text-align: center; margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--border); position: relative; }
+.article-header::after { content: ''; display: block; height: 2px; width: 100px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); }
+.article-category { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--meta); margin-bottom: 14px; }
+.article-title-kn { font-family: 'Noto Serif Kannada', serif; font-size: 1.85rem; font-weight: 700; color: var(--gold-light); line-height: 1.35; margin-bottom: 14px; }
+.article-meta { font-size: 0.85em; color: var(--meta); font-family: 'Noto Sans Kannada', sans-serif; }
+.article-meta span { color: var(--border-light); margin: 0 6px; }
+.article-body p { margin-bottom: 1.5em; }
+.article-image { margin: 1.8em 0; text-align: center; }
+.article-image img { max-width: 100%; height: auto; display: block; margin: 0 auto; border: 1px solid var(--border); border-radius: 4px; }
+.article-image figcaption { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.78em; color: var(--meta); margin-top: 8px; font-style: italic; }
+.verse { background: var(--section-bg); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 16px 22px; margin: 1.6em 0; line-height: 2.1; color: var(--text); font-family: 'Noto Serif Kannada', serif; font-size: 1em; }
+.verse-source { font-size: 0.78em; color: var(--meta); margin-top: 10px; font-family: 'Noto Sans Kannada', sans-serif; line-height: 1.5; font-style: italic; }
+.quote-block { background: var(--header-bg); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin: 1.6em 0; font-size: 0.95em; line-height: 1.9; }
+.quote-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--meta); margin-bottom: 8px; display: block; }
+.source-note { background: var(--section-bg); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; margin: 1.8em 0 1em; font-size: 0.88em; color: var(--meta); font-style: italic; line-height: 1.7; font-family: 'Noto Sans Kannada', sans-serif; }
+.article-close { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid var(--border); font-size: 0.88em; color: var(--meta); font-style: italic; text-align: right; font-family: 'Noto Sans Kannada', sans-serif; }
+.tags { margin-top: 2em; padding-top: 1.2em; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { display: inline-block; padding: 3px 10px; font-size: 0.73em; border: 1px solid var(--border-light); border-radius: 4px; color: var(--meta); background: var(--section-bg); font-family: 'Noto Sans Kannada', sans-serif; }
+.back-link { display: inline-block; margin-top: 36px; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--border-light); }
+.back-link:hover { color: var(--gold-light); border-bottom-color: var(--gold); }
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 32px 0 0; }
+footer { text-align: center; color: var(--meta); font-size: 0.82em; padding: 20px 0 30px; font-family: 'Noto Sans Kannada', sans-serif; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="https://hamsanandi.github.io/">Hamsanandi</a>
+  <span class="nav-sep">·</span>
+  <a href="https://hamsanandi.github.io/articles/">ಲೇಖನಗಳು</a>
+</nav>
+
+<div class="article-wrap">
+  <header class="article-header">
+    <div class="article-category">ಲೇಖನ · ಭಾಷೆ ಮತ್ತು ಲಿಪಿ · ಇತಿಹಾಸ</div>
+    <h1 class="article-title-kn">ಲಿಪಿ ಮತ್ತು ಭಾಷೆ</h1>
+    <div class="article-meta">ಹಂಸಾನಂದಿ</div>
+  </header>
+
+  <div class="article-body">
+
+    <p>ಯಾವ ಭಾಷೆಗೂ ಮೊದಲು ಲಿಪಿ ಇರುವುದಿಲ್ಲ — ಏಕೆಂದರೆ ಮಾತು ಮೊದಲು ಬರೆಹ ನಂತರ. ಕನ್ನಡದ ಮೊದಲ ದಾಖಲೆ ಸಿಕ್ಕಿರುವುದು ಸಾಮಾನ್ಯಶಕ 2–3 ನೇ ಶತಮಾನದಲ್ಲಿ. ಅದಕ್ಕೆ ಮೊದಲು ಕನ್ನಡ ಭಾಷೆಯೇ ಇರಲಿಲ್ಲವೆಂದು ತಿಳಿಯೋಣವೇ? ಅಥವಾ ಆ ಸಮಯದ ಸುಮಾರಿನಲ್ಲಿ, ಅ ಮೊದಲೇ ಇದ್ದ ಕನ್ನಡ ಭಾಷೆಯನ್ನು  ಬರವಣಿಗೆಯ ಚೌಕಟ್ಟಿನೊಳಗೆ  ಒಳಪಡಿಸಿದರು ಎಂದು ತಿಳಿಯೋಣವೇ?</p>
+
+    <p>ತುಸುವೇ ಯೋಚಿಸಿದರೂ, ಎರಡನೆಯ ಅಭಿಪ್ರಾಯವೇ ಸರಿಯಾಗಿರಬೇಕೆಂದು ತಿಳಿಯುತ್ತದೆ. ಕನ್ನಡಕ್ಕೆ ಹೇಗೋ, ಸಂಸ್ಕೃತ ಭಾಷೆಗೂ ಹಾಗೇ. ಲಿಪಿಯಿಲ್ಲದ ಕಾಲ ಒಂದಿತ್ತು. ಒಂದು ಕಾಲದಲ್ಲಿ ಬರೆಹದ ಶಕ್ತಿಯನ್ನರಿತ ಮೇಲೆ, ಬರೆವಣಿಗೆ ಬಂದಿತು. ಅದು ಬಂದ ನಂತರವೂ ಮೌಖಿಕ ಪರಂಪರೆಯೂ ಜೊತೆಗೇ ಮುಂದುವರೆಯಿತು. ಮುದ್ರಣ ಸಾಧ್ಯವಾಗುವತನಕ ನೆನಪಿನಲ್ಲಿಡುವುದಕ್ಕೆ ಇರುತ್ತಿದ್ದ ಹೆಚ್ಚಾಯ ತಿಳಿದೇ ಇದೆ. ಪುಸ್ತಕಗಳನ್ನು ಪ್ರತಿ ಮಾಡಲು ಇದ್ದ ಕಷ್ಟಗಳು, ತಾಳೆಗರಿಗಳನ್ನು ರಕ್ಷಿಸಿ ಇಡಲು ಇರುತ್ತಿದ್ದ ತೊಂದರೆಗಳು, ಇವುಗಳನ್ನೆಲ್ಲ ನೋಡಿದಾಗ, ಗ್ರಂಥಗಳನ್ನು ಬಾಯಿಂದ ಬಾಯಿಗೆ ದಾಟಿಸುವಂತಹ ಪರಂಪರೆಯೂ ಬರವಣಿಗೆಯ ಜೊತೆಗೇ ಮುಂದುವರೆದಿದ್ದರ ಕಾರಣ ತಿಳಿಯುತ್ತದೆ.</p>
+
+    <figure class="article-image">
+      <img src="aihole.jpg" alt="ಐಹೊಳೆಯ ರವಿಕೀರ್ತಿ ಶಾಸನ">
+      <figcaption>ಐಹೊಳೆಯ ರವಿಕೀರ್ತಿ ಶಾಸನ — ಚಾಲುಕ್ಯ / ಕನ್ನಡ ಲಿಪಿ (ಸಾ.ಶ. ೬–೭ನೇ ಶತಮಾನ)</figcaption>
+    </figure>
+
+    <p>ತಮ್ಮ ಸಾಹಿತ್ಯವನ್ನು ಬೇರೆಯವರಿಗೆ ತಿಳಿಸಬಾರದೆಂದು, ಬರೆಯದೇ ಬಾಯಿಂದ ಬಾಯಿಗೇ ಹೋಗಬೇಕೆಂದು ವೇದವನ್ನು ಕಲ್ಪಿಸಿದರು ಎಂದು "ಆರ್ಯ" ರ ಮೇಲೆ ಗೂಬೆ ಕೂರಿಸುವ ಹಲವರನ್ನು ಕಂಡಿದ್ದೇವೆ. ಅದೇ ವಾದಸರಣಿಯಲ್ಲಿ ನೋಡಿದರೆ, ಕನ್ನಡದ ತ್ರಿಪದಿ ಶೈಲಿಯಲ್ಲಿರುವ ನೂರಾರು ಜನಪದ ಪದ್ಯಗಳನ್ನು ಕೂಡ (ನೂರಾರೇಕೆ, ಸಾವಿರಾರೇ ಇರಬಹುದು), "ಬೇರೆಯವರು ಕಲಿಯಬಾರದೆಂದು" ಪದ್ಯಗಳಲ್ಲಿ ಕಟ್ಟಿ, ಅದನ್ನು ಬರೆಯದೇ ಇಟ್ಟು, ಬಾಯಿಂದ ಬಾಯಿಗೆ ಹೋಗುವಂತೆ ಮಾಡಿದರು ಎಂದು ಹೇಳಬಹುದಲ್ಲ? ಇಂತಹ ವಾದ ಎಷ್ಟು ಟೊಳ್ಳು ಅನ್ನುವುದು ಮನವರಿಕೆ ಆಯಿತೇ? ಇಂಥ ವಾದವನ್ನ ಮಾಡುವರನ್ನು ಕಂಡಾಗ ಅಳುವುದೋ ನಗುವುದೋ ನೀವೇ ಹೇಳಬೇಕಷ್ಟೇ.</p>
+
+    <p>ಒಟ್ಟಿನಲ್ಲಿ, ಭಾಷೆ ಬೆಳವಣಿಗೆಯಾಗಿ ಹಲವು ಕಾಲದ ವರೆಗೆ ಲಿಪಿ ಇರಲಿಲ್ಲ. ಲಿಪಿ ಬಂದ ನಂತರವೂ ಅದನ್ನು ಉಳಿಸಿಕೊಳ್ಳುವಂತೆ ಬರೆಯುವ ಸಾಮಗ್ರಿಯ ಕೊರತೆ ಇತ್ತು. ತಾಳೆಗರಿ, ಭೂರ್ಜ ಮರದ ಎಲೆ ಮೊದಲಾದುವುಗಳ ಮೇಲೆ ಬರೆವ ಹಸ್ತ ಪ್ರತಿಗಳು ಆಗಾಗ ಹಾಳಾಗುವುದೂ, ಅವನ್ನು ಮತ್ತೆ ಮತ್ತೆ ಪ್ರತಿ ಮಾಡುವುದೂ ಕಷ್ಟ ಸಾಧ್ಯವಾದ ಕೆಲಸ. ಇನ್ನು ತಾಮ್ರದ ಹಾಳೆಗಳ ಮೇಲೆ ಬಹಳ ಮುಖ್ಯವಾದ ದಾಖಲೆಗಳನ್ನು ಬರೆದಿಡುವ ಕೆಲಸ ಆಗಿದೆಯಾದರೂ ಅದು ಬಹಳ ದುಬಾರಿಯಾದಂತಹ ವಿಧಾನ. ಹಾಗಾಗಿ ಬರಹದ ಬಳಕೆ ಬಂದ ನಂತರವೂ ಪದ್ಯದ ಮೂಲಕ, ಮಾರ್ಗದಲ್ಲಿ ಸೂತ್ರ ಮಾರ್ಗದಲ್ಲಿ ಪುಸ್ತಕಗಳನ್ನು ನೆನಪಿನಲ್ಲಿ ಉಳಿಸಿಕೊಳ್ಳುವ ಪ್ರಯತ್ನ ನಮ್ಮ ದೇಶದಲ್ಲಿ ಮಾಡಿದ್ದಾರೆ. ಇಂತಹ ಪ್ರಯತ್ನ ಹಲವು ಭಾಷೆಗಳಲ್ಲಿ ಆಗಿದೆ. ಅಷ್ಟೇ ಇಲ್ಲಿನ ಒಳಗುಟ್ಟು!</p>
+
+    <p>ವ್ಯಾಕರಣಕಾರ ಪಾಣಿನಿಯ ಕಾಲಕ್ಕಾಗಲೆ ಲಿಪಿ ಇತ್ತು ಎಂಬುದು ನಿರ್ವಿವಾದ. ಈತನ ಕಾಲ ಏನಿಲ್ಲವೆಂದರೂ ಇಂದಿಗೆ ೨೭೦೦–೨೮೦೦ ವರ್ಷಗಳ ಹಿಂದೆ. ಅವನ ನಂತರ ಸುಮಾರು ಐದುನೂರು ವರ್ಷಗಳ ನಂತರ ಬಂದ ಚಾಣಕ್ಯನ ಅರ್ಥಶಾಸ್ತ್ರವು ಲೆಕ್ಕ ಪತ್ರಗಳನ್ನು ಬರೆದಿಡುವ ವಿಷಯವನ್ನು ಹೇಳುತ್ತದೆ. ಲಿಪಿಯಿಲ್ಲದೇ ಇದು ಸಾಧ್ಯವೇ? ಹಾಗಾಗಿ ಭಾರತದ ಇನ್ನಾವ ಭಾಷೆಗೂ ಮೊದಲೇ ಸಂಸ್ಕೃತವನ್ನು ಬರೆಯುತ್ತಿದ್ದರು ಅಂತ ಖಚಿತವಾಗಿ ಹೇಳಬಹುದು.</p>
+
+    <p>ಈಗ ನಮಗೆ ಸಿಕ್ಕಿರುವ ಮೊದಮೊದಲ ಶಾಸನಗಳು ಪ್ರಾಕೃತದವು, ಆದರೆ ಪ್ರಾಕೃತವೂ ಸಂಸ್ಕೃತದ್ದೇ ಛಾಯೆಯೇ ಹೊರತು ಪೂರಾ ಬೇರೆ ಭಾಷೆಯೆಂದೆನಿಸುವುದಿಲ್ಲ. ಖಾತ್ರಿಯಾಗಿ ಹೇಳಬಹುದೇನೆಂದರೆ ಮೊದಮೊದಲ ಶಿಲಾಶಾಸನಗಳಲ್ಲಿ ಪ್ರಾಕೃತ ಬಳಸಿ ಒಂದೆರಡು ಶತಮಾನಗಳ ನಂತರ ಸಂಸ್ಕೃತ ಬಳಸಿದ್ದಾರೆ ಎಂದು ಅಷ್ಟೇ. ಅದಕ್ಕಿಂತ ಹೆಚ್ಚು ಏನು ಹೇಳಿದರೂ ಅದು ಊಹೆಯೇ.</p>
+
+    <p>ಬಹಳ ಜನರು ಸಂಸ್ಕೃತ ಎಂದರೆ ದೇವನಾಗರಿ ಲಿಪಿ ಎಂದುಕೊಂಡು, ಹತ್ತನೇ ಶತಮಾನ (ಸಾಮಾನ್ಯಶಕ) ದವರೆಗೆ ಸಂಸ್ಕೃತ ಬರವಣಿಗೆಯೇ ಇರಲಿಲ್ಲವೆಂಬ ತಪ್ಪು ಅಭಿಪ್ರಾಯವನ್ನು ಇಟ್ಟುಕೊಂಡಂತೆ ಕಾಣುತ್ತದೆ. ಆದರೆ ಸಂಸ್ಕೃತದ ಲಿಪಿಯೂ ದೇಶ ಕಾಲಗಳಿಗೆ ಬದಲಾಗುತ್ತಾ ಹೋಗಿದೆ. ದೊರಕಿರುವ ಇತಿಹಾಸವನ್ನು ನೋಡಿದರೆ ಎಲ್ಲಕ್ಕಿಂತ ಮೊದಲು ಬ್ರಾಹ್ಮೀ ಲಿಪಿ (ಅದಕ್ಕೂ ಮೊದಲು ಯಾವುದಾದರೂ ಲಿಪಿ ಇದ್ದರೆ, ಪಾಣಿನಿಯ ಕಾಲದಲ್ಲಿ, ಅದು ನಮಗೆ ದೊರೆತಿಲ್ಲ. ಅಂದಹಾಗೆ ಸಿಂಧು ಸರಸ್ವತಿ ನಾಗರಿಕತೆಯ ಲಿಪಿಯೇ  ಬ್ರಾಹ್ಮೀ ಲಿಪಿ ಆಗಿ ಬೆಳವಣಿಗೆ ಹೊಂದಿದೆ ಅನ್ನುವುದೂ ಹಲವು ಪರಿಣತರ ಅಭಿಪ್ರಾಯ. ಇದಲ್ಲದೇ,  ಬ್ರಾಹ್ಮೀ ಅನ್ನುವುದೂ ೧೯ನೇ ಶತಮಾನದಲ್ಲಿಟ್ಟ ಹೊಸ ಹೆಸರು, ೨೦೦೦ ವರ್ಷಗಳ ಹಿಂದೆ ಆ ಲಿಪಿಗೆ ಹೆಸರಿತ್ತೇ, ಹೆಸರಿದ್ದರೆ ಏನು ಎಂಬುದೆಲ್ಲ ಊಹಾಪೋಹವಷ್ಟೇ). ಇದಕ್ಕೆ ಈಚೆಗೆ ಕೆಲವರು ಧಮ್ಮಲಿಪಿ ಎಂಬ ಮರುನಾಮಕರಣ ಮಾಡಿದಂತೆ ಕಾಣುತ್ತೆ. ಅದಕ್ಕೂ ಕೂಡ, ಸಮಕಾಲೀನವಾದ ಹೆಸರಾಗಿದೆಯೆಂಬ ಸೂಚನೆಯಿಲ್ಲ. ಅಶೋಕನು ಧರ್ಮಬೋಧನೆಗಾಗಿ ಮಾಡಿಸಲು ಬಳಸಿದ ಶಾಸನಗಳನ್ನು ಧಮ್ಮಲಿಪಿಯೆಂದು ಈಚೆಯವರು ಕರೆದಿರಬೇಕು.</p>
+
+    <p>ಬ್ರಾಹ್ಮೀ ಆದ ನಂತರ ಶಾರದಾ, ವಂಗ, ನಾಗರೀ, ಸಿದ್ಧಂ, ಗ್ರಂಥ, ಕನ್ನಡ/ತೆಲುಗು, ಮಲಯಾಳ, ತಿಗಳಾರಿ, ತಿಬೆಟ್ ಹೀಗೆ ಹತ್ತು ಹಲವು ಲಿಪಿಗಳಲ್ಲಿ ಬರೆದಿರುವುದು ಕಂಡುಬರುತ್ತದೆ. ಈ ಎಲ್ಲ ಲಿಪಿಗಳೂ ಬ್ರಾಹ್ಮಿಯು ಬದಲಾಗುತ್ತ ಬಂದ ಬೆಳವಣಿಗೆಯ ಹಂತಗಳೆಂದು ನೋಡಿದಾಗ ಸಂಸ್ಕೃತಕ್ಕೆ ಲಿಪಿಯಿಲ್ಲ ಎಂಬ ಮಾತಿಗೆ ಹುರುಳಿಲ್ಲವೆಂಬುದು ತಿಳಿಯುತ್ತದೆ.</p>
+
+    <p>ಸಂಸ್ಕೃತವನ್ನು ಕೇವಲ ದೇವನಾಗರಿಯಲ್ಲಿ ಮಾತ್ರ ಬರೆಯುತ್ತಿರುವುದು ಇತ್ತೀಚಿನ ರೂಢಿ. ಸಂಸ್ಕೃತವನ್ನು ಹಲವು ಲಿಪಿಗಳಲ್ಲಿ ಬರೆವ ರೂಢಿ ಏಕೆ ಬಂತೆಂದರೆ ದೇಶ ವಿದೇಶಗಳ ವಿವಿಧ ಭಾಗಗಳಲ್ಲೂ ಸಂಸ್ಕೃತದಲ್ಲಿ ಉಪಯೋಗವೆನಿಸುವ ಶಾಸ್ತ್ರ-ಕಾವ್ಯ ಕೃತಿಗಳಿದ್ದದ್ದು. ಅಂಥ ಕೃತಿಗಳು ತಮಗೆ ಉಪಯುಕ್ತವೆಂದು ಸಂಸ್ಕೃತವನ್ನು (ಹೆಚ್ಚಾಗಿ) ಮಾತಾಡದ, ಅಥವಾ ಸಂಸ್ಕೃತ ಜನ್ಯವಾದ ಭಾಷೆಗಳನ್ನು ಮಾತಾಡದ  ಪ್ರದೇಶದ ಜನರೂ ಅರಿತಿದ್ದೇ ಅದಕ್ಕೆ ಕಾರಣ. ಆ ದಾರಿಯಲ್ಲಿ, ಒಂದೇ ಭಾಷೆಯನ್ನು ಬರೆಯಲು ತಮ್ಮ ತಮ್ಮ ಪ್ರದೇಶಗಳಲ್ಲಿ ಪ್ರಚಲಿತವಾದ ಲಿಪಿಗಳನ್ನು ಬಳಸಿದರು ಅಷ್ಟೇ. ಒಟ್ಟಿನಲ್ಲಿ ಸುಮಾರು  ಹತ್ತನೇ ಶತಮಾನದವರೆಗೆ ದೇವನಾಗರಿ ಲಿಪಿ ಕಂಡುಬರುವುದಿಲ್ಲ ಎಂದ ಮಾತ್ರಕ್ಕೆ ಅಲ್ಲಿಯವರೆಗೆ ಸಂಸ್ಕೃತವನ್ನು ಬರೆಯಲಿಲ್ಲ ಎಂದು ಅರ್ಥವಲ್ಲ ಎಂಬುದನ್ನು ಮನದಟ್ಟು ಮಾಡಿಕೊಳ್ಳಬೇಕು. ಕನ್ನಡದ ಲಿಪಿಯೂ ಹೀಗೇ — ಮೊದಲಿಗೆ ಕದಂಬ, ನಂತರ ಚಾಲುಕ್ಯ, ನಂತರ ಹೊಯ್ಸಳ, ನಂತರ ವಿಜಯನಗರ ಹೀಗೆ ಕಾಲಕಾಲಕ್ಕೆ ಬದಲಾಗುತ್ತಬಂದದ್ದೇ. ಕದಂಬ ಚಾಲುಕ್ಯ ಲಿಪಿಗಳಲ್ಲಿ ಸಂಸ್ಕೃತ ತೆಲುಗು ಕನ್ನಡ ಮೂರೂ ಭಾಷೆಗಳನ್ನು ಬರೆದಿರುವುದನ್ನು ನೋಡುವಾಗ, ನಾವು ಐಹೊಳೆಯ ರವಿಕೀರ್ತಿ ಶಾಸನದ ಲಿಪಿಯನ್ನು "ಕನ್ನಡ" ಲಿಪಿ ಎಂದು ಕರೆಯೋಣವೋ? ಚಾಲುಕ್ಯ ಲಿಪಿ ಎಂದು ಕರೆಯೋಣವೋ ಎಂಬ ಪ್ರಶ್ನೆ ನಾವೇ ಹಾಕಿಕೊಳ್ಳಬಹುದು.</p>
+
+    <div class="quote-block">
+      <span class="quote-label">ಐಹೊಳೆ ಶಾಸನ — ರವಿಕೀರ್ತಿ</span>
+      ಸಾಮಾನ್ಯ ನೆಲೆಯಲ್ಲಿ ಸರಳವಾಗಿ ಹೇಳುವಾಗ ರವಿಕೀರ್ತಿಯ ಐಹೊಳೆ ಶಾಸನದ ಲಿಪಿಯನ್ನು ಕನ್ನಡ ಲಿಪಿ ಎಂದೇವೇ ಹೊರತು, ಅದು ಕನ್ನಡಕ್ಕೆ ಮಾತ್ರ ಎಂದೇನಲ್ಲ.
+    </div>
+
+    <p>ಒಟ್ಟಿನಲ್ಲಿ, ಸಂಸ್ಕೃತಕ್ಕೆ ಲಿಪಿಯಿರಲಿಲ್ಲವೆಂದಾಗಲಿ, ಸಂಸ್ಕೃತ ಬಲ್ಲವರು ಬರವಣಿಗೆಯನ್ನು ಧಿಕ್ಕರಿಸಿದರೆಂದಾಗಲೀ ಅಭಿಪ್ರಾಯಗಳನ್ನು ನೀವು ಅಲ್ಲಲ್ಲಿ ನೋಡಿದರೆ, ಅಂತಹ ಬೀಸು ಹೇಳಿಕೆಗಳನ್ನು ನೆಚ್ಚಬೇಡಿ!</p>
+
+    <div class="source-note">ಕನ್ನಡದ ಪ್ರಖ್ಯಾತ ಬರಹಗಾರ ವಸುಧೇಂದ್ರ ಅವರ ಒಂದು ಫೇಸ್‌ಬುಕ್ ಪೋಸ್ಟ್‌ಗೆ ನಾನು ಬರೆದಿದ್ದ ಉತ್ತರವನ್ನು ತುಸು ಓರಣಗೊಳಿಸಿ ಹಾಕಿದ್ದೇನೆ.</div>
+
+    <div class="article-close">— ಹಂಸಾನಂದಿ</div>
+
+    <div class="tags">
+      <span class="tag">ಲಿಪಿ</span>
+      <span class="tag">ಭಾಷೆ</span>
+      <span class="tag">ಕನ್ನಡ</span>
+      <span class="tag">ಸಂಸ್ಕೃತ</span>
+      <span class="tag">ಇತಿಹಾಸ</span>
+    </div>
+
+  </div><!-- .article-body -->
+
+  <a class="back-link" href="https://hamsanandi.github.io/articles/">← ಲೇಖನಗಳಿಗೆ ಹಿಂದಿರುಗಿ</a>
+
+</div><!-- .article-wrap -->
+
+<hr class="section-divider">
+<footer>GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ &nbsp;·&nbsp; <a href="https://hamsanandi.github.io/" style="color:var(--gold-light);">hamsanandi</a></footer>
+
+</body>
+</html>
