@@ -1,0 +1,287 @@
+
+Amaruka kavya parampare · HTML
+<!DOCTYPE html>
+<html lang="kn" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಅಮರುಕನ ಕಾವ್ಯ ಪರಂಪರೆ ಸಮಾಜದ ಬಗ್ಗೆ ನೀಡುವ ಒಳನೋಟಗಳು — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;500;600&family=Noto+Serif+Kannada:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88; --text: #1a1208; --meta: #8a7055;
+  --verse-ink: #3a2a12;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans Kannada', 'EB Garamond', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 860px; margin: 0 auto; padding: 0 0 60px;
+  font-size: 16px; line-height: 1.6;
+}
+ 
+/* ── Top nav bar (matches site) ── */
+.site-nav { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 42px; position: sticky; top: 0; z-index: 100; }
+.nav-home { font-family: 'Noto Serif Kannada', serif; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--gold); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+.nav-home:hover { text-decoration: underline; }
+.nav-links { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-link { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.72rem; color: var(--meta); text-decoration: none; padding: 0 10px; line-height: 42px; white-space: nowrap; border-left: 1px solid var(--border); transition: color 0.15s, background 0.15s; }
+.nav-link:first-child { border-left: none; }
+.nav-link:hover { color: var(--gold); background: rgba(139,94,26,0.06); }
+.nav-link.active-section { color: var(--gold); font-weight: 600; }
+ 
+/* ── Article header ── */
+.page-header { text-align: center; padding: 44px 22px 26px; border-bottom: 1px solid var(--border); position: relative; }
+.page-header::after { content: ''; display: block; height: 2px; width: 120px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); }
+.eyebrow { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; }
+.page-title { font-family: 'Noto Serif Kannada', serif; font-weight: 600; font-size: 1.6rem; line-height: 1.45; color: var(--gold); max-width: 18em; margin: 0 auto; }
+.page-subtitle { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.9rem; color: var(--meta); margin-top: 14px; }
+.byline { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.82rem; color: var(--gold-dim); margin-top: 6px; }
+ 
+/* ── Article body ── */
+.article { max-width: 690px; margin: 0 auto; padding: 34px 24px 0; }
+.article p { font-size: 1.04rem; line-height: 1.92; margin-bottom: 1.15em; color: var(--text); }
+.article p.lead { font-size: 1.1rem; color: var(--gold-light); }
+ 
+/* ── Verse — the signature block ── */
+.verse { text-align: center; margin: 30px 0 32px; }
+.verse-inner {
+  display: inline-block; text-align: left;
+  background: var(--section-bg);
+  border: 1px solid var(--border); border-left: 3px solid var(--gold);
+  border-radius: 6px; padding: 20px 30px;
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.04rem; line-height: 2.0; color: var(--verse-ink);
+  max-width: 100%;
+}
+.verse-inner .ln { display: block; white-space: normal; }
+ 
+/* ── Ornament & end-note ── */
+.ornament { text-align: center; color: var(--gold-dim); letter-spacing: 0.5em; margin: 38px 0 26px; font-size: 0.9rem; }
+.endnote {
+  max-width: 600px; margin: 0 auto;
+  font-size: 0.92rem; line-height: 1.8; color: var(--meta);
+  font-style: italic; text-align: center;
+  background: var(--section-bg); border: 1px dashed var(--border-light);
+  border-radius: 8px; padding: 18px 22px;
+}
+ 
+/* ── Section divider ── */
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 38px auto 34px; max-width: 320px; }
+ 
+/* ── Footer ── */
+footer { font-family: 'Noto Sans Kannada', sans-serif; text-align: center; color: var(--meta); margin-top: 50px; padding: 22px 20px 0; border-top: 1px solid var(--border); font-size: 0.8rem; }
+footer a { color: var(--gold-light); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.back-link { display: inline-block; margin-top: 12px; font-size: 0.82rem; color: var(--gold); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+ 
+/* ── A11y & responsive ── */
+a:focus-visible, .nav-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+@media (max-width: 600px) {
+  .site-nav { flex-wrap: wrap; padding: 8px 12px; min-height: unset; }
+  .nav-home { width: 100%; padding-bottom: 6px; line-height: 1.4; }
+  .nav-links { width: 100%; }
+  .nav-link { font-size: 0.72rem; padding: 0 8px; line-height: 32px; }
+  .page-header { padding: 30px 18px 22px; }
+  .page-title { font-size: 1.3rem; }
+  .article { padding: 26px 18px 0; }
+  .article p { font-size: 1.0rem; }
+  .verse-inner { padding: 16px 18px; font-size: 0.98rem; line-height: 1.9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+ 
+<nav class="site-nav" aria-label="Site navigation">
+  <a class="nav-home" href="https://hamsanandi.github.io/">ಹಂಸಾನಂದಿ</a>
+  <div class="nav-links">
+    <a class="nav-link" href="https://hamsanandi.github.io/compositions/">ಸಂಗೀತರಚನೆಗಳು</a>
+    <a class="nav-link active-section" href="https://hamsanandi.github.io/articles/">ಲೇಖನಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/books/">ಪುಸ್ತಕಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/stage-productions/">ರಂಗಪ್ರಯೋಗಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/gamaka-vachana/">ಗಮಕ ವಾಚನ</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/translations/">ಅನುವಾದಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/reviews/">ವಿಮರ್ಶೆಗಳು</a>
+  </div>
+</nav>
+ 
+<header class="page-header">
+  <div class="eyebrow">ಅಮರುಶತಕ · ಅನುಬಂಧ</div>
+  <h1 class="page-title">ಅಮರುಕನ ಕಾವ್ಯ ಪರಂಪರೆ ಸಮಾಜದ ಬಗ್ಗೆ ನೀಡುವ ಒಳನೋಟಗಳು</h1>
+  <div class="page-subtitle">ಗಾಹಾ ಸತ್ತಸಯಿಯಿಂದ ಅಮರುಕ ಶತಕದವರೆಗೆ — ವ್ಯಾಪಾರ, ವಿರಹ ಮತ್ತು ಪಯಣಿಗರ ಪತ್ನಿಯರು</div>
+  <div class="byline">ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. (ಹಂಸಾನಂದಿ)</div>
+</header>
+ 
+<article class="article">
+ 
+  <p>ಸಿಂಧೂ ಸರಸ್ವತಿ ಸಂಸ್ಕೃತಿಯ ನಗರಗಳಲ್ಲಿ, ಮತ್ತು ಮಧ್ಯಪೂರ್ವ ದೇಶಗಳಲ್ಲಿ ನಡೆದ ಉತ್ಖನನಗಳಲ್ಲಿ ದೊರೆತ ಆಧಾರಗಳಿಂದ ಸುಮಾರು ನಾಲ್ಕೂವರೆ ಸಾವಿರ ವರ್ಷಗಳ ಹಿಂದೆಯೇ ಈ ಎರಡೂ ಭಾಗಗಳ ನಡುವೆ ವ್ಯಾಪಾರ ವ್ಯವಹಾರಗಳಿದ್ದದ್ದು ತಿಳಿದು ಬಂದಿದೆ. ಇದೇ ರೀತಿ, ಸುಮಾರು ಎರಡನೇ ಶತಮಾನದ ಒಂದು ಗ್ರೀಕ್ ನಾಟಕದಲ್ಲಿ, ಕನ್ನಡ ಅಥವಾ ಕನ್ನಡದಂತಹ ಭಾಷೆಯ ಕೆಲವು ಪದಗಳು ಕಂಡು ಬಂದಿರುವುದನ್ನು ನೋಡಿ, ವಿದ್ವಾಂಸರು ಭಾರತದ ಪಶ್ಚಿಮ ಕರಾವಳಿಗೂ, ಗ್ರೀಸ್, ರೋಮ್ ಮೊದಲಾದ ರಾಷ್ಟ್ರಗಳ ನಡುವೆಯೂ ವ್ಯಾಪಾರ ಸಂಬಂಧಗಳು ಇದ್ದಿರಬೇಕೆಂದು ಊಹಿಸಿದ್ದಾರೆ.</p>
+ 
+  <p>ಸಿಂಧೂ ನಾಗರಿಕತೆಯ ಸಮಯದಲ್ಲಿನ ವ್ಯಾಪಾರದ ಕುರುಹುಗಳನ್ನು ಸಾಹಿತ್ಯದ ಆಕರಗಳಲ್ಲಿ ಹುಡುಕುವುದು ಸಾಧ್ಯವಾಗಲಾರದಾದರೂ, ಸುಮಾರು 2300 ವರ್ಷಗಳ ಹಿಂದಿನ ಕೌಟಿಲ್ಯನ ಅರ್ಥಶಾಸ್ತ್ರದಲ್ಲಿ ವ್ಯಾಪಾರ, ವ್ಯಾಪಾರದ ಸರಕುಗಳು, ಅವಕ್ಕೆ ಹಾಕಬೇಕಾದ ಸುಂಕ, ಮಾರುಕಟ್ಟೆಗಳಿಗೆ ಅನ್ವಯಿಸುವ ಕಾನೂನುಗಳು ಮೊದಲಾದ ವಿಷಯಗಳ ವಿವರಗಳಿವೆ. ಇದಕ್ಕೆ ಇನ್ನೂರು ಮುನ್ನೂರು ವರ್ಷ ನಂತರದ, ಅಂದರೆ ಸಾಮಾನ್ಯಶಕ ಮೊದಲನೇ ಶತಮಾನದಲ್ಲಿ ಬರೆದದ್ದೆಂದು ಹೇಳಬಹುದಾದ ಸಾತವಾಹನ ವಂಶದ ಹಾಲ ಮಹಾರಾಜನ ಗಾಹಾಸತ್ತಸಯಿಯಲ್ಲಿ (ಇದು ಮಹಾರಾಷ್ಟ್ರೀ ಪ್ರಾಕೃತದಲ್ಲಿ, ಹಲವಾರು ಕವಿಗಳು ಬರೆದ, ಏಳುನೂರು ಪದ್ಯಗಳ ಸಂಕಲನ) ವ್ಯಾಪಾರಕ್ಕೆಂದು ದೂರ ದೇಶಕ್ಕೆ ಹೋಗುವ ವ್ಯಾಪಾರಿಗಳು, ಮತ್ತು ಗಂಡಂದಿರ ಅಗಲಿಕೆಯಲ್ಲಿ ಕೊರಗುವ ಈ ವ್ಯಾಪಾರಿಗಳ ಹೆಂಡಿರ ವಿಷಯವು ಹಲವಾರು ಪದ್ಯಗಳಲ್ಲಿ ಪ್ರಸ್ತಾಪವಾಗಿವೆ. ಗಾಹಾ ಸತ್ತಸಯಿಯಲ್ಲಿ ಹಲವಾರು ಬಗೆಯ ಪದ್ಯಗಳು ಇದ್ದರೂ, ಪ್ರೀತಿ ಪ್ರೇಮಗಳ ಬಗ್ಗೆ ಮೊದಮೊದಲ ಮುಕ್ತಕಗಳು ಇಲ್ಲಿ ನಮಗೆ ಸಿಗುತ್ತವೆ ಎನ್ನಬಹುದು. ಸರಿ ಸುಮಾರು ಇದೇ ಸಮಯಕ್ಕೆ ಸೇರಿದಂತಹ ಕೆಲವು ಸಂಗಂ ತಮಿಳು ಕಾವ್ಯಗಳಿಂದ (ಉದಾ: ಅಗನಾನೂರು) ಈ ರೀತಿಯ ಪರಂಪರೆ ಭಾರತದ ಎಲ್ಲ ಕಡೆಯಲ್ಲೂ ಇದ್ದಿರಬೇಕು ಎಂದೂ ಊಹೆ ಮಾಡಬಹುದು. ಅಮರುಕನು ತನ್ನ ಪದ್ಯಗಳಿಗೆ ಕೆಲವು ಗಾಹಾಸತ್ತಸಯಿಯ ಪದ್ಯಗಳನ್ನು ಮಾದರಿಯನ್ನಾಗಿ ಇಟ್ಟುಕೊಂಡಿರುವುದು, ಕೆಲವೊಮ್ಮೆ ಅಲ್ಲಿರುವ ಅದೇ ಪದ್ಯಗಳಲ್ಲಿನ ಅಂಶವನ್ನು ವಿಸ್ತರಿಸಿ ಬೆಳೆಸಿರುವುದು ಕೂಡ ಈಗಾಗಲೇ ಚರ್ಚೆಗೆ ಒಳಪಟ್ಟಿರುವ ವಿಷಯಗಳೇ ಆಗಿದೆ.</p>
+ 
+  <p>ಗಾಹಾಸತ್ತಸಯಿಯಲ್ಲಿ ಕಾಣಬರುವ ಎಷ್ಟೋ ಹೆಣ್ಣುಗಳು ಓದು ಬರಹ ಬಾರದವರು, ಲೆಕ್ಕಾಚಾರ ಗೊತ್ತಿಲ್ಲದವರು ಆಗಿದ್ದರೆ, ಮತ್ತೆ ಕೆಲವರು ಬೆಣ್ಣೆಯಲ್ಲಿ ಕೂದಲು ತೆಗೆವ ಚಾಕಚಕ್ಯತೆಯವರು. ಕೆಲವರು ಸಿರಿವಂತರಾದರೆ ಕೆಲವರು ಬಡವರು. ಹೀಗೆ ಗಾಹಾಸತ್ತಸಯಿಯಲ್ಲಿ ಸಮಾಜದ ಬೇರೆ ಬೇರೆ ಚಿತ್ರಣಗಳನ್ನು ನೋಡಬಹುದು. ಮಳೆಮೋಡಗಳನ್ನು ಆಕಾಶದಲ್ಲಿ ಕಂಡಾಗ, ಇನ್ನು ಮೂರೋ ನಾಲ್ಕೋ ತಿಂಗಳು ತನ್ನ ಪ್ರಿಯನು ಊರಿಗೆ ಮರಳಲಾರ ಎಂದು ಕೊರಗುವ ತಿಳುವಳಿಕೆ ಇರುವಾಕೆ ಒಂದು ಕಡೆಯಿದ್ದರೆ ಮಳೆ ನೀರಿಂದ ಗೋಡೆ ತೋಯುವಾಗ, ಆ ಗೋಡೆಯ ಮೇಲೆ ತನ್ನ ಗಂಡ ಊರಿಗೆ ಹೋಗಿ ಎಷ್ಟು ದಿನವಾಗಿದೆ ಎಂಬ ಲೆಕ್ಕಾಚಾರಕ್ಕೆಂದು, ದಿನಕ್ಕೊಂದರಂತೆ ಹಾಕಿದ್ದ ಇದ್ದಲಿನ ಗೆರೆಗಳು ಎಲ್ಲಿ ಅಳಿಸಿ ಹೋಗಿ ಲೆಕ್ಕ ತಪ್ಪಿಹೋದೀತೋ ಎಂಬ ಅಂಜಿಕೆಗೆ ಗೋಡೆಗೆ ಆತುಕೊಂಡು ನಿಲ್ಲುವ ಮುಗ್ಧೆ ಇನ್ನೊಂದು ಕಡೆ. ಹೀಗೆ ಹಲವು ಬಗೆಯ ಪಾತ್ರಗಳು ಗಾಹಾಸತ್ತಸಯಿಯಲ್ಲಿ ಕಂಡುಬರುತ್ತವೆ.</p>
+ 
+  <p>ಗಾಹಾ ಸತ್ತಸಯಿಯಲ್ಲಿರುವಂತೆ ಅಮರುಕ ಶತಕದಲ್ಲಿಯೂ ಹೆಚ್ಚು ಪದ್ಯಗಳನ್ನು ನಾಯಕಿಯ ದೃಷ್ಟಿಯಿಂದಲೇ ಹೇಳಿದ್ದರೂ ಎರಡೂ ಕಡೆ ನಾಯಕನ ಕಡೆಯಿಂದ ಬರೆದಂತಹ ಪದ್ಯಗಳೂ ಇವೆ. ಜೊತೆಗೆ ವ್ಯಾಪಾರಕ್ಕೋಸ್ಕರ ಪ್ರಯಾಣಕ್ಕೆ ಹೋಗುವ ಗಂಡಸರು, ಅವರನ್ನು ನೆನೆದು ಕೊರಗಿ ಅವರ ಮರಳುವಿಕೆಗೆ ಕಾಯುವ ಪತ್ನಿಯರ ವಿಷಯವು ಗಾಹಾಸತ್ತಸಯಿ ಮತ್ತೆ ಅಮರುಶತಕ ಎರಡರಲ್ಲೂ ಕಂಡುಬರುತ್ತದೆ. ಗಾಹಾಸತ್ತಸಯಿಯ ಹೆಣ್ಣುಗಳು ಹೆಚ್ಚಾಗಿ ಹಳ್ಳಿಯವರಾಗಿದ್ದರೆ, ಅಮರುಕನ ಪದ್ಯಗಳಲ್ಲಿ ಕಂಡು ಬರುವ ನಾಯಕಿಯರು ಬಹುಶಃ ಪಟ್ಟಣಗಳಲ್ಲಿದ್ದು, ಹೆಚ್ಚು ಸ್ಥಿತಿವಂತ ಕುಟುಂಬಗಳಿಂದ ಬಂದಂತೆ ತೋರುತ್ತಾರೆ. ಬಡವರೇ ಇರಲಿ ಸಿರಿವಂತರೇ ಇರಲಿ, ಪ್ರೀತಿ ಪ್ರೀತಿಯೇ, ವಿರಹ ವಿರಹವೇ ಅಲ್ಲವೇ? ಇಲ್ಲಿಯೂ ಗಂಡಹೆಂಡಿರು ತಿಂಗಳುಗಟ್ಟಲೆ ಒಬ್ಬರಿಂದೊಬ್ಬರು ದೂರವಿರುವ ಪ್ರಸಂಗಗಳು ಬರುತ್ತವೆ. ಎಲ್ಲ ಪದ್ಯಗಳಲ್ಲೂ ಪತಿಯು ಊರಿಗೆ ತೆರಳಿದ್ದು ವ್ಯಾಪಾರಕ್ಕೇ ಎಂದು ನೇರವಾಗಿ ಹೇಳಿರದಿದ್ದರೂ, ಹಾಗೆಂದು ಊಹಿಸಲು ಅವಕಾಶವಿದೆ. ಒಂದು ಪದ್ಯದಲ್ಲಂತೂ ವ್ಯಾಪಾರಿಗಳು ಊರಿಂದೂರಿಗೆ ಹೋಗುವಾಗ ಅವರು ಸೇರಿಕೊಳ್ಳುತ್ತಿದ್ದ ಸಾರ್ಥದ ಪ್ರಸ್ತಾಪ ಇರುವುದರಿಂದ ಈ ಅಮರುಶತಕವು ಹೇಳುವ ನಾಯಕಿಯರಲ್ಲಿ ಹಲವರು ವ್ಯಾಪಾರಿ ಕುಟುಂಬಗಳಿಗೆ ಸೇರಿದವರೆಂದು ತಿಳಿಯಬಹುದು. ಇಡೀ ಪದ್ಯಾನುವಾದವನ್ನು ಓದುವ ಮುನ್ನ, ಈ ವಿಷಯಕ್ಕೆ ಹೊಂದುವ, ಅಮರುಕ ಶತಕದಿಂದ ಆಯ್ದ ಕೆಲವು ಪದ್ಯಗಳನ್ನೂ, ಅವುಗಳ ಅನುವಾದಗಳನ್ನೂ ಈ ಅನುಬಂಧದಲ್ಲಿ ನೋಡೋಣ.</p>
+ 
+  <p>ಅಮರುಕಶತಕದ ಪದ್ಯಗಳೆಲ್ಲ ಮುಕ್ತಕಗಳು. ಅಂದರೆ, ಒಂದು ಪದ್ಯಕ್ಕೂ ಮತ್ತೊಂದಕ್ಕೂ ಯಾವುದೇ ಸಂಬಂಧವಿಲ್ಲ. ಯಾವ ಪಾತ್ರಗಳಿಗೂ ಹೆಸರಿರುವುದಿಲ್ಲ. ನಮ್ಮ ಅನುಕೂಲಕ್ಕೆ ನಾಯಕ, ನಾಯಕಿ ಎಂದು ಅಡಿ ಟಿಪ್ಪಣಿಗಳಲ್ಲಿ ಸೂಚಿಸಿದೆ. ಹಲವು ಪದ್ಯಗಳಲ್ಲಿ ಗೆಳತಿ, ದೂತಿ, ಗೆಳೆಯನ ಪಾತ್ರಗಳು ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ. ಕೆಲವು ಪದ್ಯಗಳಲ್ಲಿ ಸಹಪ್ರಯಾಣಿಕ, ಹಳ್ಳಿಗರು, ಮನೆಯ ಹಿರಿಯರು ಮೊದಲಾದವರ ಪ್ರಸ್ತಾಪವೂ ಇವೆ. ಬಿಡಿ ಪದ್ಯಗಳಾದ್ದರಿಂದ ಇಲ್ಲಿ ಪದ್ಯದಿಂದ ಪದ್ಯಕ್ಕೆ ಮುಂದುವರೆಯುವ ಯಾವುದೇ ಕಥೆ ಇಲ್ಲದಿದ್ದರೂ, ಈ ಶತಕದಲ್ಲಿ ಪ್ರಸ್ತಾಪವಾಗಿರುವ ‘ಪಯಣಿಗರ ಪತ್ನಿಯರ’ ಬಗ್ಗೆ ಇರುವ ಪದ್ಯಗಳನ್ನು ಒಗ್ಗೂಡಿಸಿ, ಪದ್ಯಗಳ ನಡುವೆ ಒಂದಷ್ಟು ನನ್ನದೇ ವ್ಯಾಖ್ಯಾನ ಬರೆದಿದ್ದೇನೆ.</p>
+ 
+  <div class="section-divider" role="separator"></div>
+ 
+  <p class="lead">ಒಂದು ಬೀಳ್ಕೊಡುವ ಸಂದರ್ಭ. ವ್ಯಾಪಾರಿಯೊಬ್ಬ ಪ್ರಯಾಣಕ್ಕೆ ಹೊರಟಿದ್ದಾನೆ. ಅವನ ಹೆಂಡತಿಯೋ, ಬಹಳ ಮುಗ್ಧೆ. ಗಂಡನನ್ನು ಮರಳಿಬರುವುದು ಯಾವಾಗ ಎಂದು ಕೇಳುತ್ತಿರುವ ಬಗೆಯನ್ನು ನೋಡಿ:</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಗಂಟೆಹೊಡೆಯುವ ಮುನ್ನವೋ ನಡುಹಗಲಲೋ ತುಸುಬಳಿಕವೋ</span>
+    <span class="ln">ಅಲ್ಲದಿರೆ ಇಳಿಹೊತ್ತಿಗಲ್ಲವೆ ಇನಿಯ ನೀ ಬರುವುದೆನುತ</span>
+    <span class="ln">ನೂರು ದಿನಗಳ ದೂರ ಪಯಣಕೆ ಹೊರಟುನಿಂತಿಹ ನಲ್ಲನ</span>
+    <span class="ln">ಗಮನ ತಪ್ಪಿಸುತಿಹಳು ಹುಡುಗಿಯು ಬಿಕ್ಕುತಲಿ ಕಂಬನಿಯಲಿ</span>
+  </div></div>
+ 
+  <p>ನೂರು ದಿನಗಳ ಪ್ರಯಾಣಕ್ಕೆ ಹೊರಟಾತ ಹೇಗೆ ಸಮಾಧಾನ ಹೇಳಿದನೋ! ಅಂತೂ ಅವನು ಆಕೆಯನ್ನು ಒಪ್ಪಿಸಿರಬೇಕು. ಆದರೆ ಆ ಕ್ಷಣದಲ್ಲಿ ಕಣ್ಣು ಮುಚ್ಚಿದ ಅವಳಿಗೆ, ಅವನನ್ನು ಬಿಟ್ಟ ವಿರಹದ ಬೇಗುದಿ ಅಲ್ಲೇ ತಟ್ಟಿದೆ! ಕಣ್ಣು ಬಿಟ್ಟೊಡನೆಯೇ, ಗಂಡ ಅಲ್ಲೇ ಇದ್ದುದನ್ನು ನೋಡಿ, ಅವನು ಊರಿಗೆ ಹೋಗಿ, ಮರಳಿ ಬಂದಾಯಿತೆಂದು ಬಹಳ ಸಂತೋಷಗೊಂಡು, ನೀನು ಯಾವಾಗ ಮರಳಿದೆಯೆಂದು ಅವನನ್ನೇ ಕೇಳುತ್ತಾಳೆ!</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಇನಿಯನೂರಿಗೆ ಹೊರಡುವೆನೆನೆ ತ-</span>
+    <span class="ln">ರುಣಿಯು ಮೊಗವನು ನೆಟ್ಟು ಕೆಳಗಡೆ</span>
+    <span class="ln">ಮಣಿಯೆ ವಿರಹದುರಿಯಲಿ ಬೆಂದಳು ಮುಗುದೆಯಾಕ್ಷಣವೆ</span>
+    <span class="ln">ಚಣದ ನಂತರ ನೋಡೆ ನಲ್ಲನು</span>
+    <span class="ln">ಕಾಣಲಾತನ ನೋಡಿಯಚ್ಚರಿ</span>
+    <span class="ln">ಯೆನಿಸಿ ಹರುಷದಿ ತಬ್ಬಿ ನುಡಿದಳು ಬಂದುದೆಂದೆಂದು!</span>
+  </div></div>
+ 
+  <p>ತಾನಿನ್ನೂ ಪ್ರಯಾಣಕ್ಕೆ ಹೋಗಿಲ್ಲವೆಂದೂ, ಈಗಿನ್ನು ಹೊರಡಲೇಬೇಕೆಂದೂ, ಊರಿಗೆ ಹೋದವರು ಬಂದೇಬರುವರು ಅಲ್ಲವೇ ಎಂದೂ, ತಿಳಿಸುವ ಭಾರ ಇವನಿಗೆ ಮತ್ತೆ ಬಂದಿದೆ. ಈತ ಸಮಾಧಾನ ಪಡಿಸಬಹುದು. ಕೇಳುವುದು ಅವಳಿಗೆ ಬಿಟ್ಟದ್ದು! ಅವಳು ನಕ್ಕಳಂತೆ, ಆದರೆ ಬದುಕುವಾಸೆಯೇ ಅವಳಲ್ಲಿಲ್ಲ!</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಪಯಣ ಹೋದರೆ ಮತ್ತೆ ಬಾರದೆ ಇರುವುದುಂಟೇ ಸುಂದರಿ?</span>
+    <span class="ln">ಎನ್ನ ಸಲುವಿಗೆ ಚಿಂತೆಯೇತಕೆ? ಏತಕೀಪರಿ ಸೊರಗಿಹೆ?</span>
+    <span class="ln">ಒದ್ದೆಗಣ್ಣಲಿ ನಾನು ಕೇಳಲು ನಾಚಿ ತುಂಬಿದ ಕಣ್ಗಳ</span>
+    <span class="ln">ನೀರ ತಡೆದಳು! ನೋಡಿ ನಕ್ಕಳು! ತೋರಿ ಸಾವಿಗೆ ಕಾತರ!</span>
+  </div></div>
+ 
+  <p>ಅವಳು ನಕ್ಕಿದ್ದರಲ್ಲಿ, ಪ್ರಾಣವೇ ಹೋಗಿಬಿಡುವುದೇನೋ ಎಂಬ ದುಃಖ ಅವನಿಗೆ ಕಂಡಿತು. ಆದರೇನಂತೆ? ಜೀವನ ವ್ಯಾಪಾರ ನಡೆಯಬೇಕಲ್ಲ! ಹೇಗೋ ದಿನಗಳು ಕಳೆದುಬಿಡುತ್ತವೆ! ಯೋಚಿಸದಿರು ಎಂದು ಸಮಾಧಾನ ಮಾಡುತ್ತಾನಂತೆ ಅವಳನ್ನು. ಹೋಗಿ ಬರುವ ದಿನಗಳು ಕಣ್ಣು ಮುಚ್ಚಿ ತೆಗೆದಂತೆ ಕಳೆದು ಹೋಗುವುದೋ ಇಲ್ಲವೋ, ಆದರೆ, ದಿಕ್ಕೇ ತೋಚದೆ ಇರುವುದರಿಂದ ಕಣ್ಣು ತೆರೆದರೇನು, ಮುಚ್ಚಿದರೇನು ಎಂಬ ಭಾವನೆ ಇರಬೇಕು ಅವಳಿಗೆ. ಹೊರಡುವ ಮೊದಲು ಏನಾದರೂ ಹೇಳೆಂದು ಆಕೆಯನ್ನು ಕೇಳಿದರೆ, ತನ್ನ ಸಾವಿನ ಸುದ್ದಿ ತಿಳಿದೊಡನೆ, ಸಿಕ್ಕ ಪುಣ್ಯ ಕ್ಷೇತ್ರದಲ್ಲಿ ತನಗೆ ತರ್ಪಣ ಕೊಡೆಂದು ಹೇಳುತ್ತಾ, ಆ ಮೂಲಕ ಅವನನ್ನು ಬಿಟ್ಟು ತಾನು ಬಹುಕಾಲ ಬದುಕಿ ಉಳಿಯಲಾರೆ ಎಂದು ಸೂಚಿಸುತ್ತಿದ್ದಾಳೆ!</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">“ಇನಿಯೆ ದಿನಗಳ ಮುಚ್ಚಿ ಕಣ್ಣನು ಹೇಗೊ ಎಂತೋ ಕಳೆಯೆ, ನೀ”</span>
+    <span class="ln">“ಒಳಿತು! ಕಂಗಳ ಮುಚ್ಚಿ ಬಿಡುವೆನು ದಿಕ್ಕು ತೋಚದ ಮುನ್ನವೇ”</span>
+    <span class="ln">“ಬಂದೆ ಬಿಟ್ಟೆನು!” “ಒಳ್ಳೆ ಗೆಳೆಯರ ಭಾಗ್ಯ ಹೆಚ್ಚಿರೆ ನಿಚ್ಚಳ”</span>
+    <span class="ln">“ನಿನ್ನೊಸಗೆಯೇನಿಹುದು” “ತರ್ಪಣ ನೀಡು ಪುಣ್ಯ ಕ್ಷೇತ್ರದಿ”</span>
+  </div></div>
+ 
+  <p>ಏನೇ ಆಗಲಿ, ಹೊರಡುವುದನ್ನು ತಪ್ಪಿಸಲಾಗದು. ಹೊರಟಿದ್ದಾನೆ. ಹಲ ದಿನಗಳು ಕಳೆದಿವೆ. ಗಂಡನನ್ನು ಬಿಟ್ಟಿರುವ ವಿರಹ ಹೆಂಡತಿಗೆಷ್ಟೋ, ಇವನಿಗೂ ಅಷ್ಟೇ ಇದೆ. ನೂರಾರು ಯೋಜನಗಳ ದಾರಿಯನ್ನು ದಾಟಿದರೂ, ಹೊಳೆ ತೊರೆ ಕಾಡುಗಳನ್ನು ದಾಟಿದ್ದರೂ, ಊರಿನ ದಿಕ್ಕಿಗೆ ನೋಡಿದಾಗ, ಅವಳ ಮೊಗವೇ ಅವನಿಗೆ ಕಾಣುತ್ತಿರುತ್ತದೇನೋ ಎನ್ನಿಸುತ್ತೆ! ಹಾಗೆಂದೇ ಅವನು ಆ ಕಡೆಗೇ ಬಗ್ಗಿ ಬಗ್ಗಿ ನೋಡುತ್ತಿರುತ್ತಾನಂತೆ!</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ದೂರದೇಶದಿ ಕಾಡುಮಲೆಹೊಳೆ ನೂರು ದಾಟಿಹ ಹಾದಿಗ</span>
+    <span class="ln">ತನ್ನ ದಿಟ್ಟಿಗೆ ನಲ್ಲೆ ನಿಲುಕಳು ಎಂಬುದನು ತಾನರಿತರೂ</span>
+    <span class="ln">ಕೊರಳ ನಿಲುಕಿಸಿ ಮೆಟ್ಟುಗಾಲಲಿ ನೀರು ತುಂಬಿದ ಕಣ್ಣಲಿ</span>
+    <span class="ln">ಏನನೋ ನೆನೆಯುತ್ತಲಾಕಡೆಯಲ್ಲೆ ನೋಡುತಲಿರುವನು!</span>
+  </div></div>
+ 
+  <p>ಅವನ ನೂರು ದಿನಗಳ ಪ್ರಯಾಣದಲ್ಲಿ, ಈ ವ್ಯಾಪಾರಿ ಪ್ರತಿ ರಾತ್ರಿಯೂ ಒಂದಲ್ಲ ಒಂದು ಹಳ್ಳಿಯಲ್ಲಿ ತಂಗಬೇಕು. ಹೀಗೊಮ್ಮೆ ಎಲ್ಲೋ ತಂಗಿದ್ದಾಗ, ತನ್ನ ಪ್ರಿಯೆಯಿಂದ ದೂರವಾಗಿರುವ ದುಃಖವನ್ನೇ ಹಾಡಾಗಿ ಹಾಡುತ್ತಿದ್ದನಂತೆ. ಆ ಹಾಡಿಗೆ, ಮೋಡಗಳೇ ದುಃಖಪೂರಿತರಾಗಿ, ಅವನ ವಿರಹಕ್ಕೆ ಕಣ್ಣೀರು ಸುರಿಸುವಂತೆ ಮಳೆಸುರಿದಿರುವಂತೆ.</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ರಾತ್ರಿ ಹೊತ್ತಿನಲಿ ಮೋಡಮೊರೆವಾಗ ತಳಮಳಿಸಿ ಕಣ್ಣಲಿ</span>
+    <span class="ln">ನೀರ ಸುರಿಸುತ್ತ ತನ್ನ ವಿರಹವನೆ ಹಾಡುತಿರೆ ಹಾದಿಗ</span>
+    <span class="ln">ನೋವ ತುಂಬಿರುವ ಜೀವ ಹಿಂಡುತಿಹ ದನಿಯ ಕೇಳಿ ಲೋಕ</span>
+    <span class="ln">ಪಯಣಕಿರಲಿ ಬಿಂಕಕ್ಕು ಕೂಡ ತರ್ಪಣವ ಕೊಟ್ಟಿತಲ್ಲ!</span>
+  </div></div>
+ 
+  <p>ಇವನ ಈ ದುಃಖವನ್ನು ಕಂಡಮೇಲೆ, ಆ ರಾತ್ರಿಗೆ ಇವನಿಗೆ ಆಸರೆ ಕೊಟ್ಟ ಹಳ್ಳಿಗರು ಏನು ತಾನೇ ಮಾಡಿಯಾರು? ಆದರೆ, ರಾತ್ರಿ ಇಡೀ ಇವನು ವಿರಹದಲ್ಲಿ ಹಾಡುವುದನ್ನು, ಆ ಗೋಳಿನ ನೋವನ್ನು ಕೇಳಿದ ಹಳ್ಳಿಗರು ಇನ್ನು ಮುಂದೆ ಇಂಥ ವ್ಯಾಪಾರಿಗಳಿಗೆ ರಾತ್ರಿ ತಂಗಲು ಅವಕಾಶ ಕೊಡುವುದೇ ಬೇಡ ಎಂದು ನಿರ್ಧಾರ ಮಾಡಿಬಿಟ್ಟರಂತೆ. ಹೇಗಿದ್ದಿರಬಹುದು ನೋಡಿ ಇವನ ವಿರಹದ ತೀವ್ರತೆ!</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಇರುಳಿನಲಿ ಸುರಿವಮಳೆ ಕಾರ್ಮುಗಿಲ ಗುಡುಗುಗಳ ಕೇಳಿ ಕಂಗೆಟ್ಟಾತನು</span>
+    <span class="ln">ಊರಿನಲ್ಲೊಬ್ಬಳೇ ನಿಟ್ಟುಸಿರಿನಲಿ ನವೆಯುತಿರುವ ಹುಡುಗಿಯನೆ ನೆನೆದು</span>
+    <span class="ln">ಪಯಣಿಗನು ರಾತ್ರಿಯಿಡಿ ಬಿರಿದ ಕೊರಲಲ್ಲಿ ತಾ ಗೋಳಾಡುತಿರುವ ದನಿಯ</span>
+    <span class="ln">ಕೇಳಿ ಹಳ್ಳಿಗರಂದೆ ಮುಡಿವು ಮಾಡಿದರೆಡೆಯ ಕೊಡೆವೆಂದು ಪಯಣಿಗರಿಗೆ</span>
+  </div></div>
+ 
+  <p>ಇವನು ಹೀಗಿದ್ದರೆ, ಅವಳಿನ್ನೂ ಕೋಮಲೆ! ಮಳೆ ಹೀಗೆ ಸುರಿದಾಗ, ಊರಿನಲ್ಲಿ ಇದ್ದ ಅವಳಿಗೆ ಏನಾಯ್ತೋ!</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ರಾತ್ರಿಯಲಿ ಗುಡುಗೊಂದು ಮೊರೆಯೆ ಸೊರಗಿಹ ಬೆಡಗಿ</span>
+    <span class="ln">ಬೆಚ್ಚಿಬಿದ್ದಿರಲೊಡನೆ ಮೂರ್ಛೆಯಲ್ಲೆ</span>
+    <span class="ln">ಹಾಸಿಗೆಯ ಬಳಿ ಕುಳಿತ ಗೆಳತಿಯರು ಕೊರಗುತ್ತ</span>
+    <span class="ln">ಕೈಗೆ ಮೊಗವಿತ್ತಿರಲು ದುಃಖದಲ್ಲೆ</span>
+    <span class="ln">ಜೋರಾಗಿ ಅಳುತಿರಲು ಸುರಿಸುತಿಹ ಕಣ್ಣೀರು</span>
+    <span class="ln">ಹರಿದು ಹೋಗಿರಲವಳ ಎದೆಯ ಮೇಲೆ</span>
+    <span class="ln">ನೆನೆಯುತ್ತ ನೆನೆಯುತ್ತಲಿನಿಯನಾ ಮೆದುಮಾತ</span>
+    <span class="ln">ಗೋಳಾಡುತಿಹಳು ಪಯಣಿಗನ ನಲ್ಲೆ</span>
+  </div></div>
+ 
+  <p>ಇಲ್ಲಿ ನೋಡಿ, ಅವಳು ಒಬ್ಬಳೇ ಇಲ್ಲ. ಅವಳ ದುಃಖದಲ್ಲಿ, ವಿರಹದಲ್ಲಿ, ಅವಳ ಸಖಿಯರೂ ಕೂಡ ಪಾಲ್ಗೊಂಡಿದ್ದಾರೆ! ಅವಳು ತನ್ನ ಪ್ರಿಯನನ್ನು ನೆನೆನೆನೆದು, ಗುಡುಗಿನ ಸದ್ದಿಗೆ ಬೆದರಿ, ಮೂರ್ಛೆಯೇ ಹೋದಳಂತೆ. ಅವಳ ಗೋಳಂತೂ ಹೇಳತೀರದಾಗಿದೆ. ಇತ್ತಕಡೆ ಇವನ ಪ್ರಯಾಣ ಮುಂದುವರೆದಿದೆ. ಬಹುಶಃ ಪತ್ನಿಯ ನೆನಪು ಮಾಡಿಕೊಳ್ಳುತ್ತಾ, ತಾನು ಹೊರಡುವಾಗ ತನ್ನ ಮಡದಿಯೊಂದಿಗೆ ನಡೆದ ಸಂಭಾಷಣೆಯನ್ನು ಅವನು ತನ್ನ ಸಹ ಪ್ರಯಾಣಿಕನಿಗೆ ಹೀಗೆ ವಿವರಿಸಿದ್ದಿರಬಹುದು:</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಆಗಸದಿ ಮಳೆ ಮೋಡ ಮೊರೆದಿರೆ ಕಣ್ಣು ತುಂಬಿಸಿ ಕೋಮಲೆ</span>
+    <span class="ln">“ನಲ್ಲ ಪಯಣಕೆ ನೀನು ಹೋದರೆ” ಎನಲು ಮಾತೇ ಕಟ್ಟಿರೆ</span>
+    <span class="ln">ನನ್ನ ಬಟ್ಟೆಯ ಹಿಡಿದದೆಂತೋ ನೆಲವ ಕೆರೆಯುತ ಸುಮ್ಮನೆ</span>
+    <span class="ln">ನಿಂತು ಬಿಟ್ಟುದ ಮಾತಿನಲಿ ನಾನಿಂದು ಹೇಳಲು ಸಾಧ್ಯವೆ?</span>
+  </div></div>
+ 
+  <p>ಈತ ಹೊರಟು ಹಲವಾರು ತಿಂಗಳೇ ಆಗಿಹೋಗಿದೆಯೇನೋ! ಇವನಿಲ್ಲದೆ ಹೆಂಡತಿ ಸೊರಗಿ ಹೋದಳು. ಎಷ್ಟೆಂದರೆ ಅವಳ ಕೈಗಳಿಂದ ಬಳೆಗಳು ಜಾರಿ ಹೋಗುವಷ್ಟು, ಅವಳು ಒಣಗಿ ಬಡವಾಗಿಹೋದಳು. ಅವಳ ಸ್ಥಿತಿಯನ್ನು ಕವಿ ವಿವರಿಸುವುದು ಈ ಮುಂದಿನ ಪದ್ಯದಿಂದ.</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ತೊಟ್ಟ ಬಳೆಗಳು ಕೈಯ ತೊರೆದಿವೆ ಕಣ್ಣ ನೀರದು ಸುರಿದಿದೆ</span>
+    <span class="ln">ಧೈರ್ಯ ಚಣದಲೆ ಮಾಯವಾಗಿದೆ ಮನಸು ದೂರಕೆ ಓಡಿದೆ</span>
+    <span class="ln">ಗಟ್ಟಿ ಮನದಲೆ ನಲ್ಲ ತೆರಳಿರೆ ಜೊತೆಯಲೇ ಇವರೆಲ್ಲರೂ</span>
+    <span class="ln">ಹೊರಟು ಹೋದರೆ ಜೀವ ಸಾರ್ಥವ ತೊರೆದು ಉಳಿದಿಹೆಯೇತಕೆ?</span>
+  </div></div>
+ 
+  <p>ನೂರಾರು ವ್ಯಾಪಾರಿಗಳು ದೇಶದಿಂದ ದೇಶಕ್ಕೆ ಪ್ರಯಾಣ ಹೋಗುವ ಗುಂಪಿಗೆ ಸಾರ್ಥ ಎಂದು ಹೆಸರು. ಇಂತಹ ಸಾರ್ಥಗಳೊಡನೆ ತೀರ್ಥಯಾತ್ರೆಗೆಂದು ಹೋಗುವ ಪ್ರಯಾಣಿಕರೂ, ಅವರ ಸಾಮಾನುಗಳನ್ನು ಕೊಂಡೊಯ್ಯುವ ಕುದುರೆ, ಕತ್ತೆ ಮೊದಲಾದ ಪ್ರಾಣಿಗಳೂ, ದಾರಿಯಲ್ಲಿ ಬಂಡಿಗಳನ್ನು ದುರಸ್ತಿ ಮಾಡುವ ಬಡಗಿ, ಕಮ್ಮಾರರೂ, ಹೀಗೆ ಬಗೆಬಗೆಯ ಜನರೂ, ಪ್ರಾಣಿಗಳೂ ಹೋಗುತ್ತಿದ್ದರು. ಈ ಪದ್ಯದಲ್ಲಿ ಆಕೆ, ತನ್ನ ಕೈಯಿಂದ ಜಾರಿ ಹೋದ ಬಳೆಗಳನ್ನು, ಕಣ್ಣಿಂದ ಸುರಿದ ನೀರನ್ನು, ಮಾಯವಾದ ಧೈರ್ಯವನ್ನು, ತನ್ನತನವನ್ನೇ ಕಳೆದುಕೊಂಡ ಮನಸ್ಸನ್ನು, ತನ್ನ ಪ್ರಿಯನು ಹೋದ ಸಾರ್ಥದೊಡನೆಯೇ ಹೊರಟು ಹೋದರು ಎಂದು ಸಮೀಕರಿಸುತ್ತಿದ್ದಾಳೆ. ತನ್ನ ಜೀವವನ್ನು, ನೀನಾದರೂ ಏಕಿದ್ದೀಯೆ? ನೀನೂ ಸಾರ್ಥದೊಡನೆಯೇ ಹೊರಟು ಹೋಗಬೇಕಿತ್ತು ಎಂದು, ತಾನು ಬದುಕುವುದೇ ಕಷ್ಟವಾಗಿದೆ ಎಂಬುದನ್ನು ಸೂಚಿಸುವಂತೆ ಹೇಳುತ್ತಿದ್ದಾಳೆ. ನನಗೆ ಕಂಡಂತೆ, ವ್ಯಾಪಾರೀ ಸಂಬಂಧವಾದ ಸಾರ್ಥದ ಹೆಸರು ಅಮರುಕ ಶತಕದಲ್ಲಿ ಬರುವುದು ಇದೊಂದೇ ಪದ್ಯದಲ್ಲಿ.</p>
+ 
+  <p>ಹಲವು ತಿಂಗಳಾಗಿವೆ. ಬಹುಶಃ ಅವನು ತಲುಪಬೇಕಾದೆಡೆಗೆ ತಲುಪಿದ್ದಾನೆ. ವ್ಯಾಪಾರ ಮುಗಿಸಿದ್ದಾನೆ. ಊರಿಗೆ ಮರಳುತ್ತಿದ್ದಾನೆ. ದಾರಿಯ ಹಳ್ಳಿಯಲ್ಲಿ ತಂಗಹೊರಟಿದ್ದಾನೆ. ಅವನಿಗೆ ಅಲ್ಲಿ ರಾತ್ರಿ ಮಲಗಲು ಎಡೆ ಸಿಕ್ಕಿತೇ? ಇಲ್ಲವೇ?</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಇಲ್ಲಿ ನೀಡೆವು ಹಾದಿಗನೆ ವಸತಿಯನು ತಂಗಲು ಇರುಳಲಿ</span>
+    <span class="ln">ಒಮ್ಮೆ ಹಳ್ಳಿಯ ಮದುವೆ ಮಂಟಪದಲ್ಲಿ ಹರೆಯದ ಪಯಣಿಗ</span>
+    <span class="ln">ನಿದ್ದೆ ಮಾಡಿರೆ ಮೋಡ ಗುಡುಗಿರೆ ಬೆಚ್ಚಿ ನಲ್ಲೆಯ ನೆನೆದವ</span>
+    <span class="ln">ಚಪ್ಪರವೆ ಕುಸಿವಂತೆ ಮಾಡಿದುದಿಂದು ಜನರಿಗೆ ನೆನಪಿದೆ</span>
+  </div></div>
+ 
+  <p>ಆ ಹಳ್ಳಿಗರೆಂದರಂತೆ — ನಿನಗಿಲ್ಲಿ ರಾತ್ರಿ ತಂಗಲು ಬಿಡಲಾರೆವು! ಏಕೆ ಗೊತ್ತೇ? ಹಿಂದೊಮ್ಮೆ, ನಿನ್ನಂಥ ಯುವಕನೊಬ್ಬ ಮದುವೆ ಮಂಟಪದಲ್ಲಿ ರಾತ್ರಿ ತಂಗಿದ್ದ, ಅವನು ಅವನ ಹೆಂಡತಿಯನ್ನು ನೆನೆದು ಅತ್ತ ಗೋಳಿಗೆ, ಮಂಟಪದ ಚಪ್ಪರವೇ ಕುಸಿದು ಹೋಗಿ, ಮದುವೆಯೇ ನಿಂತು ಹೋಗಿತ್ತು! ಆ ಕಾರಣಕ್ಕೆ ನಿನ್ನಂತಹ, ಹೆಂಡತಿಯನ್ನು ದೂರದೂರಿನಲ್ಲಿ ಬಿಟ್ಟು ಬಂದಿರುವ ಯುವಕರಿಗೆ, ನಾವಿಲ್ಲಿ ತಂಗಲು ಅವಕಾಶ ಕೊಡಲಾರೆವು ಎಂದರಂತೆ ಹಳ್ಳಿಗರು.</p>
+ 
+  <p>ಪಾಪ, ಇವನೇನು ಮಾಡಿದನೋ? ಹೇಗೋ ರಾತ್ರಿ ಕಳೆದು, ಊರಿನ ಕಡೆಗೆ ನಿಧಾನವಾಗಿ ಹೆಜ್ಜೆ ಹಾಕಿರಬೇಕು. ಅಂತೂ ಅವನು ಊರನ್ನು ತಲುಪುವ ದಿನ ಸಮೀಪಿಸಿದೆ. ಇತ್ತ ಕಡೆ ಅವನ ಮಡದಿ, ಗಂಡ ಇಂದು ಬರುವನು ನಾಳೆ ಬರುವನು ಎಂದು ಕಾದಿಹಳು!</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಕಣ್ಣು ತೋರುವವರೆಗು ನಲ್ಲನಾ ಹಾದಿಯನೆ ಕಾಯ್ದು ಬೇಸತ್ತಾಗಲೆ</span>
+    <span class="ln">ದಾರಿಗರ ಸಪ್ಪಳವು ನಿಲ್ಲುತಿರೆ ಹೊರಗೆಲ್ಲ ಹಬ್ಬುತಿರೆ ಕಗ್ಗತ್ತಲೆ</span>
+    <span class="ln">ಹೆಣ್ಣಿವಳು ಮನೆಯೆಡೆಗೆ ತಿರುಗುತ್ತ ಹಾಕಿರಲು ಹೆಜ್ಜೆಯೊಂದನ್ನಾಕಡೆ</span>
+    <span class="ln">ಕೂಡಲೆಯೆ ಬಂದನೇನೋಯೆನುತ ಕತ್ತನ್ನು ಮೆಲ್ಲ ಹೊರಳಿಸಿ ನೋಳ್ಪಳೆ</span>
+  </div></div>
+ 
+  <p>ದಿನವೆಲ್ಲ ಊರ ಬಾಗಿಲಲ್ಲೇ ಕಾದಿದ್ದಾಳೆ. ಸಂಜೆಯಾಗಿದೆ. ಇನ್ನು ಮನೆಗೆ ತೆರಳಬೇಕೆಂದು ಹೋಗುತ್ತಿರುವಾಗ, ಸದ್ದಾಯಿತಂತೆ, ಕೂಡಲೆ ಇವನು ಬಂದೇ ಬಿಟ್ಟನೋ ಏನೋ ಎಂಬ ಆಸೆಯಿಂದ ತಿರುಗಿ ನೋಡಿದಳಂತೆ ಅವಳು! ಇತ್ತಕಡೆ, ತನ್ನ ಹಾದಿ ಕಾಯುವ ನಲ್ಲೆಯು ಏನು ಮಾಡುತ್ತಿರಬಹುದೆಂಬ ಯೋಚನೆ ಆತನಿಗೆ.</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ನಾ ಬರುವ ದಾರಿಯನೆ ಕಾಯುತಿರೆ ಕೊರಗಿನಲಿ</span>
+    <span class="ln">ಅಗಲಿಕೆಯ ಉರಿನಾಲಗೆಯೊಳು ಬೆಂದು</span>
+    <span class="ln">ಮನದಿನಿಯೆ ದಳದಳನೆ ಸುರಿಸುತಿಹ ಕಣ್ಣೀರು</span>
+    <span class="ln">ಬಿಳಿಚಿದೊಡಲೆದೆಯಲ್ಲಿ ಸುರಿವುದಯ್ಯೋ!</span>
+  </div></div>
+ 
+  <p>ಅಂತೂ ಇಂತೂ ಅವಳನ್ನು ನೆನೆಯುತ್ತಲೇ ಕೊನೆಗೊಮ್ಮೆ ಊರಿಗೆ ಸೇರಿದ್ದಾನೆ. ಇಬ್ಬರಿಗೂ ಸಂಭ್ರಮವೋ ಸಂಭ್ರಮ. ಆದರೆ ಮನೆಯಲ್ಲಿರುವ ಜನದಿಂದ ಏಕಾಂತ ದೊರೆಯದೇ ಹೋಗಿದೆ! ತಿಂಗಳುಗಳ ನಂತರ ಮನೆಗೆ ಗಂಡ ಬಂದರೂ, ಅವಳು ಇಡೀ ದಿನವನ್ನು ಹೀಗೆ ನಿರೀಕ್ಷೆಯಲ್ಲೇ ಕಳೆಯಬೇಕಾಯಿತು. ಸಂಜೆಯಾದರೂ, ಸಖಿಯರು ಅವಳನ್ನು ಗಂಡನೊಂದಿಗಿರಲು ಬಿಡದೇ, ತಮ್ಮ ಹರಟೆಯನ್ನು ಮುಂದುವರೆಸುತ್ತ ಇದ್ದರೆ ಇವಳಿಗೆ ರೋಸಿಹೋಗುವುದರಲ್ಲಿ ಆಶ್ಚರ್ಯವೇನು? ಆಗ ಈ ಜಾಣೆ ಮಾಡಿದ್ದೇನು?</p>
+ 
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಊರಿನಿಂದಲಿ ಇನಿಯ ಮರಳಿಬಂದಿರುವಂದು ನೂರಾಸೆಗಳಲಿ ದಿನವ</span>
+    <span class="ln">-ನ್ನೆಂತೊ ಕಳೆಯುತ ಸಂಜೆ ಕೋಣೆಯನು ಸೇರಿದರೆ ಗೆಳತಿಯರ ಹರಟೆನಿಲದೇ</span>
+    <span class="ln">ಹೋಗಿರಲು ತವಕದಲಿ ಏನೊ ಕಚ್ಚಿತು ಎನುತ ರೇಸಿಮೆಯ ಮೇಲುಡುಗೆಯ</span>
+    <span class="ln">ಎಸೆದಳೀ ಬೆಡಗಿ ನಲ್ಲನ ಸೇರುವಾಸೆಯಲಿ ದೀಪವನು ನಂದಿಸುತಲಿ!</span>
+  </div></div>
+ 
+  <div class="ornament">✦ ✦ ✦</div>
+ 
+  <p class="endnote">ಮೂಲ ಪದ್ಯಗಳು ಅಮರುಕನವು. ಕನ್ನಡ ಅನುವಾದ ಮತ್ತು ಈ ಕಾಲ್ಪನಿಕ ಸರಣಿ ನನ್ನದಷ್ಟೇ. ಈ ಹಿನ್ನೆಲೆಯು ಪದ್ಯಗಳ ಅನುವಾದವನ್ನು ಓದಲು ಆಸಕ್ತಿ ಹೆಚ್ಚಿಸಬಹುದೆಂದು ನಂಬಿದ್ದೇನೆ.</p>
+ 
+</article>
+ 
+<footer>
+  <div>ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. ಅವರ ಬರಹಗಳು · Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank" rel="noopener">@hamsanandi</a></div>
+  <a class="back-link" href="https://hamsanandi.github.io/articles/">← ಲೇಖನಗಳ ಪಟ್ಟಿಗೆ ಹಿಂದಿರುಗಿ</a>
+</footer>
+ 
+</body>
+</html>
