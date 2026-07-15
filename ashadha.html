@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="kn" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಆಷಾಢಸ್ಯ ಪ್ರಥಮ ದಿವಸೇ — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;500;600&family=Noto+Serif+Kannada:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88; --text: #1a1208; --meta: #8a7055;
+  --verse-ink: #3a2a12;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans Kannada', 'EB Garamond', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 860px; margin: 0 auto; padding: 0 0 60px;
+  font-size: 16px; line-height: 1.6;
+}
+
+/* ── Top nav bar (matches site) ── */
+.site-nav { background: var(--header-bg); border-bottom: 1px solid var(--border); padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 42px; position: sticky; top: 0; z-index: 100; }
+.nav-home { font-family: 'Noto Serif Kannada', serif; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--gold); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+.nav-home:hover { text-decoration: underline; }
+.nav-links { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-link { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.72rem; color: var(--meta); text-decoration: none; padding: 0 10px; line-height: 42px; white-space: nowrap; border-left: 1px solid var(--border); transition: color 0.15s, background 0.15s; }
+.nav-link:first-child { border-left: none; }
+.nav-link:hover { color: var(--gold); background: rgba(139,94,26,0.06); }
+.nav-link.active-section { color: var(--gold); font-weight: 600; }
+
+/* ── Article header ── */
+.page-header { text-align: center; padding: 44px 22px 26px; border-bottom: 1px solid var(--border); position: relative; }
+.page-header::after { content: ''; display: block; height: 2px; width: 120px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); }
+.eyebrow { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 14px; }
+.page-title { font-family: 'Noto Serif Kannada', serif; font-weight: 600; font-size: 1.6rem; line-height: 1.45; color: var(--gold); max-width: 18em; margin: 0 auto; }
+.page-subtitle { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.9rem; color: var(--meta); margin-top: 14px; }
+.byline { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.82rem; color: var(--gold-dim); margin-top: 6px; }
+
+/* ── Article body ── */
+.article { max-width: 690px; margin: 0 auto; padding: 34px 24px 0; }
+.article p { font-size: 1.04rem; line-height: 1.92; margin-bottom: 1.15em; color: var(--text); }
+.article p.lead { font-size: 1.1rem; color: var(--gold-light); }
+
+/* ── Verse — the signature block ── */
+.verse { text-align: center; margin: 30px 0 32px; }
+.verse-inner {
+  display: inline-block; text-align: left;
+  background: var(--section-bg);
+  border: 1px solid var(--border); border-left: 3px solid var(--gold);
+  border-radius: 6px; padding: 20px 30px;
+  font-family: 'Noto Serif Kannada', serif;
+  font-size: 1.04rem; line-height: 2.0; color: var(--verse-ink);
+  max-width: 100%;
+}
+.verse-inner .ln { display: block; white-space: normal; }
+.verse-src { display: block; margin-top: 10px; font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.8rem; font-style: italic; color: var(--meta); }
+
+/* ── Ornament & end-note ── */
+.ornament { text-align: center; color: var(--gold-dim); letter-spacing: 0.5em; margin: 38px 0 26px; font-size: 0.9rem; }
+.endnote {
+  max-width: 600px; margin: 0 auto;
+  font-size: 0.92rem; line-height: 1.8; color: var(--meta);
+  font-style: italic; text-align: center;
+  background: var(--section-bg); border: 1px dashed var(--border-light);
+  border-radius: 8px; padding: 18px 22px;
+}
+.endnote + .endnote { margin-top: 14px; }
+
+/* ── Section divider ── */
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 38px auto 34px; max-width: 320px; }
+
+/* ── Footer ── */
+footer { font-family: 'Noto Sans Kannada', sans-serif; text-align: center; color: var(--meta); margin-top: 50px; padding: 22px 20px 0; border-top: 1px solid var(--border); font-size: 0.8rem; }
+footer a { color: var(--gold-light); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.back-link { display: inline-block; margin-top: 12px; font-size: 0.82rem; color: var(--gold); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+
+/* ── A11y & responsive ── */
+a:focus-visible, .nav-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+@media (max-width: 600px) {
+  .site-nav { flex-wrap: wrap; padding: 8px 12px; min-height: unset; }
+  .nav-home { width: 100%; padding-bottom: 6px; line-height: 1.4; }
+  .nav-links { width: 100%; }
+  .nav-link { font-size: 0.72rem; padding: 0 8px; line-height: 32px; }
+  .page-header { padding: 30px 18px 22px; }
+  .page-title { font-size: 1.3rem; }
+  .article { padding: 26px 18px 0; }
+  .article p { font-size: 1.0rem; }
+  .verse-inner { padding: 16px 18px; font-size: 0.98rem; line-height: 1.9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <a class="nav-home" href="https://hamsanandi.github.io/">ಹಂಸಾನಂದಿ</a>
+  <div class="nav-links">
+    <a class="nav-link" href="https://hamsanandi.github.io/compositions/">ಸಂಗೀತರಚನೆಗಳು</a>
+    <a class="nav-link active-section" href="https://hamsanandi.github.io/articles/">ಲೇಖನಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/books/">ಪುಸ್ತಕಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/poetry/">ಛಂದೋಬದ್ಧ ಕಾವ್ಯ</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/stage-productions/">ರಂಗಪ್ರಯೋಗಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/gamaka-vachana/">ಗಮಕ ವಾಚನ</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/translations/">ಅನುವಾದಗಳು</a>
+    <a class="nav-link" href="https://hamsanandi.github.io/reviews/">ವಿಮರ್ಶೆಗಳು</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow">ಮಳೆಗಾಲ · ಕಾವ್ಯ</div>
+  <h1 class="page-title">ಆಷಾಢಸ್ಯ ಪ್ರಥಮ ದಿವಸೇ ...</h1>
+  <div class="page-subtitle">ಗಾಹಾ ಸತ್ತಸಇಯಿಂದ ಭರ್ತೃಹರಿಯವರೆಗೆ — ಮುಂಗಾರಿನ ವರ್ಣನೆ, ವಿರಹ ಮತ್ತು ಪಯಣಿಗರ ಪತ್ನಿಯರು</div>
+  <div class="byline">ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. (ಹಂಸಾನಂದಿ)</div>
+</header>
+
+<article class="article">
+
+  <p class="lead">"ಮಳೆಗಾಲ ಚಳಿಗಾಲ ಬೇಸಿಗೇ ಕಾಲ ಮುಗಿಯಾಲಿ, ಕಲಿಸತ್ತೆ ಕೆಲಸಾವ!" ಅಂದಳಂತೆ ಯಾರೋ ಜಾಣೆ ಸೊಸೆ. ಸಮಶೀತೋಷ್ಣವಲಯದಲ್ಲಿರುವ ಪ್ರದೇಶಗಳಲ್ಲಿ ವರ್ಷಕ್ಕೆ ನಾಲ್ಕು ಕಾಲ ಎಂಬ ಲೆಕ್ಕಾಚಾರವಿದ್ದರೆ, ನಮ್ಮ ದೇಶದಲ್ಲಿ ಹಿಂದಿನಿಂದ ವರ್ಷಕ್ಕೆ ಮೂರು ಕಾಲ, ಆರು ಋತುಗಳು ಮತ್ತೆ ಹನ್ನೆರಡು ತಿಂಗಳುಗಳು ಎಂಬ ಲೆಕ್ಕಾಚಾರ.</p>
+
+  <p>ಎಲ್ಲಾ ಕಾಲಗಳನ್ನೂ ಕವಿಗಳು ವರ್ಣಿಸಿದ್ದರೂ, ಮಳೆಗಾಲವನ್ನು ವಿಶೇಷವಾಗಿ ಬಣ್ಣಿಸುವುದನ್ನ ನೋಡಬಹುದು. ಬಹುಶಃ ನಮ್ಮ ಬದುಕಿಗೆ ಮೂಲವೇ ಈ ಮಳೆಗಾಲ, ಅದೇ ನಮ್ಮ ಜೀವನಾಡಿಯಾದ್ದರಿಂದಲೇ ಈ ಬಣ್ಣನೆ. ’ಆಷಾಢ ಮಾಸ ಬಂದೀತವ್ವಾ, ಅಣ್ಣ ಬರಲಿಲ್ಲ ಕರಿಯಾಕ’ ಎಂದು ಹಳ್ಳಿಯ ಹೆಂಗಸೊಬ್ಬಳ ಹಾಡಿನಿಂದ ಹಿಡಿದು ಕಾಳಿದಾಸನಂತಹ ಮಹಾ ಕವಿ ’ಆಷಾಢಸ್ಯ ಪ್ರಥಮದಿವಸೇ’ ಎಂದು ಬರೆಯುವತನಕ ಈ ಮುಂಗಾರಿನ ವರ್ಣನೆ ನಮ್ಮ ಚರಿತ್ರೆಯ, ಸಂಸ್ಕೃತಿಯ ಒಳನೋಟಗಳನ್ನು ಕೊಡಬಲ್ಲವು. ನಾವು ಒಳಹೊಕ್ಕು ನೋಡಬೇಕಷ್ಟೇ!</p>
+
+  <p>ಅಷ್ಟಕ್ಕೂ, ನಮ್ಮ ತಿಂಗಳುಗಳಿಗೆ ಹೆಸರು ಕೊಟ್ಟಿರುವುದೇ ಒಂದು ಕುತೂಹಲದ ಸಂಗತಿ. ಆಯಾ ಹುಣ್ಣಿಮೆಯಲ್ಲಿ ಚಂದ್ರ ಆಕಾಶದಲ್ಲಿ ಎಲ್ಲಿ ಕಾಣುತ್ತಾನೆ ಅನ್ನುವುದರ ಮೇಲೆ ಚೈತ್ರ, ವೈಶಾಖ ಮೊದಲಾದ ತಿಂಗಳುಗಳ ಹೆಸರನ್ನು ಇಡಲಾಗಿದೆ. ಹುಣ್ಣಿಮೆಯ ಚಂದ್ರ ಪೂರ್ವಾಷಾಢಾ-ಉತ್ತರಾಷಾಢಾ ಎಂಬ ನಕ್ಷತ್ರಗಳ ಬಳಿ ಇರುವ ತಿಂಗಳೇ ಆಷಾಢ. ಇದು ಕಾರ್ಗಾಲದ ಸಮಯ. ಮೋಡ ಕವಿದಿರುವ ಆಕಾಶದಿಂದ ಹುಣ್ಣಿಮೆಯ ಚಂದ್ರ ಕಾಣದೇ ಹೋಗಬಹುದಾದರೂ, ಹುಣ್ಣಿಮೆಯ ಚಂದಿರ ಎಲ್ಲಿರುತ್ತಾನೆ ಎಂದು ತಿಳಿಯೋದಕ್ಕೆ ಸುಮಾರು ನಾಲ್ಕು ಸಾವಿರ ವರ್ಷಗಳಿಂದಲೇ ನಮ್ಮಲ್ಲಿ ಪಂಚಾಂಗದ ವ್ಯವಸ್ಥೆ ಇತ್ತು. ಸುಮಾರಾಗಿ ಮೂರೂವರೆ ಸಾವಿರ ವರ್ಷಗಳ ಹಿಂದಿನ ವೇದಾಂಗ ಜ್ಯೋತಿಷದಲ್ಲಿ ಮಾಘಮಾಸವೆಂಬ ಚಾಂದ್ರಮಾನ ತಿಂಗಳ ಹೆಸರು ಹೇಳಿರುವುದರಿಂದ ಆಷಾಢ ಎಂಬ ಹೆಸರೂ ಅಂದೇ ಚಾಲಿಯಲ್ಲಿದ್ದ ಹೆಸರು ಎನ್ನಲಿಕ್ಕೆ ಅಡ್ಡಿಯೇನಿಲ್ಲ.</p>
+
+  <p>ಆದರೆ ವಿಪರ್ಯಾಸ ನೋಡಿ, ಒಂದು ಕಡೆ ಮೋಡದ ಹಿಂದೆ ಅಡಗಿರುವ ಚಂದ್ರನ ಚಲನೆಯನ್ನೇ ಲೆಕ್ಕ ಮಾಡುವವರಿದ್ದಾಗ, ಅದೇ ಸಮಯದಲ್ಲಿ ಸಾಮಾನ್ಯವಾದ, ಕೂಡಿ ಕಳೆಯುವುದೂ ತಿಳಿಯದವರೂ ಇದ್ದರು. ಲೋಕೋಭಿನ್ನರುಚಿಃ ಎಂಬಂತೆ ಲೋಕೋಭಿನ್ನಪ್ರತಿಭಾ! ಹೀಗೊಬ್ಬ ಮುಗ್ಧ ಹೆಣ್ಣಿನ ಪ್ರಸ್ತಾಪ ಹಾಲ ಮಹಾರಾಜನ, ಸುಮಾರಾಗಿ ಎರಡು ಸಾವಿರ ವರ್ಷ ಹಿಂದಿನ ಗಾಹಾಸತ್ತಸಇ ಎಂಬ ಮಹಾರಾಷ್ಟ್ರೀ ಪ್ರಾಕೃತ ಭಾಷೆಯ, ಪದ್ಯಸಂಕಲನದಲ್ಲಿ ಬರುತ್ತೆ:</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಝಂಝಾವಾಉತ್ತಿಣ್ಣಿಅಧರವಿವರಪಲೋಟ್ಟಸಲಿಲಧಾರಾಹಿಂ</span>
+    <span class="ln">ಕುಡ್ಡಲಿಹಿಓಹಿದಿಅಯಂ ರಕ್ಖಇ ಅಜ್ಜಾ ಕರಅಲೇಹಿಂ</span>
+    <span class="verse-src">— ಗಾಹಾಸತ್ತಸಇ, ೨-೭೦ (ಮೂಲ ಪ್ರಾಕೃತ)</span>
+  </div></div>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಜೋರುಗಾಳಿಗೆ ಮನೆಯ ಸೂರೇ</span>
+    <span class="ln">ಹಾರಿಹೋಗಿರಲಾಕೆಯು ।</span>
+    <span class="ln">ಗೋಡೆಮೇಲಿನ ದಿನದ ಗೆರೆಗಳ</span>
+    <span class="ln">ಉಳಿಸೆ ನೋಡುತಲಿರುವಳು! ॥</span>
+    <span class="verse-src">— ಭಾವಾನುವಾದ ನನ್ನದೇ</span>
+  </div></div>
+
+  <p>ಧಾರಾಕಾರ ಸುರಿಯುವ ಮಳೆ. ಗಂಡ ವ್ಯಾಪಾರಕ್ಕೆ ದೂರದೂರಿಗೆ ಹೋಗಿದ್ದಾನೆ. ಎಷ್ಟು ದಿನಗಳ ನಂತರ ಮರಳಿ ಬರುತ್ತೇನೆಂದು ಗೋಡೆಯ ಮೇಲೆ ಗೆರೆಗಳನ್ನು ಹಾಕಿ ಹೋಗಿದ್ದಾನೆ. ಪ್ರತಿದಿನವೂ ಗೆರೆಯೊಂದನ್ನು ಹೊಡೆದು ಹಾಕಿ, ಗಂಡ ಬರುವ ಸಮಯ ಒಂದು ದಿನ ಹತ್ತಿರವಾಗುತ್ತಿದೆ ಎಂದು ಕಾಯುವ ಹೆಂಡತಿ. ಬಹುಶಃ ಓದು ಬರಹ ಬರದ ಹೆಣ್ಣೀಕೆ. ಆಷಾಢದ ಮಳೆಗೆ ಮನೆಯ ಛಾವಣಿ ಸೋರಿ ಗೋಡೆಯ ಮೇಲೆ ಬರೆದ ಗೆರೆಗಳು ಅಳಿಸಿ ಹೋಗುತ್ತಿದ್ದರೆ, ತನ್ನ ಜೀವವನ್ನೇ ಉಳಿಸಿಕೊಳ್ಳುವಂತೆ ಆ ಹೆಣ್ಣು ಆ ಗೆರೆಗಳನ್ನು ಉಳಿಸಿಕೊಳ್ಳಲು ನೋಡುತ್ತಿದ್ದಳಂತೆ. ಪಾಪ, ಎಂತಹ ಮುಗ್ಧೆ ನೋಡಿ!</p>
+
+  <p>ಈಕೆಯ ಪರಿ ಹೀಗಿದ್ದರೆ, ಮತ್ತೊಬ್ಬಳ ಸ್ಥಿತಿ ಈಗ ನೋಡಿ:</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಪಹಿಅವಹು ವಿವರನ್ತರಗಲಿಅಜಲೋಲ್ಲೇ ಘರೇ ಅಣೇಲ್ಲಂ ಪಿ</span>
+    <span class="ln">ಉದ್ದೇಸಂ ಅವಿರಅವಾಹಸಲಿಲಣಿವಹೇಣ ಉಲ್ಲೇಇ</span>
+    <span class="verse-src">— ಗಾಹಾಸತ್ತಸಇ, ೬-೪೦ (ಮೂಲ ಪ್ರಾಕೃತ)</span>
+  </div></div>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಸುರಿವ ಮಳೆಯಿಂದೊದ್ದೆಯಾಗಿರುವ ಮನೆಯನ್ನು</span>
+    <span class="ln">ಪರವೂರಲಿರುವ ಪತಿಯನ್ನೆ ನೆನೆಯುತ್ತ ।</span>
+    <span class="ln">ಸುರಿವ ಕಣ್ಣೀರಿನೊಳು ಮತ್ತಷ್ಟು ತೋಯಿಸು-</span>
+    <span class="ln">-ತ್ತಿರುವಳೀ ತರುಣಿ ತಾ ಒಣಗಬಿಡದೇ ॥</span>
+    <span class="verse-src">— ಭಾವಾನುವಾದ ನನ್ನದೇ</span>
+  </div></div>
+
+  <p>ಸಂಸ್ಕೃತ ಕಾವ್ಯದಲ್ಲಿಯೂ ಹೆಚ್ಚಾಗಿ ಮಳೆಗಾಲದ ಈ ಕವಿತೆಗಳಲ್ಲಿ ಪ್ರಯಾಣಕ್ಕೆ ಹೋಗಿರುವ ಗಂಡಂದಿರು, ಮತ್ತೆ ಅವರನ್ನು ನೆನೆದು, ಅವರ ಬರವನ್ನು ಎದುರು ನೋಡುತ್ತಿರುವ ಹೆಂಡತಿಯರು ಆಗಿಂದಾಗ್ಗೆ ಕಂಡುಬರುತ್ತಾರೆ. ಅಂದರೆ ವಿರಹವು ಮಳೆಗಾಲದಲ್ಲಿ ಹೆಚ್ಚುತ್ತಿತ್ತೇ?</p>
+
+  <p>ಇದರ ಒಳಗುಟ್ಟೇನೆಂದರೆ, ನಮ್ಮ ದೇಶ ಮಾನ್ಸೂನ್ ಹವಾಮಾನದ ದೇಶ. ಕೆಲವೇ ತಿಂಗಳುಗಳಲ್ಲಿ ವರ್ಷದಲ್ಲಿ ಬೀಳುವ ಎಲ್ಲಾ ಮಳೆಯೂ ಸುರಿದುಬಿಡುತ್ತದೆ, ಆ ಸಮಯದಲ್ಲಿ ಹೊಳೆಹಳ್ಳಗಳೆಲ್ಲ ತುಂಬಿ ಹರಿಯುತ್ತವೆ. ಅಂದಿನ ದಿನಗಳಲ್ಲಿಯೂ ವ್ಯಾಪಾರಿಗಳು ದೇಶದ ಒಂದು ಕಡೆಯಿಂದ ಮತ್ತೊಂದು ಕಡೆಗೆ ತಮ್ಮ ಸರಕುಗಳನ್ನು ಮಾರಲು ಹೋಗುತ್ತಿದ್ದಿದುಂಟು. ಸಾಮಾನ್ಯವಾಗಿ, ಇವರು ಮಳೆಗಾಲ ಆರಂಭವಾಗುವ ಮೊದಲು ತಮ್ಮ ತಮ್ಮ ಊರು ಸೇರಿಕೊಳ್ಳುತ್ತಿದ್ದರು. ಸಾವಿರಾರು ವರ್ಷದ ಹಿಂದೆ, ಇಂದಿನಷ್ಟು ರಸ್ತೆಗಳ ಅನುಕೂಲವಿಲ್ಲದ ಸಮಯ. ಹೊಳೆಗಳನ್ನೆಲ್ಲ ಹೆಚ್ಚಾಗಿ ದೋಣಿಗಳಲ್ಲೆಯೇ ದಾಟಬೇಕು. ಪ್ರವಾಹದ ಹೊಳೆಯಲ್ಲಿ ಯಾರುತಾನೇ ಜೀವವನ್ನು ಒತ್ತೆಯಿಟ್ಟು ದೋಣಿ ನಡೆಸುತ್ತಾರೆ? ಹಾಗಾಗಿ ವ್ಯಾಪಾರಕ್ಕೆಂದು ದೂರ ದೇಶಕ್ಕೆ ಹೋದವರು, ಮಳೆಗಾಲ ಮೊದಲಾಗುವ ಮೊದಲೇ ಮರಳದೇ ಹೋದರೆ, ಇನ್ನವರು ಸುಮಾರು ನಾಲ್ಕು ತಿಂಗಳ ನಂತರ, ಮಳೆಗಾಲ ಮುಗಿದಮೇಲೇ ಮರಳುತ್ತಿದ್ದದ್ದು. ಇದೇ ಕಾರಣಕ್ಕೆ ಹಳೆಯ ಸಂಸ್ಕೃತ ಪದ್ಯಗಳಲ್ಲಿ ಮಳೆಗಾಲ, ಮತ್ತೆ ಆ ಸಮಯದಲ್ಲಿ ಒಬ್ಬರಿಂದೊಬ್ಬರು ದೂರವಿರುವ ಗಂಡಹೆಂಡಿರ ನೋವುಗಳು ಮತ್ತೆ ಮತ್ತೆ ಬರುವುದು. ಇದರ ಜೊತೆಗೇ ವ್ಯಾಪಾರ ವ್ಯವಹಾರಗಳಿಗೆಂದು ದೂರದೇಶಗಳಿಗೆ ಹೋದವರ ವಿಚಾರದಿಂದ, ಆ ಕಾಲದಲ್ಲಿಯೇ ನಮ್ಮ ದೇಶದಲ್ಲಿ ದೂರದೂರದ ಪ್ರದೇಶಗಳೊಂದಿಗೆ ನಡೆಸುತ್ತಿದ್ದ ವ್ಯಾಪಾರ ವಹಿವಾಟುಗಳು ಜನಜೀವನದಲ್ಲಿ ಮುಖ್ಯ ಪಾತ್ರ ವಹಿಸಿದ್ದವು ಎನ್ನುವುದೂ ತಿಳಿದು ಬರುತ್ತದೆ.</p>
+
+  <div class="section-divider" role="separator"></div>
+
+  <p>ಮಹಾಕವಿ ಕಾಳಿದಾಸ ಭಾರತ ಒಂದಕ್ಕೇ ಏಕೆ, ಪ್ರಪಂಚದ ಕವಿಗಳಲ್ಲೆಲ್ಲರಲ್ಲೂ ಮುಂಚೂಣಿಯಲ್ಲಿ ನಿಲ್ಲುವಂತಹ ಕವಿ. ಅವನ ಮೊದಲ ರಚನೆ ಋತು ಸಂಹಾರ ಎಂಬ ಕಿರುಕಾವ್ಯ. ಸುಮಾರು ೧೫೦ ಪದ್ಯಗಳ ಈ ರಚನೆಯಲ್ಲಿ ಆತ ವರ್ಷದ ಆರೂ ಋತುಗಳ ವೈಭವವನ್ನು, ಆಯಾ ಋತುಗಳಲ್ಲಿ ಆಗಿನ ಕಾಲದ ಜನಜೀವನವನ್ನು ಕಣ್ಣಿಗೆ ಕಟ್ಟುವಂತೆ ವರ್ಣಿಸುತ್ತಾನೆ.</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಹೊಳೆವ ಬೆಳ್ದಾವರೆಗಳನು ಹೋಲ್ವ ಮೋಡಗಳು</span>
+    <span class="ln">ಮುತ್ತಿಡುತ ಬೆಟ್ಟಗಳ ಮೆರೆಯುತಿರಲು</span>
+    <span class="ln">ಕುಣಿಯುತಿಹ ನವಿಲುಗಳು ಹರಿವ ಜಲಧಾರೆಗಳು</span>
+    <span class="ln">ಹಬ್ಬವನು ತಂದಿಹವು ದಿಟದಿ ಮನಕೆ</span>
+    <span class="verse-src">— ಋತುಸಂಹಾರ: ವರ್ಷಋತು-೧೬, ಅನುವಾದ ನನ್ನದೇ</span>
+  </div></div>
+
+  <p>ಆದರೆ, ಇಂತಹ ಸೊಗಸಾದ ವಾತಾವರಣದಲ್ಲೂ ಎಲ್ಲರೂ ಸಂತೋಷವಾಗಿರುವುದಿಲ್ಲ! ಏಕೆಂದು ಕಾಳಿದಾಸನನ್ನೇ ಕೇಳೋಣ:</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ನಲ್ಲನೂರಿನೊಳಿರದೆ ಖಿನ್ನ ಯುವತಿಯರು</span>
+    <span class="ln">ಬಿಟ್ಟು ನಿಂದಿಹರೊಡವೆ ಲೇಪಗಳನೆಲ್ಲ</span>
+    <span class="ln">ಕಣ್ಣಕಮಲಗಳಲ್ಲಿ ನೀರಿಳಿಸಿ ತೋಯಿಸುತ</span>
+    <span class="ln">ಹಣ್ಣು ತೊಂಡೆಯ ಹೋಲ್ವ ಕೆಂದುಟಿಗಳನ್ನು</span>
+    <span class="verse-src">— ಋತುಸಂಹಾರ: ವರ್ಷಋತು-೧೨, ಅನುವಾದ ನನ್ನದೇ</span>
+  </div></div>
+
+  <p>ಇಂಗ್ಲಿಷಿನಲ್ಲೊಂದು If you can’t beat them, join them ಎಂಬ ಹೇಳಿಕೆ ಇದೆ. ಅಂದರೆ, ಯಾರನ್ನಾದರೂ ಗೆಲ್ಲಲಾಗದೇ ಇದ್ದರೆ, ಅವರ ಗುಂಪನ್ನೇ ಸೇರುವುದೊಳಿತು ಎಂದು. ಕವಿ ಕಾಳಿದಾಸನಂತೂ ಮಹಾಜಾಣ. ಅದಕ್ಕೇ ಇರಬೇಕು, ಋತುಸಂಹಾರದ ನಂತರ ಬರೆದ ಮೇಘದೂತಂ ಎಂಬ ಕಾವ್ಯದಲ್ಲಿ, ಹೆಂಡತಿಯಿಂದ ಕಾರಣಾಂತರದಿಂದ ದೂರವಾದ ಯಕ್ಷನೊಬ್ಬನಿಗೆ, ಮಳೆಗಾಲದಲ್ಲಿ ತನ್ನ ಪತ್ನಿಗೆ ಸಂದೇಶವನ್ನು ಕಳಿಸಲು ಆ ಮಳೆಮೋಡವನ್ನೇ ಹರಿಕಾರನನ್ನಾಗಿ ಬಳಸಿಬಿಟ್ಟ! ಯಕ್ಷನಿದ್ದ ಮಧ್ಯಭಾರತದ ರಾಮಗಿರಿಯಿಂದ ಹಿಮಾಲಯದಲ್ಲಿರುವ ಅಲಕಾವತಿಗೆ ತನ್ನ ಸಂದೇಶವನ್ನು ಕಳಿಸಲು ಆಷಾಢದ ಮೊದಲ ದಿನದಂದೇ ("ಆಷಾಢಸ್ಯ ಪ್ರಥಮದಿವಸೇ"), ಅವನಿಗೆ ಆನೆಯೊಂದು ಮಣ್ಣಿನ ಒಡ್ಡಿನಜೊತೆ ತನ್ನ ಕೊಂಬಿನಿಂದ ಗುದ್ದಿ ಆಟವಾಡುತ್ತಿರುವಂತೆ ಆಗಸದಲ್ಲಿ ಕಾಣುತ್ತಿರುವ ಮಳೆಮೋಡವೊಂದು ಕಂಡಿತಂತೆ! ಅದನ್ನೇ ಅವನು ತನ್ನ ಪ್ರಿಯೆಗೆ ಸಂದೇಶ ಕಳಿಸಲು ಕೇಳಿಕೊಂಡೂಬಿಟ್ಟ:</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ತಸ್ಮಿನ್ನದ್ರೌ ಕತಿಚಿದಬಲಾವಿಪ್ರಯುಕ್ತಸ್ಸಕಾಮೀ</span>
+    <span class="ln">ನೀತ್ವಾಮಾಸಾನ್ ಕನಕವಲಯಭ್ರಂಶರಿಕ್ತ ಪ್ರಕೋಷ್ಠಃ</span>
+    <span class="ln">ಆಷಾಢಸ್ಯ ಪ್ರಥಮ ದಿವಸೇ ಮೇಘಮಾಶ್ಲಿಷ್ಟಸಾನುಂ</span>
+    <span class="ln">ವಪ್ರಕ್ರೀಡಾಪರಿಣತಗಜಪೇಕ್ಷಣೀಯಂ ದದರ್ಶ</span>
+    <span class="verse-src">— ಕಾಳಿದಾಸನ ಮೇಘದೂತದಿಂದ (ಮೂಲ ಸಂಸ್ಕೃತ)</span>
+  </div></div>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಅಗಲಿ ಇದ್ದರೂ ಆಸೆಗೊಂಡಿರಲು ಗಿರಿಯೊಳಂತು ಇಂತು</span>
+    <span class="ln">ಕೆಲವೆ ತಿಂಗಳಲಿ ಚಿನ್ನಕಡಗ ಮೊಳಕೈಗೆ ಸರಿದು ಬಂತು</span>
+    <span class="ln">ಕಾರಹುಣ್ಣಿಮೆಯ ಮಾರನೆಯ ದಿನವೆ ಮೋಡ ಕೋಡನೊಪ್ಪಿ</span>
+    <span class="ln">ಕಂಡಿತೊಡ್ಡಿನೊಡ ಡಿಕ್ಕಿಯಾಡುವಾ ಆನೆ ಬೆಡಗನೊಪ್ಪಿ ||</span>
+    <span class="verse-src">— ಬೇಂದ್ರೆಯವರ ಕನ್ನಡ ಮೇಘದೂತದಿಂದ, ಪೂರ್ವಮೇಘ-೨</span>
+  </div></div>
+
+  <p>ಎಚ್.ಎಸ್.ವೆಂಕಟೇಶಮೂರ್ತಿಯವರು, ಹಾಗೂ ಇತರ ಕೆಲವು ಕನ್ನಡ ವಿಮರ್ಶಕರು ಬೇಂದ್ರೆಯವರು ಕಾಳಿದಾಸ ನಗರ ಪ್ರದೇಶದ ಕವಿ, ಆದರೆ ಬೇಂದ್ರೆಯವರು ದೇಸಿಯನ್ನು ಮೇಲೆತ್ತಲು, ಮೇಘದೂತವನ್ನು ಜಾನಪದ ಶೈಲಿಯಲ್ಲಿ ಅನುವಾದಿಸಿದ್ದಾರೆ ಎನ್ನುತ್ತಾರೆ. ಹಾಗಾಗಿ, ಈ ವಿಮರ್ಶಕರು ಆಷಾಢಸ್ಯ ಪ್ರಥಮ ದಿವಸೇ ಎಂಬ ಮಾತನ್ನು ’ಕಾರ ಹುಣ್ಣಿಮೆಯ ಮಾರನೆಯ ದಿನ’ ಎಂದು ಅನುವಾದಿಸಿರುವುದರಲ್ಲಿ, ದೇಸಿಯ ಬೆಡಗನ್ನು ಕಾಣುತ್ತಾರೆ. ಆದರೆ ನನ್ನ ಎಣಿಕೆಯಲ್ಲಿ, ಇದಕ್ಕೆ ಇನ್ನೊಂದು ಮುಖ್ಯ ಕಾರಣವಿದೆ. ದಕ್ಷಿಣ ಭಾರತದಲ್ಲಿ ಚಾಂದ್ರಮಾನ ತಿಂಗಳು ಅಮಾವಾಸ್ಯೆಯ ಮಾರನೆಯ ದಿನದಿಂದ ಆರಂಭವಾಗಿ, ಮುಂದಿನ ಅಮಾವಾಸ್ಯೆಗೆ ಮುಗಿಯುತ್ತದೆ. ಆದರೆ ಉತ್ತರ ಭಾರತದಲ್ಲಿ, ಚಾಂದ್ರಮಾನ ತಿಂಗಳುಗಳು ಹುಣ್ಣಿಮೆಯ ಮಾರನೆಯ ದಿನ ತಿಂಗಳು ಮೊದಲಾಗಿ, ಮುಂದಿನ ಹುಣ್ಣಿಮೆಗೆ ಮುಗಿಯುತ್ತೆ. ಇದೇ ಕಾರಣಕ್ಕೆ, ಬೇಂದ್ರೆಯವರು ಕಾಳಿದಾಸನ ‘ಆಷಾಢಸ್ಯ ಪ್ರಥಮದಿವಸೇ’ ಎಂಬ ಮಾತನ್ನು ‘ಕಾರಹುಣ್ಣಿಮೆಯ ಮಾರನೆಯದಿನ’ ಎಂದು ಕನ್ನಡಕ್ಕೆ ತಂದಿರುವುದರಲ್ಲಿ ಮೂಲಕ್ಕಿರುವ ನಿಷ್ಠೆಯೂ ಕಂಡುಬರುತ್ತೆ ಎಂದು ನನ್ನ ಅಭಿಪ್ರಾಯ.</p>
+
+  <p>ಆ ಕಾಳಿದಾಸ ಕಲ್ಪಿಸಿದ ಯಕ್ಷನ ವಿರಹವಾದರೂ ಎಂತಹದ್ದು? ನಲ್ಲೆಯನ್ನು ನೆನೆದು, ಕೊರಗಿ ಸಣ್ಣಗಾಗಿರುವ ಅವನ ಕೈ ಕಡಗ ಮೊಳಕೈಗೆ ಸರಿದುಬಿಟ್ಟಿದೆಯಂತೆ! ಈ ರೀತಿಯ ಇನ್ನೂ ಹಲವು ಮನಮುಟ್ಟುವ ಪ್ರಸಂಗಗಳನ್ನು ಸಂಸ್ಕೃತ ಕಾವ್ಯಗಳಲ್ಲಿ ಕಾಣಬಹುದು. ಈ ಮುಂಚೆ ಹೇಳಿದ ಕಾಳಿದಾಸನ ಮೇಘದೂತ ಇರುವುದು ಮಂದಾಕ್ರಾಂತಾ ಎಂಬ ಛಂದಸ್ಸಿನಲ್ಲಿ. ಹಾಗಾಗಿ, ಅದೇ ಛಂದಸ್ಸಿನಲ್ಲಿರುವ ಇನ್ನೊಂದು ಪದ್ಯ ನೆನಪಾಯಿತು. ಇದು ಸದುಕ್ತಿ ಕರ್ಣಾಮೃತ ಎಂಬ ಪದ್ಯಸಂಕಲನದ್ದು. ಇಂತಹ ಪದ್ಯಗಳಿಗೆ 'ಮುಕ್ತಕ', ಎಂದರೆ ಮುತ್ತು ಎಂದು ಕರೆಯುತ್ತಾರೆ. ಹೇಗೆ ಮುತ್ತು ಒಂದು ಸರದಲ್ಲಿದ್ದರೂ, ಒಂಟಿಯಾಗಿದ್ದರೂ ಚೆನ್ನಾಗಿರುವುದೋ, ಹಾಗೆ ಇಂತಹ ಪದ್ಯಗಳೂ ಒಂಟಿಯಾಗಿದ್ದರೂ ಚಂದ, ಒಟ್ಟಿಗೆ ಓದಿದರೂ ಚಂದ ಅನ್ನುವ ಕಾರಣಕ್ಕಾಗಿ ಆ ಹೆಸರು.</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಸುಪ್ತೇ ಗ್ರಾಮೇ ನದತಿ ಜಲದೇ ಶಾನ್ತಸಂಪಾತರಮ್ಯಂ</span>
+    <span class="ln">ಪಾನ್ಥೇನಾತ್ಮವ್ಯಸನಕರುಣೋದಸ್ರು ಗೀತಂ ನಿಶೀಥೇ ।</span>
+    <span class="ln">ಸ್ಫೀತೋತ್ಕಣ್ಠಾಪರಿಗತಧಿಯಾ ಪ್ರೋಷಿತಸ್ತ್ರೀಜನೇನ</span>
+    <span class="ln">ಧ್ಯಾನಾವೇಶಸ್ತಿಮಿತನಯನಂ ಶ್ರೂಯತೇ ರುದ್ಯತೇ ಚ ॥೯೦೬॥</span>
+    <span class="verse-src">— ಸದುಕ್ತಿಕರ್ಣಾಮೃತ, ಪದ್ಯ ೯೦೬ (ಮೂಲ ಸಂಸ್ಕೃತ)</span>
+  </div></div>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಹಳ್ಳಿ ಮಲಗಿರೆ ಮೋಡ ಮೊರೆದಿರೆ ಕಣ್ಣ ನೀರನು ಸುರಿಸುತ</span>
+    <span class="ln">ತನ್ನ ದುಃಖವ ನೆನೆದು ನೆನೆಯುತ ಹಾಡನಾಗಿಸೆ ಪಯಣಿಗ</span>
+    <span class="ln">ಉಬ್ಬಿರುವ ಗಂಟಲಿನ ದನಿಯನು ಕೇಳಿ ಊರಿನ ಪೆಣ್ಗಳು</span>
+    <span class="ln">ಒದ್ದೆ ಕಣ್ಣಲಿ ಪಯಣ ತೆರಳಿಹ ತಮ್ಮಿನಿಯರನು ನೆನೆವರು</span>
+    <span class="verse-src">— ನನ್ನ ಕನ್ನಡ ಅನುವಾದ</span>
+  </div></div>
+
+  <p>ಈ ಪದ್ಯದಲ್ಲಿ ಕವಿ ಮಳೆಗಾಲದ ಎರಡು ಪ್ರಸಂಗಗಳನ್ನು ಜೊತೆಗೂಡಿಸಿದ್ದಾನೆ. ಮಳೆಗಾಲದ ಒಂದು ರಾತ್ರಿ. ಹಳ್ಳಿಯೊಂದರಲ್ಲಿ ತಂಗಿರುವ ಪ್ರಯಾಣಿಕನೊಬ್ಬ ರಾತ್ರಿ ಹೊತ್ತಿನಲ್ಲಿ ತನ್ನ ನೋವನ್ನೆಲ್ಲ ಹಾಡಾಗಿಸಿ ಹಾಡುತ್ತಿದ್ದಾನೆ. ಕವಿ ಅವನ ದುಃಖ ಯಾವುದರದ್ದು ಎಂದು ಹೇಳದೇ, ಅದನ್ನು ಓದುಗರ ಕಲ್ಪನೆಗೇ ಬಿಟ್ಟಿದ್ದಾನೆ. ಆದರೆ, ಆ ಅಳಲುದುಂಬಿದ ಧ್ವನಿ, ಈ ಹಳ್ಳಿಯಲ್ಲಿರುವ, ಗಂಡಂದಿರು ವ್ಯಾಪಾರಕ್ಕೆ ಪರವೂರಿಗೆ ಹೋಗಿದ್ದು, ಇನ್ನೂ ಹಿಂತಿರುಗದಿರುವ ಹೆಣ್ಣುಗಳಿಗೆ ತಡೆಯಲಾರದ ದುಃಖವನ್ನು ತಂದಿದೆ.</p>
+
+  <p>ಈಗ ಇದೇ ರೀತಿ ಗಂಡ ಪರವೂರಿಗೆ ಹೋಗಿರುವಾಗ, ಅವನನ್ನು ನೆನೆದು ಸೊರಗಿರುವ, ಕಾಳಿದಾಸನ ಯಕ್ಷನಂತೆ, ಕೈಯ ಬಳೆ ಜಾರುವಂತಿರುವ, ಒಬ್ಬ ಹೆಂಡತಿಯ ಉದಾಹರಣೆಗಾಗಿ ಅಮರುಕಶತಕದಿಂದ ಒಂದು ಪದ್ಯವನ್ನು ನೋಡೋಣ:</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಪ್ರಸ್ಥಾನಂ ವಲಯೈಃ ಕೃತಂ ಪ್ರಿಯಸಖೈರಸ್ರೈರಜಸ್ರಂ ಗತಂ</span>
+    <span class="ln">ಧೃತ್ಯಾ ನ ಕ್ಷಣಮಾಸಿತಂ ವ್ಯವಸಿತಂ ಚಿತ್ತೇನ ಗಂತುಂ ಪುರಃ</span>
+    <span class="ln">ಗಂತುಂ ನಿಶ್ಚಿತಚೇತಸಿ ಪ್ರಿಯತಮೇ ಸರ್ವೇ ಸಮಂ ಪ್ರಸ್ಥಿತಾ</span>
+    <span class="ln">ಗಂತವ್ಯೇ ಸತಿ ಜೀವಿತಪ್ರಿಯ ಸುಹೃತ್ಸಾರ್ಥಃ ಕಿಮುತ್ಯಜ್ಯತೇ ॥</span>
+    <span class="verse-src">— ಅಮರುಕಶತಕ, ೩೫ (ಮೂಲ ಸಂಸ್ಕೃತ)</span>
+  </div></div>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ತೊಟ್ಟ ಬಳೆಗಳು ಕೈಯ ತೊರೆದಿವೆ ಕಣ್ಣ ನೀರದು ಸುರಿದಿದೆ</span>
+    <span class="ln">ಧೈರ್ಯ ಚಣದಲೆ ಮಾಯವಾದುದೆ ಮನಸು ದೂರಕೆ ಓಡಿದೆ</span>
+    <span class="ln">ಗಟ್ಟಿ ಮನದಲೆ ನಲ್ಲ ತೆರಳಿರೆ ಜೊತೆಯಲೇ ಇವರೆಲ್ಲರೂ</span>
+    <span class="ln">ಹೊರಟು ಹೋದರೆ ಜೀವ ತಂಡವ ಬಿಟ್ಟು ಉಳಿದಿಹೆಯೇತಕೆ?</span>
+    <span class="verse-src">— ಅನುವಾದ ನನ್ನದೇ</span>
+  </div></div>
+
+  <p>ಈ ಪದ್ಯದ ನಾಯಕಿಯಂತೂ ಬಲು ಕೋಮಲೆ. ಗಂಡ ವ್ಯಾಪಾರಕ್ಕೆ ಹೋಗಿದ್ದಾನೆಂಬುದನ್ನು ಕವಿ ಮೂಲ ಪದ್ಯದಲ್ಲಿ "ಸಾರ್ಥಮ್ ಕಿಮುತ್ಯಜ್ಯತೇ" ಎಂಬ ಪದಗಳಿಂದ ಸೂಚಿಸಿದ್ದಾನೆ. ಗಂಡನಿಂದ ದೂರವಾಗಿ ಸೊರಗಿದ ಕೈಗಳಿಂದ ಬಳೆಗಳು ಜಾರಿಹೋದವಂತೆ. ಕಣ್ಣಲ್ಲಿ ನೀರು ಸುರಿದಿದೆಯಂತೆ. ಧೈರ್ಯವೇ ಹೊರಟು ಹೋಯಿತಂತೆ. ಇನ್ನು ಮನಸ್ಸೂ ಕೂಡ, ದೇಹದಿಂದಲೇ ದೂರಾದಂತೆ ಎಲ್ಲೆಲ್ಲೋ ಓಡಿದೆಯಂತೆ. ಗಂಡನೇನೋ, ಹೆಂಡತಿಗೆ ಹೀಗಾಗಬಹುದೆಂದು ತಿಳಿದಿದ್ದರೂ ಗಟ್ಟಿಮನಸ್ಸಿನಿಂದ ತನ್ನ ವ್ಯಾಪಾರದ ತಂಡದ ಜೊತೆ ಹೊರಟೇಹೋಗಿದ್ದಾನೆ. ಅದಕ್ಕೆಂದೇ ಇವಳು, ತನ್ನ ಪ್ರಾಣಕ್ಕಿರುವ ಮಿತ್ರರಾದ ಬಳೆ, ಕಣ್ಣೀರು, ಧೈರ್ಯ, ಮನಸ್ಸು, ಎಲ್ಲವೂ ದೂರವಾದರೂ, ಈ ಹಾಳು ಜೀವವೊಂದು ಏಕೆ ಹೋಗದೇ ಉಳಿದಿದೆ? ಅದೂ ಕೂಡ ತನ್ನ ಗೆಳೆಯರ ಜೊತೆಗೇ ಹೊರಟು ಹೋಗಬಾರದೇಕೆ ಎಂದು ಕೇಳಿಕೊಳ್ಳುತ್ತಿದ್ದಾಳಂತೆ! ಎಂತಹ ಅದ್ಭುತ ಕಲ್ಪನೆ ಈ ಕವಿಯದು!</p>
+
+  <p>ಈ ಬರಹವನ್ನು ಮಳೆಗಾಲದ ಸೊಬಗನ್ನು ವರ್ಣಿಸುವ ಭರ್ತೃಹರಿಯ ಶೃಂಗಾರ ಶತಕದೊಂದ ಈ ಪದ್ಯದೊಡನೆ ಮುಗಿಸುವೆ:</p>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಉಪರಿಘನಂ ಘನಪಟಲಂ ತಿರ್ಯಗ್ಗಿರಯೋಽಪಿ ನರ್ತಿತಮಯೂರಾಃ</span>
+    <span class="ln">ಕ್ಷಿತಿರಪಿ ಕನ್ದಲಧವಲಾ ದೃಷ್ಟಿಂ ಪಥಿಕಃ ಕ್ವ ಪಾತಯತಿ</span>
+    <span class="verse-src">— ಭರ್ತೃಹರಿಯ ಶೃಂಗಾರ ಶತಕ, ೯೨ (ಮೂಲ ಸಂಸ್ಕೃತ)</span>
+  </div></div>
+
+  <div class="verse"><div class="verse-inner">
+    <span class="ln">ಆಗಸದಿ ತೇಲುತಿವೆ ದಟ್ಟ ಕಾರ್ಮೋಡಗಳು</span>
+    <span class="ln">ಮಿಗೆ ನಲಿವ ನವಿಲುಗಳು ಗಿರಿಬೆಟ್ಟಗಳಲಿ</span>
+    <span class="ln">ಚಿಗುರು ಹೊಸಹೂವುಗಳನುಟ್ಟು ಮೆರೆಯುತಿರೆ ಧರೆ</span>
+    <span class="ln">ಹೊಗಬಹುದೆ ಹಾದಿಗನ ನೋಟ ಬೇರೆಡೆಗೆ?</span>
+    <span class="verse-src">— ಭಾವಾನುವಾದ ನನ್ನದೇ</span>
+  </div></div>
+
+  <div class="ornament">✦ ✦ ✦</div>
+
+  <p class="endnote">ಕೊ: ಈ ಬರಹದ ತುಸು ಕಿರುರೂಪ ಜುಲೈ ೧೬, ೨೦೧೭ರ ವಿಶ್ವವಾಣಿ ಕನ್ನಡ ದಿನಪತ್ರಿಕೆಯಲ್ಲಿ ಮೂಡಿಬಂದಿದೆ.</p>
+
+  <p class="endnote">ಕೊ.ಕೊ: ಮೇಘದೂತದ ಪದ್ಯವೊಂದರ ಉಲ್ಲೇಖ ಈ ಬರಹದಲ್ಲಿ ಬಂದಿದೆ. ಅದರಲ್ಲಿರುವ ’ಆಷಾಢಸ್ಯ ಪ್ರಥಮದಿವಸೇ’ ಎಂಬ ಮಾತೇ ಇದಕ್ಕೆ ತಕ್ಕ ತಲೆಬರಹವೆನ್ನಿಸಿದ್ದರಿಂದ ಅದನ್ನೇ ಇಟ್ಟೆ.</p>
+
+  <p class="endnote">ಕೊ.ಕೊ.ಕೊ: 'ಆಷಾಢಸ್ಯ ಪ್ರಥಮದಿವಸೇ' ಎನ್ನುವುದಕ್ಕೆ 'ಆಷಾಢಸ್ಯ ಪ್ರಶಮದಿವಸೇ' ಎಂಬ ಪಾಠಾಂತರವೂ ಇದೆ.</p>
+
+</article>
+
+<footer>
+  <div>ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. ಅವರ ಬರಹಗಳು · Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank" rel="noopener">@hamsanandi</a></div>
+  <a class="back-link" href="https://hamsanandi.github.io/articles/">← ಲೇಖನಗಳ ಪಟ್ಟಿಗೆ ಹಿಂದಿರುಗಿ</a>
+</footer>
+
+</body>
+</html>
