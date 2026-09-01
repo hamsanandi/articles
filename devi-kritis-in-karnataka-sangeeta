@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ದೇವಿ ಪರ ಕರ್ನಾಟಕ ಸಂಗೀತ ರಚನೆಗಳು — Hamsanandi</title>
+<title>ಕರ್ನಾಟಕ ಸಂಗೀತದಲ್ಲಿ ದೇವಿಯ ಬಗ್ಗೆ ರಚನೆಗಳು — Hamsanandi</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -144,6 +144,8 @@ footer { text-align: center; color: var(--meta); font-size: 0.82em; padding: 20p
 
     <p>ಹೀಗೇ ಮತ್ತೆ ಇಲ್ಲಿ ಭೇಟಿಯಾಗುತ್ತಿರೋಣ, ಇಂತಹದ್ದೇ ಸಂಗೀತ–ಸಾಹಿತ್ಯ ವಿಷಯಗಳ ಬಗ್ಗೆ ಮಾತಾಡುತ್ತಿರೋಣ. ಹಿಂದೆ ಇದ್ದಂತೆ ಈಗ ಮಾಹಿತಿಗೆ ಬರವಿಲ್ಲ. ಕೇಳಲು ಕಷ್ಟವಿಲ್ಲ. ಇಲ್ಲಿ ಪ್ರಸ್ತಾಪಿಸಿದ ರಚನೆಗಳೆಲ್ಲ ನಿಮಗೆ ಅಂತರ್ಜಾಲದಲ್ಲಿ ಸುಲಭವಾಗಿ ಕೇಳಲು ಸಿಗುವಂತಹವು. ಇದನ್ನು ಓದಿದ ನೀವು, ಇವುಗಳಲ್ಲಿ ಕೆಲವನ್ನಾದರೂ ಕೇಳಿ ಆನಂದಿಸಿದರೆ, ಈ ಬರಹದ ಉದ್ದೇಶ ಸಾರ್ಥಕ.</p>
 
+<div class="source-note">ಈ ಬರಹವು ಹಿಂದೆ ನವರಾತ್ರಿ ಹಬ್ಬದ ಸಂದರ್ಭದಲ್ಲಿ ಇಂಡಿಕ್ ಟುಡೇ ಪೋರ್ಟಲ್ ನಲ್ಲಿ ಪ್ರಕಟವಾಗಿತ್ತು.</div>
+      
     <div class="tags">
       <span class="tag">ಕರ್ನಾಟಕ ಸಂಗೀತ</span>
       <span class="tag">ದೇವಿ</span>
